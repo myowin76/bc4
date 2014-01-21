@@ -1,0 +1,48 @@
+.badge-increase, .badge-no-data, .badge-no-change, .badge-decrease, .badge-mark{
+  width: 30px;
+  padding: 0;
+  height: 30px;
+  top: 2px;
+  position: absolute;
+  padding-top: 12px;
+  left: 30%;
+  background-color: #fff;  
+}
+
+
+
+.badge-increase{ 
+  @include icon-sprite(legend-inc);
+}
+.badge-no-data{ 
+  @include icon-sprite(legend-no-data);
+}
+.badge-no-change{ 
+  @include icon-sprite(legend-no-change); 
+}
+.badge-decrease{ 
+  @include icon-sprite(legend-dec); 
+}
+.badge-mark{ 
+  @include icon-sprite(legend-mark); 
+}
+
+
+table{
+  th{
+    .badge{
+      &.arrow{
+        padding: 4px 11px;
+        border: 1px solid #dcdcdc;
+        border-radius: 3px;
+        background: url(../images/badge-arrow.jpg) no-repeat center $light-gray;
+        top: 15px;
+        position: absolute;
+        margin-left: 11px;
+        &:hover{
+          border: 1px solid #555;
+        }
+      }
+    }
+  }
+}

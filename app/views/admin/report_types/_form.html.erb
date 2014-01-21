@@ -1,0 +1,36 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/projects_sub_menu" %>
+<% end %>
+
+<%= simple_form_for(@report_type) do |f| %>
+  <%= f.error_notification %>
+  <article>
+    <section>
+      <fieldset>
+        <%= f.input :name %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :notes %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :public, as: :radio_buttons %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :exe_summary, as: :radio_buttons %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :recommendation, as: :radio_buttons %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :best_practice, as: :radio_buttons %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :supplementary, as: :radio_buttons %>
+      </fieldset>
+    </section>
+
+  </article>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-save pull-right' %>
+  </div>
+<% end %>

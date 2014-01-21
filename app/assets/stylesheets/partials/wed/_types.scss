@@ -1,0 +1,12 @@
+article{
+  .type{
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .title{
+    a{
+      font-family: $base-font-alt;
+      font-size: 22px;
+    }
+  }
+}

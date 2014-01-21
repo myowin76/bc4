@@ -1,0 +1,121 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/companies_sub_menu" %>
+<% end %>
+
+<div class="page-header">
+  <h1>Companies</h1>
+</div>
+
+<div class="well">
+  <section>
+    <div class="table-search">
+      <input type="text" placeholder="search" />
+    </div>
+    <a class="btn btn-filter">
+      <i></i>Show Filter
+    </a>
+
+    <a href="#" class="btn btn-download pull-right">
+      <i></i>Download
+    </a>
+    <%= link_to new_admin_company_path, :class => 'btn btn-new pull-right' do %>
+      <i></i>
+      New Company
+    <% end %>
+  </section>
+</div>
+
+
+<div class="well filters">
+  <section>
+    <%#= form_for @admin_company do |c| %>
+      <div class="row">
+
+        <div class="col-sm-2">
+          <div class="ddl-type">
+            <%= select_tag "", options_from_collection_for_select(@company_types, "id", "name"),
+                 :class => 'form-control', :prompt => "Type" %>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="ddl-sector">
+            <%= select_tag "", options_from_collection_for_select(@company_sectors, "id", "name"),
+                 :class => 'form-control', :prompt => "Sector" %>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="ddl-regions">
+            <%= select_tag "", options_from_collection_for_select(@company_regions, "id", "name"),
+                 :class => 'form-control', :prompt => "Region" %>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="ddl-countries">
+            <%= select_tag "", options_from_collection_for_select(@company_countries, "id", "name"),
+                 :class => 'form-control', :prompt => "Country" %>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="ddl-type">
+            <select class="form-control">
+                <option>Status</option>
+                <option>Pdf</option>
+                <option>CSV</option>
+            </select>
+          </div>
+        </div>
+      </div>  
+      <div class="row">
+        <div class="col-sm-6">
+          <a href="#" class="btn btn-green btn-action-filter"><i></i>Filter</a>
+          <a href="#" class="btn btn-reset"><i></i>Reset</a>
+        </div>  
+      </div>
+    <%# end %>
+  </section>
+  
+</div>
+
+<table class="table" id="company_index">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>&nbsp;</th>
+      <th>Reports count</th>
+      <th></th>
+      <th></th>
+      <th></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_companies.each do |company| %>
+      <tr>
+        <td><%= image_tag(company.icon.url(:normal)) %></td>
+        <td><%= company.name %></td>
+        
+        <td><%= link_to company.reports_count, admin_company_reports_path(company) %></td>
+        <%#= link_to 'Show', company %>
+        <td><%= link_to 'Edit', edit_admin_company_path(company), :class => 'link_edit' %></td>
+        <td><a href="#" class='link_assume'>Assume Identity</a></td>
+        <td><%= link_to 'Destroy', company, method: :delete, :class => 'link_destroy',
+          data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- <div class="pager">
+  <section class="pager-info">
+    <%#= page_entries_info @admin_companies %>  
+  </section>
+  <section>
+    <%#= will_paginate @admin_companies, :next_label => 'Next', :previous_label => 'Previous' %>
+  </section>  
+</div>     -->
+<%#= render "admin/shared/paginate"%>

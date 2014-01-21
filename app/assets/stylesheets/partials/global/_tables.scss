@@ -1,0 +1,65 @@
+//
+// Tables
+// --------------------------------------------------
+
+table, table.table, table.bc {
+  clear: both;
+  @include clearfix;
+  max-width: 100%;
+  background-color: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 15px;
+
+  thead tr th {
+	  vertical-align: middle;
+	  font-family: $base-font-alt;
+	  font-weight: bold;
+	  //background-color: $col-table-header;
+	  border-bottom: 0;
+	  font-size: 16px;
+	  border-top: 0px;
+
+	}
+	tbody{
+		tr{
+			td{
+				vertical-align: middle;
+				padding-left: 15px;
+				padding-right: 15px;
+				border-top: 0px;
+				border-bottom: 1px solid $light-gray;
+			}
+
+			
+		}
+
+	}
+}
+
+table{
+	width: 100%;
+}
+
+table.table{
+	margin-bottom: 0px;
+
+	thead tr th{
+		background: url(/assets/table-header-bg.jpg) repeat-x;
+	  height: 62px;
+	}
+
+	tbody{
+		tr{
+			td{
+				padding: 14px;
+			}
+
+			&:last-child{
+				td{
+					border-bottom: 1px solid $silver;		
+				}
+			}
+		}
+	}
+}

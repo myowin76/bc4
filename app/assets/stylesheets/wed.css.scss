@@ -1,0 +1,286 @@
+// to be remove all
+@import "partials/global/base";
+@import "partials/global/mixins";
+@import "partials/wed/pages";
+@import "partials/wed/navs";
+@import "partials/wed/forms";
+@import "partials/wed/tables";
+
+
+@import "partials/pages/reports";
+
+
+
+.client-bar, .profile-bar{
+	@include clearfix;
+	border-bottom: 1px solid $silver;
+	padding:	20px 0;
+
+	figure{
+
+		@include clearfix;
+		width: 210px; height: 65px;
+		line-height: 63px;
+		background-color: white;
+		text-align: center;
+		border: 1px solid $silver;
+		float: left;
+
+		img{
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	section{
+		padding-left: 20px;
+		float: left;
+
+		p{
+			margin: 0;
+
+			&:first-child{
+				padding-bottom: 4px;
+				/*font-weight: bold;*/
+			}
+		}
+	}
+}
+
+.profile-bar{
+	padding: 10px 0 10px 10px;
+	border-bottom: 0;
+
+}
+
+/* score cards */
+.container{
+
+	.legend{
+
+		padding: 10px 15px 15px;
+		margin-bottom: 20px;
+		font-family: $base-font;
+		
+		li{
+			float: left;
+			width: 25%;
+		}
+
+		.color{
+			
+			float: left;
+			width: 14px;
+			height: 14px;
+			border: 1px solid $silver;
+			margin-top: 3px;
+		}
+
+		
+
+		label{
+			float: left;
+			font-weight: normal;
+			margin-left: 10px;
+			margin-bottom: 0px;
+		}
+	}
+
+	.col-gr{
+		background-color: #c2e6cb;
+	}
+
+	.col-yel{
+		background-color: #f3ea83;
+	}
+
+	.col-pi{
+		background-color: #ffc2c2;
+	}
+}
+
+/* my peers */
+.container{
+	
+	.add-peer{
+		margin-top: 20px;
+		padding-top: 5px;
+		border-top: 1px solid $silver;
+
+		> section{
+			padding: 15px;
+		}
+
+		#peer-companies{
+			width: 300px;
+			float: left;
+		}
+
+		.peer-list-head, .peer-list{
+			@include clearfix;
+			width: 60%;
+			li{
+				> div{
+					&.manage{
+						float: right;
+					}
+				}
+			}
+		}
+		.peer-list-head{
+			font-size: 18px;
+			font-weight: bold;
+
+		}
+
+		.peer-list{
+			@extend .doc-list-style;
+			width: 60%;
+
+			.icon{
+				width: 45px;
+				margin-right: 10px;
+			}
+
+			li{
+				padding: 4px 12px;
+
+				> div{
+					&.peer-title{
+						font-family: $base-font;
+						font-size: 15px;
+					}
+				}
+			}
+		}
+
+		li{
+			> div{
+				line-height: 41px;
+				
+				&.manage{
+
+					.link_remove{
+						margin-top: 12px;
+					}
+
+				}	
+			}	
+		}		
+	}
+}
+
+/* BEST PRACTICE */
+.container{
+	.by-metric{
+		@include clearfix;
+		clear: both;
+		padding-top: 20px;
+
+		.bp-metric-companies{
+			.well:first-child{
+				border-top: 1px solid $silver;
+				padding-top: 5px;
+			}
+		}
+
+	}	
+}
+
+/* progress charts */
+.container{
+
+	#chart{
+		clear: both;
+		@include clearfix;
+	}
+}
+
+
+/* Dashboard */
+.container{
+	
+	.wed-dashboard{
+		@include article-list-style;
+	}
+}
+
+/* best practices all metric */
+
+.wed-bp-list{
+	
+
+	margin-top: 20px;
+	padding-right: 0;
+
+	.metric{
+		border-bottom: 1px solid $silver;
+	}
+
+	&:nth-child(4n){
+		padding-right: 7px;
+	}
+
+	
+	.title{
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.rank{
+		width: 50px;
+	}
+
+	.score{
+		width: 50px;
+	}
+
+	thead{
+		tr{
+			background-color: $light-gray;
+			background: url(/assets/table-header-bg.jpg) repeat-x;
+
+			th{
+				padding: 7px;
+				font-weight: normal;
+
+			}
+
+			&:first-child{
+				background-position: top;
+			}
+
+			&:last-child{
+				background-position: bottom;
+
+				> div{
+					font-weight: normal;
+				}
+			}
+		}
+
+	}
+
+	tbody{
+		td{
+			padding: 10px 4px;
+			img{
+				border: 1px solid $silver;
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+}
+
+/* WEN */
+
+	
+/* Consultancy */
+.container{
+	.wed-consultancy{
+		@extend .wed-dashboard;	
+	}	
+}
+
+//global

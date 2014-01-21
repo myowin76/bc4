@@ -1,0 +1,43 @@
+<% page_title @page_title %>
+<% page_lead @page_lead %>
+
+
+<article class="profile-bar">
+  <figure>
+    <!-- <img src="/uploads/companies/logos/8a6e7d6d-f967-3474-a9ae-ad74590c58d9.gif" alt=""> -->
+    <%= link_to image_tag(@company.logo.url(:normal)), @company.url, :target => '_blank' %>
+  </figure>
+  <section>
+    <p><%= @company.name %></p>
+    <p><strong>Latest report score:</strong> 177/280 (previous: 162/280)</p>
+    <p><strong>Current rank:</strong> 3</p>
+  </section>
+</article>
+
+
+<ul class="nav-tabs classic company-profile">
+  <li class="active"><a href="#score-card" data-toggle="tab">Score Card</a></li>
+  <li><a href="#latest-report" data-toggle="tab">Latest Report</a></li>
+  <li><a href="#progress-chart" data-toggle="tab">Progress Chart</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  
+  <div class="tab-pane active" id="score-card">
+  	<%= render "wed/wed/partials/score_card" %>
+  </div>
+  
+  <div class="tab-pane" id="latest-report">
+    <%= render "wed/wed/partials/latest_report" %>
+  </div>
+
+  <div class="tab-pane" id="progress-chart">
+  	<%= render "wed/wed/partials/progress_chart" %>
+  </div>
+
+</div>
+
+
+<%#= @company.name %>
+<%#= image_tag(@company.logo.url(:normal)) %>

@@ -1,0 +1,126 @@
+@import "susy";
+
+/*---------------------------------------------------------*/
+// Colors
+$base-line-height             : 25px !default; 
+$form-line-height             : 25px !default; 
+
+$base-font-size               : 16px !default;
+$font-color                   : #333 !default;
+
+
+$link-color                   : #336699 !default;
+$link-hover-color             : #1b3b7c !default;
+$link-visited-color           : #336699 !default;
+
+$selected-font-color          : #ffffff !default;
+$selected-background-color    : #d2d2d2 !default;
+
+$invalid-background-color     : #f0dddd !default;
+
+$col-main-nav                 : #3f3f3f !default;
+$col-main-nav-hover           : #343434 !default;
+
+
+/*---------------------------------------------------------*/
+// Colors
+
+//Variable colors used in mixins => set using the design guide
+
+$light-gray                   : #f0f1f1 !default;
+$silver                       : #c0c0c0 !default;
+
+$col-dark-gray                : #6c6c6c !default;
+$col-blue                     : #8fa5b3 !default;
+$col-dark-blue                : #688495 !default;
+$col-bg                       : #8fa5b3 !default;
+$col-dark-border              : #444444 !default;
+
+//More colors variable => also set with the design guide
+$col-yellow                   : #ffeb00 !default;
+$col-dark-yellow              : #e3d100 !default;
+$col-line-gray                : #c0c0c0 !default;
+$col-line-light-gray          : #f0f1f1 !default;
+$col-icon-blue                : #96abbe !default;
+
+/*---------------------------------------------------------*/
+// Font-face fonts  
+@font-face {
+  font-family: 'Garamond';
+  src: url('simoncini_garamond_lt-webfont.eot');
+  src: url('simoncini_garamond_lt-webfont.eot?#iefix') format('embedded-opentype'),
+       url('simoncini_garamond_lt-webfont.ttf') format('truetype'),
+       url('simoncini_garamond_lt-webfont.woff') format('woff'),
+       url('simoncini_garamond_lt-webfont.svg#simoncini_garamond_lt-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garamond-Bold';
+  src: url('simoncini_garamond_bold-webfont.eot');
+  src: url('simoncini_garamond_bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('simoncini_garamond_bold-webfont.ttf') format('truetype'),
+       url('simoncini_garamond_bold-webfont.woff') format('woff'),
+       url('simoncini_garamond_bold-webfont.svg#simoncini_garamond_bold-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$base-font                    : Helvetica, Arial, Sans-Serif;
+$base-font-alt                : 'Garamond', Georgia, Serif;
+$base-font-alt-bold           : 'Garamond-Bold';
+
+
+
+/*------------------------List Styles---------------------------------*/
+
+.doc-list-style{
+  border: 1px solid $silver;
+  
+  li{
+    @include clearfix;
+    padding: 12px;
+    border-top: 1px solid $silver;
+    background-color: white;
+
+    &:first-child{
+      border-top-width: 0px;
+    }
+
+    a{
+      color: $font-color;
+    }
+
+    > div{
+      @include clearfix;
+      float: left;
+    }
+  }
+}
+/*---------------------------------------------------------*/
+// Susy grid settings
+
+$total-columns  : 12;             // a 12-column grid
+$column-width   : 6.4em;    // each column is ? em wide
+$gutter-width   : 1em;            // 1em gutters between columns
+$grid-padding   : 1em;  // grid-padding equal to gutters
+
+
+/*---------------------------------------------------------*/
+// Media Queries / Retina Display
+
+$mq-small-min                 : 0 ;
+$mq-small-max                 : 480px;
+
+$mq-medium-min                : 481px;
+$mq-medium-max                : 800px;
+
+$mq-large-min                 : 801px;
+$mq-large-max                 : 1280px;
+
+$pixel-ratio-min              : 1.5;
+
+/*---------------------------------------------------------*/
+
+$experimental-support-for-svg: true;

@@ -1,0 +1,19 @@
+.mod-brand{
+  @include legacy-pie-clearfix;
+  @include trailer(1, $base-font-size, padding);
+  //@include trailer(.5, $base-font-size, margin);
+  font-family: $base-font-alt;
+  font-size: 16px;
+  border-bottom: 1px solid $col-line-gray;
+  color: white;
+  // background: red;
+
+  div{
+    float: left;
+    &.quick-access{
+      float: right;
+    }
+  }
+
+  
+}

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @newsletter.email %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @newsletter.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @newsletter.last_name %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @newsletter.company %>
+</p>
+
+<p>
+  <strong>Job title:</strong>
+  <%= @newsletter.job_title %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @newsletter.country.name %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @newsletter.website %>
+</p>
+
+<p>
+  <strong>Bc tip:</strong>
+  <%= @newsletter.bc_tip %>
+</p>
+
+<p>
+  <strong>Wen:</strong>
+  <%= @newsletter.wen %>
+</p>
+
+<p>
+  <strong>Specials:</strong>
+  <%= @newsletter.specials %>
+</p>
+
+<%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
+<%= link_to 'Back', newsletters_path %>

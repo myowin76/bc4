@@ -1,0 +1,38 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/projects_sub_menu" %>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @report_type.name %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @report_type.notes %>
+</p>
+
+<p>
+  <strong>Exe summary:</strong>
+  <%= @report_type.exe_summary %>
+</p>
+
+<p>
+  <strong>Recommendation:</strong>
+  <%= @report_type.recommendation %>
+</p>
+
+<p>
+  <strong>Best practice:</strong>
+  <%= @report_type.best_practice %>
+</p>
+
+<p>
+  <strong>Supplementary:</strong>
+  <%= @report_type.supplementary %>
+</p>
+
+<%= link_to 'Edit', edit_admin_report_type_path(@report_type) %> |
+<%= link_to 'Back', admin_report_types_path %>

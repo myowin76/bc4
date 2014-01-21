@@ -1,0 +1,172 @@
+<div class="well">
+	<section>
+		<a href="#" class="btn" id="hg-high-medium">Hide highest and medium</a>
+		<a href="#" class="btn" id="hg-peer-group">Hide peer group</a>
+
+		<div class="ddl-download pull-right">
+      <select class="form-control">
+          <option>Format</option>
+          <option>Pdf</option>
+          <option>CSV</option>
+      </select>
+      <a href="#" class="btn btn-download"><i></i>Download</a>
+    </div>
+    
+	</section>
+  <p>
+    <%= link_to "Click here to edit your peers", my_peers_path %>
+  </p>
+  
+</div>
+
+<div class="well legend">
+  
+  <ul class="row">
+    <li>
+      <div class="color col-gr"></div>
+      <label>Score is in the 1st 25 percentile</label>
+    </li>
+    <li>
+      <div class="color col-yel"></div>
+      <label>Score is in the 2nd 25 percentile</label>
+    </li>
+    <li>
+      <div class="color col-pi"></div>
+      <label>Score is in the 3rd or 4th 25 percentile</label>
+    </li>
+  </ul>
+
+</div>
+
+<div class="tbl-score-card">
+
+  <ul class="sc-header">
+    <li>
+      <div class="title">Metric / Sub metric [max score]</div>
+      <div class="my-company">
+        <a href="#">
+          <img src="/uploads/companies/icons/8ee7e6c0-3523-98b4-f9ec-5514b6f1dd1e.jpg" alt="" />
+          <%#= image_tag(@company.icon.url(:normal)) %>
+        </a>
+      </div>
+      <% @my_peers.each do |my_peer| %>
+        <div class="peer">
+          <%= link_to image_tag(my_peer.icon.url(:normal)), my_peer.url, :target => '_blank' %>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+
+  <ul class="sc-header2">
+    <li>
+      <div class="title">&nbsp;</div>
+      <div class="my-company">
+        <div class="sc-score">score</div>
+        <div class="sc-best">vs.best</div>
+        <div class="sc-median">vs.median</div>
+      </div>
+    </li>
+  </ul>
+  <section class="sc-main">
+    <ul class="metric">
+      <% @metrics.roots.each do |metric| %>
+        <li>
+          <div class="title">
+            <span><%= metric.name %></span>
+          </div>
+          <div class="my-company">
+            <div class="sc-score col-gr">
+              <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+            </div>
+            <div class="sc-best">
+              <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+            </div>
+            <div class="sc-median">
+              <a href="#" data-toggle="modal" data-target="#viewReport">30</a>
+            </div>
+          </div>
+          <div class="peer  ">
+            <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+          </div>
+          <div class="peer">
+            <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+          </div>
+          <div class="peer">
+            <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+          </div>
+          <div class="peer col-pi">
+            <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+          </div>
+          <div class="peer col-yel">
+            <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+          </div>
+          <div class="peer">
+            <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+          </div>
+          <div class="peer">
+            <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+          </div>
+          <div class="peer">
+            <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+          </div>
+          <div class="peer">
+            <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+          </div>
+        </li>
+
+        <!-- submetrics -->
+        <ul class="sub-metrics">
+          <% metric.sub_metrics.order(:number).each do |submetric| %>  
+          <li>
+            <div class="title">
+              <span><%= submetric.name %></span>
+            </div>
+            <div class="my-company">
+              <div class="sc-score col-gr">
+                <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+              </div>
+              <div class="sc-best">
+                <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+              </div>
+              <div class="sc-median">
+                <a href="#" data-toggle="modal" data-target="#viewReport">30</a>
+              </div>
+            </div>
+            <div class="peer  ">
+              <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+            </div>
+            <div class="peer">
+              <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+            </div>
+            <div class="peer">
+              <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+            </div>
+            <div class="peer col-pi">
+              <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+            </div>
+            <div class="peer col-yel">
+              <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+            </div>
+            <div class="peer">
+              <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+            </div>
+            <div class="peer">
+              <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+            </div>
+            <div class="peer">
+              <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+            </div>
+            <div class="peer">
+              <a href="#" data-toggle="modal" data-target="#viewReport">11</a>
+            </div>
+          </li>
+          <% end %>
+        </ul>
+
+      <% end %>
+    </ul>
+  </section>
+
+</div>
+
+<%= render "shared/report_popup" %>

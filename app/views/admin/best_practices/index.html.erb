@@ -1,0 +1,48 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/projects_sub_menu" %>
+<% end %>
+
+<div class="page-header">
+  <h1>Best Practices</h1>
+</div>
+
+<div class="well">
+  <section>
+    <div class="table-search">
+      <input type="text" placeholder="search" />
+    </div>
+    <%= link_to new_admin_best_practice_path,
+        :class => "btn-new pull-right" do %>    
+        <i></i>New Best practice
+    <% end %>
+  </section>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Body</th>
+      <th>Company</th>
+      <th></th>
+      <th></th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @best_practices.each do |best_practice| %>
+      <tr>
+        <td><%= link_to best_practice.name, best_practice %></td>
+        <td><%= best_practice.body %></td>
+        <td><%= best_practice.company.name %></td>
+        <%#= link_to 'Show', best_practice %>
+        <td><%= link_to 'Edit', edit_admin_best_practice_path(best_practice), :class => 'link_edit' %></td>
+        <td><%= link_to 'Destroy', best_practice, method: :delete, :class => 'link_destroy',
+              data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

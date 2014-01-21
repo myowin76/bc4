@@ -1,0 +1,83 @@
+
+<header>
+  <div class="navbar" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" 
+        	data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <%= link_to wed_dashboard_path, :class => "navbar-brand" do %>
+          <img src="/assets/BC-database-logo_251-wide.png" alt="logo" />
+        <% end %>
+      </div>
+      
+      <ul class="nav navbar-nav pull-right">
+        <%# if user_signed_in? %>
+          <li><%#= link_to "My Account", edit_user_registration_path %></li>
+          <li><%#= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+        <%# end %>
+        <li>
+          <%= link_to admin_dashboard_path do %>
+            <span>Admin</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to wed_advanced_search_path do %>
+            <span>Advanced search</span>
+          <% end %>
+        </li>
+        <li>
+          <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <input type="text" placeholder="Search" class="form-control">
+            <input type="submit" class="search" />
+          </div>
+        </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <%= render 'wed/wed/partials/client_bar' %>
+  <!-- <div class="container">
+   
+  </div> -->
+  <nav class="main-nav" role="main">
+      <ul id="main-navigation">
+        <li class="dashboard">
+          <%= link_to "Dashboard", wed_dashboard_path %>
+        </li>
+        <li class="score-card">
+          <%= link_to "Score card", score_card_path %>
+        </li>
+        <li class="latest-report">
+          <%= link_to "Latest Report", latest_report_path %>
+        </li>
+        <li class="progress-chart">
+          <%= link_to "Progress Chart", progress_chart_path %>
+        </li>
+        <li class="peer-comparison">
+          <%= link_to "Peer Comparison", peer_comparison_path %>
+        </li>
+        <li class="best-practice">
+          <%= link_to "Best Practice", best_practice_path %>
+        </li>
+        <li class="results-table">
+          <%= link_to "Results Table", results_table_path %>
+        </li>
+        <li class="consultancy">
+          <%= link_to "Consultancy", wed_consultancy_path %>
+        </li>
+        <li class="wen">
+          <%= link_to "WEN", wed_wen_path %>
+        </li>
+      </ul>
+  </nav>
+
+</header>

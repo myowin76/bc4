@@ -1,0 +1,47 @@
+<header>
+  <div class="navbar" role="top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" 
+        	data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        <%= link_to root_path, :class => "navbar-brand" do %>
+          <img src="/assets/logo.png" alt="logo" height="50"/>
+        <% end %>
+      </div>
+      
+      <ul class="nav navbar-nav pull-right">
+        <li><%= link_to "Subscribe to newsletter", subscribe_newsletter_path %></li>
+        <li>
+          <%= link_to "WED", wed_dashboard_path %>
+        </li>
+        <li>
+          <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <input type="text" placeholder="Search" class="form-control">
+            <input type="submit" class="search" />
+          </div>
+          
+        </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <nav class="main-nav web" role="main">
+    <ul id="main-navigation">
+      <% Web::Page.not_home.roots.order(:position).each do |page| %>
+      <li class=<%= page.url %>>
+        <%=link_to h(page.name), page_path(page.url), class: ("active" if page.root == page) %>
+      </li>
+      <% end %>
+    </ul>
+
+    <%= yield :sub_menu %> 
+  </nav>
+</header>

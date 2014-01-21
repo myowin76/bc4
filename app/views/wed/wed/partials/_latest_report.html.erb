@@ -1,0 +1,87 @@
+
+<%# @company_reports.each do |report| %>
+	<%#= report.name %>
+	
+<%# end %>
+<div class="rpt-view-totalscore">
+	<div class="total">Total Score [280]</div>
+	<div class="scores">Score 210 (220)</div>
+</div>
+
+<div class="nav-tabs">
+	<ul>
+		<% @width = 100.00/@metrics.roots.count %>
+		<% @metrics.roots.each do |metric| %>
+			<li style="width: <%= "#{@width}" + '%' %>"><a href="#"><%= metric.number %>.<%= metric.name %></a></li>
+		<% end %>
+	</ul>
+</div>
+
+<div class="row">
+	<div class="col-sm-9">
+		<div class="rpt-metric-score">
+			<div class="name"><%= @first_metric.name %> [60]</div>
+			<div class="scores">Score 39 (41)</div>
+		</div>
+		<div class="rpt-view-container">
+			<%= render "wed/wed/partials/latest_report_view" %>
+		</div>
+
+	</div>
+	<div class="col-sm-3 rpt-aside">
+				
+		<div class="block score-legend">
+			<h2>Score Legend</h2>
+			<section>
+				<table>
+					<tr>
+						<td>[280]</td>
+						<td>Maximum possible score</td>
+					</tr>
+					<tr>
+						<td>(205)</td>
+						<td>Previous score</td>
+					</tr>
+						<td>206</td>
+						<td>Current score</td>
+					</tr>
+				</table>
+				
+			</section>
+		</div>
+
+		<div class="block rpt-download">
+			<h2>Download report</h2>
+			<section>
+				
+				<div class="ddl-download">
+					<select class="form-control">
+						<option>Format</option>
+						<option>Pdf</option>
+						<option>ODX</option>
+					</select>	
+				</div>
+
+				<a href="#" class="btn btn-download">
+					<i></i>Download complete report
+				</a>
+
+				<a href="#" class="btn btn-download">
+					<i></i>Download selected
+				</a>
+			</section>
+		</div>
+
+		<div class="block rpt-share">
+				<a href="#" class="btn btn-download">
+					<i></i>Download recommendations only (CSV)
+				</a>
+				<a href="#" class="btn"  data-toggle="modal" data-target="#shareReport">
+					<i></i>Share with colleagues
+				</a>
+		</div>
+	</div>
+
+</div>
+
+<%= render "shared/share_report_popup" %>

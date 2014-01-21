@@ -1,0 +1,140 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/projects_sub_menu" %>
+<% end %>
+
+<div class="page-header">
+  <h1>Reports</h1>
+</div>
+
+<div class="well">
+  <section>
+    <div class="table-search">
+      <input type="text" placeholder="search" />
+      
+    </div>
+    <%= link_to "#", :class => "btn btn-filter" do %>
+      <i></i>Show Filter
+    <% end %>
+  </section>
+  
+</div>
+
+<div class="well filters">
+  <section>
+    <%= form_tag admin_reports_path, method: :get do |c| %>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="ddl-sector">
+            <%= select_tag "companies", options_from_collection_for_select(@companies, "id", "name"),
+                 :class => 'form-control', :prompt => "Companies" %>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="ddl-projects">
+            <%= select_tag "project", options_from_collection_for_select(@projects, "id", "name"),
+                 :class => 'form-control', :prompt => "Projects" %>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="ddl-sector">
+            <%= select_tag "report_types", options_from_collection_for_select(@report_types, "id", "name"),
+                 :class => 'form-control', :prompt => "Report Types" %>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="ddl-status">
+            <%= select_tag "report_statues", 
+              options_from_collection_for_select(Admin::ReportState.all, "id", "name"),
+              :class => 'form-control', :prompt => "Report Status" %>
+            <!-- <select class="form-control">
+                <option>Status</option>
+                <option>Pdf</option>
+                <option>CSV</option>
+            </select> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="ddl-assignee">
+            <select class="form-control">
+                <option>Assigned to</option>
+                <option>Karen Admin</option>
+                <option>Mali Editor</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <%= text_field_tag(:published_from) %>
+        </div>
+        
+        <div class="col-sm-3">
+          <%= text_field_tag(:published_to) %>
+        </div>
+
+      </div>  
+
+      <div class="row">
+        <div class="col-sm-6">
+          <%= button_tag(:type => "submit", :class => "btn btn-green btn-action-filter") do %>
+            <i></i>Filter
+          <% end %>
+          <!-- <a href="#" class="btn btn-green btn-filter"><i></i>Filter</a> -->
+          <a href="#" class="btn btn-reset"><i></i>Reset</a>
+        </div>  
+      </div>
+    <% end %>
+  </section>
+</div>
+
+
+<!-- <div class="pager">
+  <section class="pager-info">
+    <%#= page_entries_info @reports %>  
+  </section>
+  <section>
+    <%#= will_paginate @reports, :next_label => 'Next', :previous_label => 'Previous' %>
+  </section>  
+</div>  -->   
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Project</th>
+      <th>Company</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.name %></td>
+        <td><%= report.project.name unless report.project.nil? %></td>
+        <td><%= report.company.name unless report.company.nil? %></td>
+        <td>
+          <%= link_to 'Edit', manage_report_path(report), :class => 'link_edit' %>
+        </td>
+        <td><%= link_to 'Destroy', report, :class => 'link_destroy',
+            method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- <div class="pager">
+  <section class="pager-info">
+    <%#= page_entries_info @reports %>  
+  </section>
+  <section>
+    <%#= will_paginate @reports, :next_label => 'Next', :previous_label => 'Previous' %>
+  </section>  
+</div>     -->
+<%#= link_to 'New Report', new_admin_report_path %>

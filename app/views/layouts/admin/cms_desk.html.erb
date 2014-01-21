@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render 'layouts/admin/meta_head' %>
+  <%= stylesheet_link_tag "global", "admin", media: "all" %>  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+		<div class="container">
+			<%= render 'layouts/admin/header' %>
+			<h2>This is cms layout to style</h2>
+				<%= yield %>
+			<%= render 'layouts/wed/footer' %>
+		</div>
+
+	<%= javascript_include_tag "application", "admin" %>
+	<%= yield :scripts %>
+	
+</body>
+</html>

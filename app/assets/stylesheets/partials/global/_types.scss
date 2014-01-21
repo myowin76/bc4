@@ -1,0 +1,181 @@
+
+/*
+    Color
+*/
+html,
+button,
+input,
+select,
+textarea {
+  font-family:$base-font;
+  color: $font-color;
+}
+
+
+/*
+    Selection
+*/
+::-moz-selection {
+  background: $selected-background-color;
+  color: $selected-font-color;
+  text-shadow: none;
+}
+
+::selection {
+  background: $selected-background-color;
+  color: $selected-font-color;
+  text-shadow: none;
+}
+
+
+
+/*
+    Headings
+*/
+.container{
+  
+  h1,h2,h3,h4,h5,h6{ 
+    font-family: $base-font-alt;
+    //font-weight: 600;
+    color: $font-color;
+  }  
+}
+
+/*
+    Links
+*/
+.container{
+ 
+  a {
+    color: $link-color;
+    text-decoration:none;
+    // @include transition(all 0.25s); 
+  }
+
+  a:visited {
+    //color: $link-visited-color;
+  //  color: white;
+  }
+
+  a:hover {
+    //color: darken($link-color, 10%);
+    text-decoration:none;
+  }
+
+
+
+  .lt-ie8{
+    a.btn{
+      vertical-align:top;
+    }
+  }
+
+
+  /*
+      HR
+  */
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    /*border-top: 1px solid $col-light-gray;*/
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  /*
+      Lists - Addresses margins set differently in IE 6/7.
+  */
+  dl,
+  menu,
+  ol,
+  ul {
+    margin: 0;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  
+
+
+}
+/*
+  Meta Data
+*/
+.meta{
+  display: inline-block;
+
+  b{
+    /*@include fsize(14px);*/
+    display:block;
+    font-weight:400;
+  }
+
+  + p{
+      margin-top:0;
+  }
+
+}// .meta
+
+/*
+   * Addresses paddings set differently in IE 6/7.
+   */
+
+  menu,
+  ol,
+  ul {
+    padding: 0;
+    // list-style-position:inside;
+    list-style: none;
+  }
+
+  /*
+   * Corrects list images handled incorrectly in IE 7.
+   */
+
+  nav ul,
+  nav ol {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+  }
+
+/*
+==============================================================================
+  MEDIA QUERIES - SMALL
+==============================================================================
+*/
+
+@media only screen and (min-width: $mq-small-min) and (max-width: $mq-small-max){
+
+}// @media
+
+
+/*
+==============================================================================
+  MEDIA QUERIES - MEDIUM - LARGE
+==============================================================================
+*/
+//@media only screen and (min-width: $mq-medium-min) and (max-width: $mq-medium-max){    
+@media only screen and (min-width: $mq-medium-min){      
+ 
+
+}// /@media tab
+
+
+/*
+==============================================================================
+  MEDIA QUERIES - LARGE
+==============================================================================
+*/
+@media only screen and (min-width: $mq-large-min){
+
+
+
+
+}// /@media dsk
+
+
+

@@ -1,0 +1,2 @@
+module Wed::WedHelper
+end

@@ -1,0 +1,39 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/companies_sub_menu" %>
+<% end %>
+
+<div class="page-header">
+  <h1>Regions</h1>
+</div>
+
+<div class="well">
+  <section>
+    <%= link_to new_admin_region_path, :class => "btn btn-new pull-right" do %>
+      <i></i>New Region
+    <% end %>
+  </section>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @regions.each do |region| %>
+      <tr>
+        <td><%= link_to region.name, region %></td>
+        <td><%= link_to 'Edit', edit_admin_region_path(region), :class => 'link_edit' %></td>
+        <td><%= link_to 'Destroy', region, 
+          :class => 'link_destroy', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

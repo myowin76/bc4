@@ -1,0 +1,66 @@
+<%= simple_form_for(@admin_bctip) do |f| %>
+  <%= f.error_notification %>
+
+  <article>
+    <section>
+      <fieldset>
+        <%= f.input :title %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :intro %>
+      </fieldset>
+      <fieldset>
+        <label>Body</label>
+      </fieldset>
+      <fieldset>
+        
+        <%= f.input :body, label: false,
+            :input_html => {:class => ''}  %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :showon_admin_dashboard %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :showon_wed_dashboard %>
+      </fieldset>
+      
+      <% unless f.object.new_record? %>
+        <fieldset>
+          <%= f.input :publish_from, :as => 'string',
+            :input_html => { :value => localize(f.object.publish_from, 
+                  :format => "%d/%m/%Y")}  %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :publish_to, :as => 'string',
+           :input_html => { :value => localize(f.object.publish_to, 
+                  :format => "%d/%m/%Y")}  %>
+        </fieldset>
+      <% else %>
+        <fieldset>
+          <%= f.input :publish_from, :as => 'string' %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :publish_to, :as => 'string' %>
+        </fieldset>
+      <% end %>
+      
+    </section>
+  </article>
+  
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-save pull-right' %>
+  </div>
+<% end %>
+
+
+<% content_for :scripts do %>
+  <script type="text/javascript">
+    CKEDITOR.replace( 'admin_bctip_body' );
+
+    $("#admin_bctip_publish_from, #admin_bctip_publish_to").datepicker({
+      dateFormat: 'dd/mm/yy',
+      showOn: "both",
+      buttonImage: "/assets/icons/calendar.png"
+    });
+  </script>  
+<% end %>

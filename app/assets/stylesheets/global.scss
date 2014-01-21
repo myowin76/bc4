@@ -1,0 +1,42 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require bootstrap
+ * require_tree ./partials/global
+ 
+ * require_tree .
+ 
+ */
+@import "susy";
+
+@import "icons/*.png";
+@include all-icons-sprites;
+$icon-spacing: 15px !default;
+
+// to be remove all
+@import "partials/global/base";
+@import "partials/global/mixins";
+@import "partials/global/pages";
+@import "partials/global/types";
+@import "partials/global/footer";
+@import "partials/global/navs";
+@import "partials/global/accordions";
+@import "partials/global/tables";
+@import "partials/global/chosen";
+@import "partials/global/dataTables";
+@import "partials/global/wells";
+@import "partials/global/pagination";
+@import "partials/global/tabs";
+@import "partials/global/forms";
+@import "partials/global/modals";
+@import "partials/global/calendars";
+@import "partials/global/search";
+@import "partials/global/sidebar";

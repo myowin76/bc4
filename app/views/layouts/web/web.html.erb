@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render 'layouts/web/meta_head' %>
+  <%= stylesheet_link_tag "global","web", media: "all" %>  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div class="container">
+		<%= render 'layouts/web/header' %>
+		<div class="main row" role="main">
+			<div class="col-sm-9">
+				<p id="notice"><%= notice %></p>
+				
+				<% unless @web_page.nil? %>
+					<div class="page-header">
+					  <h1><%= @web_page.page_title %></h1>
+					  <p><%= @web_page.page_intro %></p>
+					</div>
+				<% end %>
+				
+				<%= yield %>
+			</div>
+
+			<div class="col-sm-3 sidebar">
+				<%= yield :sidebar %>
+			</div>
+			
+		</div>
+		
+		<%= render 'layouts/web/footer' %>
+	</div>	
+
+	<%= javascript_include_tag "application" %>
+	<%= yield :scripts %>
+	
+</body>
+</html>

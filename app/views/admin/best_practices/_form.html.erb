@@ -1,0 +1,41 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/projects_sub_menu" %>
+<% end %>
+
+<%= simple_form_for @best_practice, :html => { :multipart => true }  do |f| %>
+  <%= f.error_notification %>
+  <article>
+    <section>
+
+      <fieldset>
+        <%= f.input :name %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :body %>
+      </fieldset>
+      <fieldset>
+        <%= f.association :company, :input_html => {:class => 'form-control'} %>
+      </fieldset>
+      
+      <%= f.fields_for :screengrabs, @screengrabs do |screengrab_fields| %>
+
+        <% unless screengrab_fields.object.new_record? %>
+        	<fieldset>
+        		<%= screengrab_fields.file_field :image %>
+        	</fieldset>
+
+        	<fieldset>
+      	    <%= screengrab_fields.input :caption %>
+      	  </fieldset>
+        <% else %>
+          
+        <% end %>
+      <% end %>
+    </section>
+  </article>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-save pull-right' %>
+  </div>
+  
+<% end %>

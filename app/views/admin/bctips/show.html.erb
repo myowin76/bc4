@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_bctip.title %>
+</p>
+
+<p>
+  <strong>Intro:</strong>
+  <%= @admin_bctip.intro %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @admin_bctip.body %>
+</p>
+
+<p>
+  <strong>Showon admin dashboard:</strong>
+  <%= @admin_bctip.showon_admin_dashboard %>
+</p>
+
+<p>
+  <strong>Showon wed dashboard:</strong>
+  <%= @admin_bctip.showon_wed_dashboard %>
+</p>
+
+<p>
+  <strong>Publish from:</strong>
+  <%= @admin_bctip.publish_from %>
+</p>
+
+<p>
+  <strong>Publish to:</strong>
+  <%= @admin_bctip.publish_to %>
+</p>
+
+<%= link_to 'Edit', edit_admin_bctip_path(@admin_bctip) %> |
+<%= link_to 'Back', admin_bctips_path %>

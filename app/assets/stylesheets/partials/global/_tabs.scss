@@ -1,0 +1,100 @@
+.container{
+
+	.nav-tabs{
+		//@include leader( .8, $base-font-size, margin);
+	  //@include trailer( .6, $base-font-size, margin);
+	  clear: both;
+	  @include legacy-pie-clearfix();
+		border-bottom: 1px solid silver;
+		border-top: 1px solid silver;
+		font-family: $base-font-alt;
+		font-size: 18px;
+
+		 li{
+			border-right: 1px solid silver;
+			float: left;
+			font-size: 16px;
+			height: 73px;
+			background-color: $light-gray;
+
+			&:hover{
+				border-bottom: 0;
+				cursor: pointer;
+			}
+
+			&:last-child{
+				border-right: 0px;
+			}
+
+			a{
+				border-radius: 0;
+				margin-right: 0;
+				margin-left: 0;
+				display: block;
+				color: $font-color;
+				padding: 18px;
+				text-align: center;
+				height: 73px;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+
+			&.active{
+				a{
+					border-top: 1px solid #f0f1f1;
+					border-left: 0;
+					border-right: 0;
+					margin-right: 0;
+					margin-left: 0;
+
+					background-color: white;
+
+					&:hover{
+						border-top: 1px solid #f0f1f1;
+						border-left: 0;
+					border-right: 0;
+					}
+				}
+			}
+
+		}
+
+		&.classic{
+			background: transparent;
+			border-top: 0;
+
+			li{
+				margin-left: 10px;
+				border: 1px solid $silver;
+				height: 50px;
+				a{
+					font-size: 18px;
+					padding: 10px 35px;
+					height: 50px;
+					&:hover{
+						border-bottom: 0;
+					}
+				}
+				&.active{
+					border-bottom: 0px;
+				}
+			} 
+		}
+
+		&.company-profile{
+			//margin-top: 25px;
+
+			+.tab-content{
+				@include clearfix;
+				margin-top: 20px;
+				border-top: 1px solid $silver;
+				padding-top: 5px;
+			}
+		}
+	}
+
+
+
+
+}	

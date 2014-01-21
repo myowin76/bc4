@@ -1,0 +1,10 @@
+#main-navigation{
+  li{
+    width: 195px;
+    &:first-child{
+      padding-left: 0px;
+    }
+    position: relative;
+  }
+}
+

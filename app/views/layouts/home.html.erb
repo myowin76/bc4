@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render 'layouts/web/meta_head' %>
+  <%= stylesheet_link_tag "global","web", media: "all" %>  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div class="container">
+		<%= render 'layouts/web/header' %>
+		<div class="main row" role="main">
+			<article class="mod-landing">
+		    <header>
+	        <h1>
+            We are experts in global online corporate communications. We help you improve the effectiveness of your websites, mobile sites, <br>social channels and apps.
+	        </h1>
+		    </header>
+		    <p>
+		    	This site is filled with <a href="/our-thinking/presentations-reports/">practical advice</a> and <a href="/our-thinking/ft-bowen-craggs-index-analysis/">deep analysis</a> for online communications professionals. Browse or search Our thinking now.
+		    </p>
+
+			</article>
+
+			<%= yield %>
+			<div class="row">
+			
+			<article class="highlight-index col-sm-5">
+        <header>
+          <h2>
+            <a href="/ft-bowen-craggs-index/" alt="FT index">
+                <img src="/assets/index_effectiveness_logo.png" alt="">
+            </a>    
+          </h2>
+        </header>
+  			<section>
+      		<table class="table">
+						<tbody>
+							<tr>
+								<td>
+									1</td>
+								<td>
+									BP</td>
+								<td>
+									215</td>
+							</tr>
+							<tr>
+								<td>
+									1</td>
+								<td>
+									Eni</td>
+								<td>
+									215</td>
+							</tr>
+							<tr>
+								<td>
+									1</td>
+								<td>
+									SAP</td>
+								<td>
+									215</td>
+							</tr>
+							<tr>
+								<td>
+									4</td>
+								<td>
+									Siemens</td>
+								<td>
+									214</td>
+							</tr>
+							<tr>
+								<td>
+									5</td>
+								<td>
+									Royal Dutch Shell</td>
+								<td>
+									213</td>
+							</tr>
+							<tr>
+								<td>
+									5</td>
+								<td>
+									Unilever</td>
+								<td>
+									213</td>
+							</tr>
+							<tr>
+								<td>
+									7</td>
+								<td>
+									Nestlé</td>
+								<td>
+									207</td>
+							</tr>
+							<tr>
+								<td>
+									7</td>
+								<td>
+									Roche</td>
+								<td>
+									207</td>
+							</tr>
+							<tr>
+								<td>
+									9</td>
+								<td>
+									Novartis</td>
+								<td>
+									206</td>
+							</tr>
+							<tr>
+								<td>
+									10</td>
+								<td>
+									GlaxoSmithKline</td>
+								<td>
+									203</td>
+							</tr>
+						</tbody>
+					</table>
+
+        </section>
+			</article>
+
+			<article class="highligth-content col-sm-4">
+        <header>
+		    	<h3><a href="/our-thinking/">Our thinking</a></h3>
+        </header>
+	      <section>
+	        <p>Insightful commentary, practical analysis and stimulating observation from our 	expert team led by veteran online commentator David Bowen.
+	        </p>
+	        <ul class="fact-links">
+            <li>
+            	Keep up with our latest <a href="/our-thinking/commentaries/">Commentaries</a> on the corporate web
+            </li>
+            <li>
+            	Consult our twice-weekly <a href="/our-thinking/bc-tips/">BC Tips</a> for best practice features
+            </li>
+	        </ul>
+	      </section>
+		  </article>
+			
+
+			<div class="col-sm-3 sidebar">
+				<%= yield :sidebar %>
+
+				<div class="widget theme-blue">
+					<section>
+						
+
+						<a href="#" class="btn btn-download"><i></i>Download</a>
+					</section>
+				</div>
+
+				<div class="widget theme-dark">
+					<section>
+						
+
+						<a href="#" class="btn btn-download">Full details here</a>
+					</section>
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		<%= render 'layouts/web/footer' %>
+	</div>	
+
+	<%= javascript_include_tag "application" %>
+	<%= yield :scripts %>
+	
+</body>
+</html>

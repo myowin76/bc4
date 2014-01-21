@@ -1,0 +1,179 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/companies_sub_menu" %>
+<% end %>
+
+
+<%= simple_form_for @admin_company, 
+    :html => { :multipart => true }, :class => "form-horizontal"  do |f| %>
+
+  <%= f.error_notification %>
+
+  <% unless f.object.new_record? %>
+    <div class="well">
+      <section>
+        <%= @admin_company.name %><br>
+        <%= @admin_company.created_at %>
+        <div class="action">
+          <a href="#" class="btn">Deactivate</a>
+          <%= link_to 'Delete', @admin_company, method: :delete, :class => 'btn',
+          data: { confirm: 'Are you sure?' } %>
+        </div>
+        
+      </section>
+    </div>
+  <% end %>
+
+  <div class="well">
+    <section>
+      <%= image_tag(@admin_company.logo.url(:normal)) %>
+      <%= f.file_field :logo %>
+    </section>
+  </div>
+
+  <div class="well">
+    <section>
+      <%= image_tag(@admin_company.icon.url(:normal)) %>
+      <%= f.file_field :icon %>
+    </section>
+  </div>
+
+  <article>
+
+    <header>
+      <h4>Details</h4>
+    </header>
+    
+    <section>
+        <p class="mandatory">* Mandatory</p>
+        <fieldset>
+          <%= f.input :name, :label => 'Name',
+            :input_html => {:class => ''} %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :url, :label => 'Url', :label => 'Website',
+            :input_html => {:class => ''} %>
+        </fieldset>
+        
+        <fieldset>
+
+          <% unless f.object.new_record? || @admin_company.renew_date.nil? %>
+            <%= f.input :renew_date, as: :string, :label => 'Renewal Date',
+              :input_html => { :value => localize(f.object.renew_date, 
+                :format => "%d/%m/%Y")} %>
+          <% else %>
+            <%= f.input :renew_date, as: :string, :label => 'Renewal Date' %>  
+          <% end %>
+        </fieldset>
+
+        <fieldset>
+          <%= f.association :company_type, :label => 'Type',
+            input_html: { class: 'form-control' }, :prompt => 'Select Company Type' %>
+        </fieldset>
+
+        <fieldset>
+          <%= f.association :company_status, :label => 'Status',
+            input_html: { class: 'form-control' }, :prompt => 'Select Company Status' %>
+        </fieldset>
+        
+        <fieldset>
+          <%= f.association :sector, :label => 'Sector',
+            input_html: { class: 'form-control' }, :prompt => 'Select Sector' %>
+        </fieldset>
+        
+        <fieldset>
+          <%= f.association :country, :label => 'Country',
+            input_html: { class: 'form-control' }, :prompt => 'Select Country' %>
+        </fieldset>
+
+        <fieldset>
+          <%= f.association :subscription, :label => 'Subscription',
+            input_html: { class: 'form-control' }, :prompt => 'Select Subscription' %>
+        </fieldset>
+
+        <% unless f.object.new_record? %>
+          <fieldset>
+            <label>Last Updated at</label>
+            <p><%= @admin_company.updated_at %></p>
+          </fieldset>
+
+          <fieldset>
+            <label>Last Updated by</label>
+            <p>Administrator</p>
+          </fieldset>
+
+          <fieldset>
+            <label>No of reports</label>
+            <p><%= link_to @admin_company.reports_count, 
+                admin_company_reports_path(@admin_company) %></p>
+          </fieldset>
+
+          <fieldset>
+            <label>No of users</label>
+            <p>
+              0
+            <%#= link_to @admin_company.users_count, 
+                admin_company_reports_path(@admin_company) %>
+            </p>
+          </fieldset>
+        <% end %>
+
+    </section>
+  </article>
+  
+
+  <!-- super user -->
+  <article>
+    <header>
+      <h4>Super Users</h4>
+    </header>
+
+    <section>
+      
+        <p class="mandatory">* Mandatory</p>
+        <fieldset>
+          <label for="email">Status <span>*</span></label>
+          <input type="text" name="email" placeholder="">
+        </fieldset>
+        <fieldset>
+          <label for="username">Username <span>*</span></label>
+          <input type="text" name="username" placeholder="">
+        </fieldset>
+        <fieldset>
+          <label for="password">Password <span>*</span></label>
+          <input type="text" name="password" placeholder="">
+        </fieldset>
+        <fieldset>
+          <label for="password-confirm">Confirm Password <span>*</span></label>
+          <input type="text" name="password-confirm" placeholder="">
+        </fieldset>
+        <fieldset>
+          <label for="firstname">First Name <span>*</span></label>
+          <input type="text" name="firstname" placeholder="Your firstname">
+        </fieldset>
+        <fieldset>
+          <label for="lastname">Last Name <span>*</span></label>
+          <input type="text" name="lastname" placeholder="Your firstname">
+        </fieldset>
+        <fieldset>
+          <label for="job-title">Job Title <span>*</span></label>
+          <input type="text" name="job-title" placeholder="Your firstname">
+        </fieldset>
+        <fieldset>
+          <label>Super User Peers <span>*</span></label>
+          
+
+          <%= select_tag "companies", options_from_collection_for_select(Admin::Company.order(:name).all, "id", "name"),:class => 'peer-companies', :prompt => "Peers", :multiple => 'true'%>
+        </fieldset>
+        
+
+      
+    </section>
+  </article>
+  
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-save pull-right' %>
+  </div>
+  
+      
+  <!-- super user end -->    
+<% end %>

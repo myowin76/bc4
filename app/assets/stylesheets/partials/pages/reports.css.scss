@@ -1,0 +1,113 @@
+//Reports styles
+
+#report_tab{
+	padding-top: 25px;
+
+}
+
+.rpt-view-totalscore{
+	@include clearfix;
+	padding: 10px;
+	margin: 10px 0;
+
+	> div{
+		font-family: $base-font;
+		font-weight: bold;
+		font-size: 15px;
+	}
+
+	.total{
+		float: left;
+	}
+
+	.scores{
+		float: right;
+	}
+
+}
+
+.rpt-metric-score{
+	@include clearfix;
+	padding: 15px;
+	border-bottom: 1px solid $silver;
+	margin-bottom: 5px;
+	> div{
+		font-family: $base-font-alt;
+		font-size: 25px;
+		font-weight: bold;
+	}
+
+	.name{
+		float: left;
+	}
+
+	.scores{
+		float: right;
+	}
+}
+
+.rpt-doc-list, .rpt-urls{
+	@include clearfix;
+	clear: both;
+}
+
+.rpt-doc-list{
+	@extend .doc-list-style;
+	width: 80%;
+	
+}
+
+.container .rpt-urls{
+	margin-bottom: 12px;
+	li{
+		padding: 3px 3px 3px 20px;
+		background: url(/assets/new-window.png) no-repeat 0 7px;
+	}
+}
+
+.rpt-aside{	
+	
+	.block{
+
+		@include clearfix;
+		background-color: $light-gray;
+		padding: 15px;
+		margin-top: 26px;
+
+		h1,h2,h3,h4{
+			font-family: $base-font-alt;
+			font-size: 22px;
+			font-weight: bold;
+			margin: 0;
+			padding-bottom: 10px;
+			border-bottom: 1px solid $silver;
+		}
+
+		section{
+			padding: 10px 0;
+
+		}
+
+		div{
+			margin-bottom: 15px;
+		}
+
+		.btn{
+			max-width: 100%;
+			display: block;
+			white-space: normal;
+			margin-bottom: 15px;
+			&:last-child{
+				margin-bottom: 0px;
+			}
+		}
+	}
+
+	.score-legend{
+		table{
+			td{
+				padding-left: 0;
+			}
+		}
+	}
+}

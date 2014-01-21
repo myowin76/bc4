@@ -1,0 +1,25 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/projects_sub_menu" %>
+<% end %>
+
+<%= simple_form_for @metric do |f| %>
+  <%= f.error_notification %>
+
+  <article>
+    <section>
+    	<fieldset>
+    		<%= f.input :name %>
+    	</fieldset>
+      <fieldset>
+      	<%= f.input :number %>
+      </fieldset>
+      <fieldset>
+      	<%= f.input :score %>
+      </fieldset>
+    </section>  
+  </article>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-save pull-right' %>
+  </div>
+<% end %>

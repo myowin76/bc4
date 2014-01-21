@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render 'layouts/wed/meta_head' %>
+  <%= stylesheet_link_tag "global", "wed", media: "all" %>  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+		
+		<%= render 'layouts/wed/header' %>	
+		<!-- page header -->
+		<div class="row">
+			<div class="col-sm-9">
+				<% if content_for(:page_header) %>	
+					<%= yield :page_header %>
+				<% else %>
+					<div class="page-header">
+						<h1><%= @page_title || "Page Title" %></h1>
+						<% unless @page_lead.blank? %>
+				    	<p class="lead"><%= @page_lead %></p>
+				    <% end %>
+				  </div>
+				<% end %>	
+
+				<!-- content -->
+				<%= yield %>
+			</div>
+			<div class="col-sm-3 sidebar">
+				<%= yield :sidebar %>
+			</div>
+		</div>
+		<%= render 'layouts/wed/footer' %>
+	</div>	
+
+	<%= javascript_include_tag "application" %>
+	<%= yield :scripts %>
+	
+</body>
+</html>

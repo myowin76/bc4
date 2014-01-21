@@ -1,0 +1,39 @@
+<h1>Listing admin_bctips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Intro</th>
+      <th>Body</th>
+      <th>Showon admin dashboard</th>
+      <th>Showon wed dashboard</th>
+      <th>Publish from</th>
+      <th>Publish to</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_bctips.each do |admin_bctip| %>
+      <tr>
+        <td><%= admin_bctip.title %></td>
+        <td><%= admin_bctip.intro %></td>
+        <td><%= admin_bctip.body %></td>
+        <td><%= admin_bctip.showon_admin_dashboard %></td>
+        <td><%= admin_bctip.showon_wed_dashboard %></td>
+        <td><%= admin_bctip.publish_from %></td>
+        <td><%= admin_bctip.publish_to %></td>
+        <td><%= link_to 'Show', admin_bctip %></td>
+        <td><%= link_to 'Edit', edit_admin_bctip_path(admin_bctip) %></td>
+        <td><%= link_to 'Destroy', admin_bctip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bctip', new_admin_bctip_path %>

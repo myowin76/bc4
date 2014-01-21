@@ -1,0 +1,41 @@
+footer {
+  @include legacy-pie-clearfix();
+  font-size: 16px;
+  font-family: $base-font-alt;
+  @include trailer( 2, $base-font-size, margin);
+  @include leader( .8, $base-font-size, margin);
+
+  .utility {
+    @include legacy-pie-clearfix();
+    border-top: 5px solid #888888;
+    clear: left;
+    padding-top: 15px;
+    line-height: 22px;
+    ul{
+      @include legacy-pie-clearfix();
+      float: left;
+      li{
+        float: left;
+        margin-right: 18px;
+        padding-right: 18px;
+        border-right: 1px solid silver;
+        list-style: none;
+        &:last-child{
+          border-right: 0;
+        }
+      }
+    }
+    span{
+      float: right;
+    }
+  }
+
+  a,
+  a:hover,
+  a:active,
+  a:focus,
+  a:visited{
+    color: $link-color;
+    // text-decoration: none;
+  }
+}

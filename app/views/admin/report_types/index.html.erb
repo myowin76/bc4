@@ -1,0 +1,47 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/projects_sub_menu" %>
+<% end %>
+
+<div class="page-header">
+  <h1>Report Types</h1>
+</div>
+
+<div class="well">
+  <section>
+    <%= link_to new_admin_report_type_path, :class => "btn btn-new pull-right" do %>
+      <i></i>New Report type
+    <% end %>
+  </section>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Notes</th>
+      <th>Exe summary</th>
+      <th>Recommendation</th>
+      <th>Best practice</th>
+      <th>Supplementary</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @report_types.each do |report_type| %>
+      <tr>
+        <td><%= link_to report_type.name, report_type %></td>
+        <td><%= report_type.notes %></td>
+        <td><%= report_type.exe_summary %></td>
+        <td><%= report_type.recommendation %></td>
+        <td><%= report_type.best_practice %></td>
+        <td><%= report_type.supplementary %></td>
+        <td><%= link_to 'Edit', edit_admin_report_type_path(report_type), :class => 'link_edit' %></td>
+        <td><%= link_to 'Destroy', report_type, method: :delete, data: { confirm: 'Are you sure?' },
+            :class => 'link_destroy' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

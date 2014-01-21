@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @web_widget.name %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @web_widget.body %>
+</p>
+
+<%= link_to 'Edit', edit_web_widget_path(@web_widget) %> |
+<%= link_to 'Back', web_widgets_path %>

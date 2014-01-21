@@ -1,0 +1,21 @@
+<div class="page-header">
+	<h1>Edit Project</h1>
+	<%= link_to "back to list", :back,  :class => "btn-mini" %>
+</div>
+
+<div class="well">
+	<h3><%= @project.name %></h3>
+
+	<div class="action">
+		<a href="#" class="btn btn-duplicate">Duplicate</a>
+  	<a href="#" class="btn btn-publish"><i></i>Publish</a>
+  	<a href="#" class="btn btn-export"><i></i>Export Data</a>
+  	<%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' },
+  		:class => 'btn'  %>
+	</div>	
+	
+</div>
+<%= render 'form' %>
+
+<%#= link_to 'Show', @project %>
+<%#= link_to 'Back', admin_projects_path %>

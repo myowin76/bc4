@@ -1,0 +1,27 @@
+<h1>Listing admin_company_statuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_company_statuses.each do |admin_company_status| %>
+      <tr>
+        <td><%= admin_company_status.name %></td>
+        <td><%= link_to 'Show', admin_company_status %></td>
+        <td><%= link_to 'Edit', edit_admin_company_status_path(admin_company_status) %></td>
+        <td><%= link_to 'Destroy', admin_company_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Company status', new_admin_company_status_path %>

@@ -1,0 +1,51 @@
+<!-- breadcrumb -->
+<% content_for :sub_menu do %>
+	<% unless @web_page.root.is_childless? %>
+	  <ul class="sub-nav">
+	    <% @web_page.root.children.order(:position).each do |page| %>
+	    
+	      <li>
+	        <span><%= link_to_unless_current page.name, nested_page_path(page) %></span>
+	      </li>
+	    <% end %>
+	  </ul>
+	<% end %> 
+<% end %>
+
+
+
+<% if @web_page.url == 'interactive-results-table' %>
+	
+	<!-- show results table partials -->
+	<%= render "admin/companies/interactive_results_table" %>
+
+	
+<% elsif @web_page.url == 'commentaries' %>
+
+	<!-- show commentaries partials -->
+	<%= render "admin/commentaries/list" %>
+
+<% elsif @web_page.url == 'bc-tips' %>
+
+	<!-- show bc-tips partials -->	
+	<%= render "admin/bctips/list" %>
+
+<% else %>
+
+	<p>
+	  <%= h(simple_format @web_page.body) %>
+	</p>	
+
+<% end %>
+
+
+
+<!-- <p>
+  <strong>Position:</strong>
+  <%#	=  @web_page.position %>
+</p> -->
+
+
+<%#= link_to 'Edit', edit_web_page_path(@web_page) %>
+<%= link_to 'Edit', cms_desk_edit_web_page_path(@web_page) %>
+<%#= link_to 'Back', web_pages_path %>

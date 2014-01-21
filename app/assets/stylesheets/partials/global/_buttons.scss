@@ -1,0 +1,163 @@
+.btn{
+  display: inline-block;
+
+  position: relative;
+
+  margin-bottom: 0; // For input.btn
+  font-family: $base-font-alt;
+  font-size: 18px; font-weight: normal;
+  border-radius: 3px;
+  
+  vertical-align: middle;
+  cursor: pointer;
+  white-space: nowrap;
+  
+  &:hover,
+  &:focus{
+    @include filter-gradient(#2f3030 , #2f3030);
+    @include background(
+      linear-gradient( color-stops(#2f3030 , #2f3030 ))
+    );
+    box-shadow: none;
+    text-decoration: none;
+    color: white;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & { // TODO: do we really only want fieldsets to be the disabled containers?
+    cursor: default;
+    pointer-events: none; // Future-proof disabling of clicks
+    
+  }
+
+
+  .icon{
+    position: absolute;  
+    height: 18px;
+    width: 18px;
+    left: 10px;
+    top: 5px;
+  }
+}
+
+
+.btn-primary{
+  padding: 3px 15px;
+  @include filter-gradient(#767676 , #656565);
+  @include background(
+    linear-gradient( color-stops(#767676 , #656565 ))
+  );
+  border-color: $col-dark-border;
+  
+  color: white;
+  text-shadow: 0px 1px 0px #343434;
+}
+.btn-xs{
+  
+}
+.btn-mini{
+  color: #231f20;
+  font-size: 14px;
+  padding: 4px 15px 2px 15px;
+  border: 1px solid #dcdcdc;
+  background-color: $light-gray;
+  box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+  &.help{
+    padding-left: 32px;
+    .icon{
+      @include buttons-sprite(help);  
+    }
+  }
+}
+
+
+
+.btn.btn-filter{
+  padding-left: 32px;
+  .icon{
+    @include buttons-sprite(table);
+  }  
+}
+
+.btn.btn-export{
+  padding-left: 32px;
+  .icon{
+    @include buttons-sprite(export);
+  }  
+}
+
+.btn.btn-download{
+  padding-left: 32px;
+  .icon{
+    @include buttons-sprite(download);
+  }  
+}
+
+.btn.btn-refresh{
+  padding-left: 32px;
+  .icon{
+    @include buttons-sprite(refresh);
+  }  
+}
+
+.btn.btn-compare{
+  padding-left: 32px;
+  .icon{
+    @include buttons-sprite(compare);
+  }  
+}
+
+.btn.btn-metric-view{
+  padding-left: 38px;
+  .icon{
+    @include buttons-sprite(metric-view);
+    width: 23px; height: 23px;
+    top: 3px;
+  }  
+}
+
+.btn.btn-metric-all{
+  padding-left: 38px;
+  .icon{
+    @include buttons-sprite(metric-all);
+    width: 23px; height: 23px;
+    top: 3px;
+  }  
+}
+
+
+.btn-green{
+  padding: 3px 15px;
+  @include filter-gradient(#11aa77 , #019765);
+  @include background(
+    linear-gradient( color-stops(#11aa77 , #019765 ))
+  );
+  color: white;
+  text-shadow: 0px 1px 0px #343434;
+  &:hover,
+  &:focus{
+    @include filter-gradient(#11aa77 , #019765);
+    @include background(
+      linear-gradient( color-stops(#11aa77 , #019765 ))
+    );
+    box-shadow: none;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+/*
+.btn-small {
+  padding: $paddingSmall;
+  font-size: $fontSizeSmall;
+  border-radius: $borderRadiusSmall;
+}
+
+// Mini
+.btn-mini {
+  padding: $paddingMini;
+  font-size: $fontSizeMini;
+  border-radius: $borderRadiusSmall;
+}
+*/

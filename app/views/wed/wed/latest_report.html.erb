@@ -1,0 +1,16 @@
+<% page_title @page_title %>
+<% page_lead @page_lead %>
+
+<div class="well">
+	<section>
+		<div class="title">
+			<%= @latest_report.name %>
+		</div>
+		<div class="ddl-reports">
+			<%= select_tag "company_reports_select", options_from_collection_for_select(@company_reports, "id", "name"), :class => 'pull-right form-control' %>
+		</div>
+		
+	</section>
+</div>
+
+<%= render "wed/wed/partials/latest_report" %>

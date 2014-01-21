@@ -1,0 +1,57 @@
+
+@import "partials/global/base";
+@import "partials/global/mixins";
+@import "partials/web/pages";
+@import "partials/web/nav";
+@import "partials/web/footer";
+@import "partials/web/home";
+
+
+
+/*commentaries/bc-tips styles*/
+.commentaries-filter{
+	@include clearfix;
+}
+
+.commentaries-list{
+	@include clearfix;
+	
+	section{
+		
+		header{
+			h3{
+				font-family: $base-font-alt;
+				font-size: 20px;
+				font-weight: bold;
+				line-height: 25px;
+			}
+		}
+
+		p{
+			line-height: 23px;
+		}
+	}
+}
+
+
+/* subscribe newsletter */
+.container{
+	.newsletter-options{
+		label{
+			min-width: 600px;
+			font-family: $base-font;
+			font-size: 15px;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+.container{
+	.irt{
+		padding-bottom: 5px;
+		margin-bottom: 0;
+		border-bottom-width: 0px;
+	}
+}

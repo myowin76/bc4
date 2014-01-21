@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_commentary.title %>
+</p>
+
+<p>
+  <strong>Intro:</strong>
+  <%= simple_format @admin_commentary.intro %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @admin_commentary.body %>
+</p>
+
+<p>
+  <strong>Showon admin dashboard:</strong>
+  <%= @admin_commentary.showon_admin_dashboard %>
+</p>
+
+<p>
+  <strong>Showon wed dashboard:</strong>
+  <%= @admin_commentary.showon_wed_dashboard %>
+</p>
+
+<p>
+  <strong>Publish from:</strong>
+  <%= @admin_commentary.publish_from %>
+</p>
+
+<p>
+  <strong>Publish to:</strong>
+  <%= @admin_commentary.publish_to %>
+</p>
+
+<%= link_to 'Edit', edit_admin_commentary_path(@admin_commentary) %> |
+<%= link_to 'Back', admin_commentaries_path %>

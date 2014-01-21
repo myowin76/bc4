@@ -1,0 +1,51 @@
+.container{
+	.dataTables_wrapper{
+
+		@include clearfix;
+		clear: both;
+
+		.top, .bottom{
+			@include clearfix;
+		}
+
+		.dataTables_info{
+			float: left;	
+		}
+
+		.dataTables_paginate{
+			float: right;	
+		}	
+
+		.paging_full_numbers{
+			
+			a.paginate_button, a.paginate_active{
+				margin: 0;
+				padding: 3px 10px;
+				border-radius: 0;
+				border-left: 0;
+			}
+
+			a.paginate_button{
+				background-color: $light-gray;
+
+				&:first-child{
+					border-left: 1px solid $silver;
+				}
+			}
+
+			a.paginate_active{
+				background-color: white;
+				border-left: 0;
+			}
+		} 
+	}
+
+	table.dataTable tr.odd td.sorting_1, 
+	table.dataTable tr.even td.sorting_1{
+		background-color: white;
+	}
+	table.dataTable tr.odd{
+		background-color: white;
+	}
+
+}

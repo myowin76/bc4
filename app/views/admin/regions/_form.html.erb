@@ -1,0 +1,22 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/companies_sub_menu" %>
+<% end %>
+
+<%= simple_form_for(@region) do |f| %>
+  <%= f.error_notification %>
+  <article>
+  	<section>
+  		<div class="form-inputs">
+  			<fieldset>
+  				<%= f.input :name %>
+  			</fieldset>
+		    
+		  </div>
+  	</section>
+  </article>
+  
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-save pull-right' %>
+  </div>
+<% end %>

@@ -1,0 +1,38 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/companies_sub_menu" %>
+<% end %>
+
+<div class="page-header">
+  <h1>Company Types</h1>
+</div>
+
+<div class="well">
+  <section>
+    <%= link_to new_admin_company_type_path, :class => 'btn btn-new pull-right' do %>
+      <i></i>
+      Company Type
+    <% end %>
+  </section>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_company_types.each do |admin_company_type| %>
+      
+      <tr>
+        <td><%= link_to admin_company_type.name, admin_company_type %></td>
+        <td><%= link_to 'Edit', edit_admin_company_type_path(admin_company_type), :class => 'link_edit' %></td>
+        <td><%= link_to 'Destroy', admin_company_type, 
+            :class => 'link_destroy', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

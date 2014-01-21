@@ -1,0 +1,137 @@
+<div class="wed-dashboard">
+	<div class="well">
+		<section>
+
+			<div class="filter-years">
+				<%#= select_tag "years_select", options_from_collection_for_select(@company_reports, "id", "name"), :class => 'pull-right form-control' %>
+				<select class="form-control">
+					<option>2010</option>
+					<option>2011</option>
+					<option>2012</option>
+					<option>2013</option>
+				</select>
+			</div>
+
+			<div class="filter-type">
+				<ul>
+					<li>
+						<input type="checkbox" name="commentaries" value="1">Commentaries
+					</li>
+					<li>
+						<input type="checkbox" name="bc-tips" value="1">BC Tips
+					</li>
+					<li>
+						<input type="checkbox" name="news" value="1">News
+					</li>
+					<li>
+						<input type="checkbox" name="articles" value="1">Articles
+					</li>
+					<li>
+						<input type="checkbox" name="events" value="1">Events
+					</li>
+				</ul>
+			</div>
+			<a href="#" class="pull-right btn btn-filter"><i></i>Filter</a>
+		</section>
+	</div>
+
+	<div class="pager">
+	  <section class="pager-info">
+	    <%= page_entries_info @companies %>  
+	  </section>
+	  <section>
+	    <%= will_paginate @companies, :next_label => 'Next', :previous_label => 'Previous' %>
+	  </section>  
+	</div>
+
+	<div class="well results">
+		
+		<article>
+			<header>
+				<span class="type">WEN Article</span>
+				<a href="#">Dropping a clanger</a>
+				<span class="date">23rd July, 2013</span>
+			</header>
+			<p>Corporate sites are abandoning left-hand navigation without assessing whether it remains the most appropriate for their – and their users’ – needs, David Bowen says.</p>
+			<p>Corporate sites are abandoning left-hand navigation without assessing whether it remains the most appropriate for their – and their users’ – needs, David Bowen says.</p>
+		</article>
+
+		<article>
+			<header>
+				<span class="type">Events</span>
+				<a href="#">Database update: BASF mobile takes aim</a>
+				<span class="date">23rd July, 2013</span>
+			</header>
+			<p>Corporate sites are abandoning left-hand navigation without assessing whether it remains the most appropriate for their – and their users’ – needs, David Bowen says.</p>
+		</article>
+
+		<article>
+			<header>
+				<span class="type">BC Tips</span>
+				<a href="#">Database update : Coca-Cola's 'Journey' now easier with better navigation</a>
+				<span class="date">23rd July, 2013</span>
+			</header>
+			<p>Corporate sites are abandoning left-hand navigation without assessing whether it remains the most appropriate for their – and their users’ – needs, David Bowen says.</p>
+		</article>
+
+		<article>
+			<header>
+				<span class="type">BC Tips</span>
+				<a href="#">Database update : Coca-Cola's 'Journey' now easier with better navigation</a>
+				<span class="date">23rd July, 2013</span>
+			</header>
+			<p>Corporate sites are abandoning left-hand navigation without assessing whether it remains the most appropriate for their – and their users’ – needs, David Bowen says.</p>
+		</article>
+
+		<article>
+			<header>
+				<span class="type">BC Tips</span>
+				<a href="#">Database update : Coca-Cola's 'Journey' now easier with better navigation</a>
+				<span class="date">23rd July, 2013</span>
+			</header>
+			<p>Corporate sites are abandoning left-hand navigation without assessing whether it remains the most appropriate for their – and their users’ – needs, David Bowen says.</p>
+		</article>
+
+	</div>
+
+	<!-- pagination -->
+	<div class="pager">
+	  <section class="pager-info">
+	    <%= page_entries_info @companies %>  
+	  </section>
+	  <section>
+	    <%= will_paginate @companies, :next_label => 'Next', :previous_label => 'Previous' %>
+	  </section>  
+	</div>
+
+
+	<% content_for :sidebar do %>
+		<div class="widget links">
+			<h3>Quick links</h3>
+			<section>
+				<ul class="rpt-urls">
+					<li><a href="#">Tips</a> </li>
+					<li><a href="#">Bowen Craggs Website</a> </li>
+				</ul>
+			</section>
+		</div>
+
+		<div class="widget peer-updates">
+			<h3>Company Index</h3>
+			<section>
+				<ul>
+					<% @my_peers.order(:updated_at).each do |company| %>
+						<li>
+							<%= link_to image_tag(company.icon.url(:normal)), company.url %>
+							<p>
+								<%= link_to company.name, company_profile_path(company) %>
+							</p>
+							<p><small><%= company.updated_at %></small> </p>
+						</li>
+					<% end %>
+				
+				</ul>
+			</section>
+		</div>
+	<% end %>
+</div>

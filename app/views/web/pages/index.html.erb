@@ -1,0 +1,39 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/cms_sub_menu" %>
+<% end %>
+
+<div class="page-header">
+  <h1>CMS Desk</h1>
+  <%= link_to cms_desk_new_web_page_path, :class => 'btn-new' do %>
+    <i></i>New Page
+  <% end %>
+</div>
+
+<ul>
+  <% @web_pages.top_level.each do |web_page| %>
+    
+      <li>
+        <%= link_to web_page.name, web_page %>
+        <% if web_page.children.present? %>
+          <ul>
+          <% web_page.children.each do |sub_page| %>
+
+            <li>Subpage - <%= link_to sub_page.name, sub_page %></li>
+          <% end %>
+          </ul>
+        <% end %>
+      </li>
+      <!-- <li><%#= web_page.meta_desc %></li>
+      <li><%#= web_page.meta_keyword %></li> -->
+      <!-- <li><%= web_page.name %></li>
+      <li><%#= web_page.page_title %></li>
+      <li><%#= web_page.page_intro %></li>
+      <li><%#= web_page.url %></li>
+      <li><%#= web_page.body %></li> -->
+      <%#= link_to 'Show', web_page %>
+      <%#= link_to 'Edit', edit_web_page_path(web_page) %>
+      <%#= link_to 'Destroy', web_page, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+</ul>
+
+    

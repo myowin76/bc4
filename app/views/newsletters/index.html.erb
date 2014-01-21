@@ -1,0 +1,45 @@
+<h1>Listing newsletters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Company</th>
+      <th>Job title</th>
+      <th>Country</th>
+      <th>Website</th>
+      <th>Bc tip</th>
+      <th>Wen</th>
+      <th>Specials</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @newsletters.each do |newsletter| %>
+      <tr>
+        <td><%= newsletter.email %></td>
+        <td><%= newsletter.first_name %></td>
+        <td><%= newsletter.last_name %></td>
+        <td><%= newsletter.company %></td>
+        <td><%= newsletter.job_title %></td>
+        <td><%= newsletter.country %></td>
+        <td><%= newsletter.website %></td>
+        <td><%= newsletter.bc_tip %></td>
+        <td><%= newsletter.wen %></td>
+        <td><%= newsletter.specials %></td>
+        <td><%= link_to 'Show', newsletter %></td>
+        <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
+        <td><%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Newsletter', new_newsletter_path %>

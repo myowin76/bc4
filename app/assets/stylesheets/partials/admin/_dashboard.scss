@@ -1,0 +1,59 @@
+#dashboard-welcome{
+	// height: 160px;
+	overflow: hidden;
+	padding: 20px 0;
+	border-bottom: 1px solid $col-line-gray;
+	
+	.company{
+		$width : ((600) / 930) * 100%;
+		width: $width;
+		float: left;
+		figure{
+			float: left;
+			border: 1px solid $col-line-gray;
+			width: 187px; height: 119px;
+		}
+		.status{
+			float: left;
+			padding-left: 20px;
+			h1{
+				font-family: "garamond-premier-pro", "Garamond", serif;
+				font-weight: normal;
+				text-align: left;
+				padding-top: 16px;
+			}
+		}
+	}
+	.account{
+		font-family: $base-font-alt;
+		font-size: 1.05em;
+		$width : ((330) / 930) * 100%;
+		width: $width;
+		float: left;
+
+		section{
+			float: left;
+			text-align: right;
+			width: 100%;
+			ul{
+				float: right;
+				li{
+					float: left;
+					padding-left: 1em;
+					margin-left: 1em;
+					border-left: 1px solid $col-line-gray;
+					&:first-child{
+						border-left: 0;
+					}
+				}
+			}
+			&.message{
+				display: block;
+				@include trailer(1.5, $base-font-size, margin);
+			}
+
+		}
+
+	}
+
+}

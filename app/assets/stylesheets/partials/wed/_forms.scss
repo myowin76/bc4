@@ -1,0 +1,39 @@
+
+section{
+	
+	.title{
+		float: left;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 33px;
+	}
+
+	.ddl-reports{
+		float: right;
+		min-width: 300px
+	}
+
+	.filter-years, .filter-type{
+		float: left;
+	}
+
+	.filter-years{
+		min-width: 150px;
+		margin-right: 40px;
+	}
+
+	.filter-type{
+		ul{
+			@include clearfix;
+			margin: 6px 0 0;
+			li{
+				float: left;
+				margin-right: 30px;
+				font-size: 16px;
+				input[type="checkbox"]{
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+<h1>Listing admin_report_states</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_report_states.each do |admin_report_state| %>
+      <tr>
+        <td><%= admin_report_state.name %></td>
+        <td><%= admin_report_state.code %></td>
+        <td><%= link_to 'Show', admin_report_state %></td>
+        <td><%= link_to 'Edit', edit_admin_report_state_path(admin_report_state) %></td>
+        <td><%= link_to 'Destroy', admin_report_state, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Report state', new_admin_report_state_path %>

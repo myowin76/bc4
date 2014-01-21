@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @best_practice.name %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @best_practice.body %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @best_practice.company.name %>
+</p>
+
+<p>
+	<strong>Screengrabs:</strong>
+	<% @best_practice.screengrabs.each do |screengrab| %>
+    <%= link_to image_tag(screengrab.image.url(:normal)), best_practices_path %>
+		<%= screengrab.caption %>,
+	<% end %>
+</p>
+<%= link_to 'Edit', edit_admin_best_practice_path(@best_practice) %> |
+<%= link_to 'Back', admin_best_practices_path %>

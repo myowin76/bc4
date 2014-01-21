@@ -1,0 +1,221 @@
+.container{
+
+  .pager{
+    section{
+      &:first-child{
+        float: left;
+      }
+
+      &:last-child{
+        float: right;
+      }
+    }
+
+    .pager-info{
+      font-family: $base-font-alt;
+      font-size: 18px;
+    }
+    
+
+
+  }
+
+  .pagination, .dataTables_paginate{
+
+    font-family: $base-font-alt;
+    font-size: 16px;
+
+    @include leader( .8, $base-font-size, margin);
+    @include trailer( .6, $base-font-size, margin);
+    @include legacy-pie-clearfix();
+
+    display: inline;
+    border-radius: 3px;
+
+    a, .current, .next_page{
+      border-top:1px solid;
+      border-right:1px solid;
+      border-bottom:1px solid;
+      border-color: $col-line-gray;
+    }
+
+    a{
+      float: left;
+      padding: 3px 10px;
+      background-color: $light-gray;
+      color: $font-color;
+      &.active,
+      &:hover,
+      &:focus{
+        text-decoration:none;
+        background: white;
+      }
+
+      &[disabled]{
+        color: darken($light-gray, 30%);
+        @include background(none);
+        background: $light-gray;
+      }
+    }
+
+    .current{
+      background-color: white;
+      padding: 3px 10px;
+      font-style: normal;
+      float: left;
+    }
+    
+
+    .previous_page, .next_page{
+      background: $light-gray;
+      padding: 3px 10px;
+      float: left;
+    }
+
+    .previous_page{
+      border: 1px solid $col-line-gray;
+
+      border-radius: 3px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; 
+      padding-right: 5px;
+    }
+
+    .next_page{
+      border-radius: 3px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;     
+    }
+
+    .previous_page:before{
+      content: "";
+      display: block;
+      float: left;
+
+      background: transparent url('../img/select-arrow_icon1.png') left top no-repeat;
+      width: 7px;
+      height: 7px;
+      margin-right: 5px;
+      margin-top: 9px;
+      //@include rotate(90deg);
+    }  
+    .next_page:after{
+      content: "";
+      display: block;
+      float: right;
+
+      background: transparent url('../img/select-arrow_icon1.png') left top no-repeat;
+      width: 7px;
+      height: 7px;
+      margin-left: 5px;
+      margin-top: 8px;
+      //@include rotate(-90deg);
+    }
+
+
+  }  
+}
+
+/*
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, 
+.pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: #ffffff;
+  color: $font-color;  
+  border-color: silver;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+  background-color: #ffffff;
+}
+
+*/
+
+
+.pager-btn{
+    
+    &.current-page{
+      background-color: white;
+      padding: 0 7px;
+    }
+    border-top:1px solid;
+    border-right:1px solid;
+    border-bottom:1px solid;
+    border-color: $col-line-gray;
+    &:first-child{
+      border-left:1px solid $col-line-gray;
+      border-radius: 3px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; 
+      padding-right: 5px;
+        
+    }
+    &:last-child{
+      border-radius: 3px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;     
+       
+    }
+    &.prev:before{
+      content: "";
+      display: block;
+      float: left;
+
+      background: transparent url('../img/select-arrow_icon1.png') left top no-repeat;
+      width: 7px;
+      height: 7px;
+      margin-right: 5px;
+      margin-top: 9px;
+      //@include rotate(90deg);
+    }  
+    &.next:after{
+      content: "";
+      display: block;
+      float: right;
+
+      background: transparent url('../img/select-arrow_icon1.png') left top no-repeat;
+      width: 7px;
+      height: 7px;
+      margin-left: 5px;
+      margin-top: 8px;
+      //@include rotate(-90deg);
+    }
+    &.last:after{
+      content: "";
+      display: block;
+      float: right;
+
+      background: transparent url('../img/select-arrow_icon1.png') left top repeat-y;
+      width: 7px;
+      height: 9px;
+      margin-left: 5px;
+      margin-top: 8px;
+      //@include rotate(-90deg);
+    }  
+    cursor: pointer;  
+    
+    @include adjust-font-size-to(14px, 1);
+    font-family: $base-font-alt;
+    text-align:center;
+    
+    
+
+    &.active,
+    &:hover,
+    &:focus{
+      text-decoration:none;
+      background: white;
+    }
+
+    &[disabled]{
+      color: darken($light-gray, 30%);
+      @include background(none);
+      background: $light-gray;
+    }
+
+    a{
+      color: $font-color ;
+      padding: 1px 7px;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }

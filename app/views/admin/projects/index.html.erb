@@ -1,0 +1,92 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/projects_sub_menu" %>
+<% end %>
+
+<div class="page-header">
+  <h1>Projects</h1>
+</div>
+
+<div class="well">
+  <section>
+    <div class="table-search">
+      <input type="text" placeholder="search" class="dataTable-search" />
+
+      
+    </div>
+    <%= link_to "#", 
+        :class => "btn btn-filter" do %>
+        <i></i>Show Filter
+    <% end %>
+
+    <%= link_to new_admin_project_path, :class => "btn btn-new pull-right" do %>
+      <i></i>New Project
+    <% end %>
+  </section>
+</div>
+
+<div class="well filters">
+  <section>
+      <div class="row">
+
+
+        <div class="col-sm-2">
+          <div class="ddl-sector">
+            <%= select_tag "", options_from_collection_for_select(@companies, "id", "name"),
+                 :class => 'form-control', :prompt => "Companies" %>
+          </div>
+        </div>
+
+        
+
+        <div class="col-sm-2">
+          <div class="ddl-type">
+            <select class="form-control">
+                <option>Status</option>
+                <option>Pdf</option>
+                <option>CSV</option>
+            </select>
+          </div>
+        </div>
+      </div>  
+      <div class="row">
+        <div class="col-sm-6">
+          <a href="#" class="btn btn-green btn-action-filter"><i></i>Filter</a>
+          <a href="#" class="btn btn-reset"><i></i>Reset</a>
+        </div>  
+      </div>
+  </section>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Publish date</th>
+      <th>Ft index</th>
+      <th>In result table</th>
+      <th>Can compare</th>
+      <th>Reports count</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to project.name, project %></td>
+        <td><%= project.publish_date %></td>
+        <td><%= project.ft_index %></td>
+        <td><%= project.in_result_table %></td>
+        <td><%= project.can_compare %></td>
+        <td><%= link_to project.reports_count, admin_project_reports_path(project) %></td>
+        <td><%= link_to 'Edit', edit_admin_project_path(project), :class => 'link_edit' %></td>
+        <td><%= link_to 'Destroy', project, :class => 'link_destroy',
+          method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

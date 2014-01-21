@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @report.name %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @report.project.name %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @report.company.name %>
+</p>
+<p>
+  <strong>Company logo:</strong>
+  <%= image_tag(@report.company.logo.url(:normal)) %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @report.company.country.region.name %>
+</p>
+
+
+<p>
+  <strong>Country:</strong>
+  <%= @report.company.country.name %>
+</p>
+
+<p>
+  <strong>Published Date:</strong>
+  <%= @report.publish_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_report_path(@report) %> |
+<%= link_to 'Back', admin_reports_path %>

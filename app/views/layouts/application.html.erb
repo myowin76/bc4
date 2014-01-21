@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render 'layouts/web/meta_head' %>
+  <%= stylesheet_link_tag "global", media: "all" %>  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+		<%= render 'layouts/web/header' %>
+		<div class="container">
+			<%= yield %>
+		</div>
+		
+		<%= render 'layouts/web/footer' %>
+
+
+	<%= javascript_include_tag "application" %>
+	<%= yield :scripts %>
+	
+</body>
+</html>

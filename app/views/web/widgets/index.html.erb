@@ -1,0 +1,33 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/cms_sub_menu" %>
+<% end %>
+
+<h1>Listing web_widgets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @web_widgets.each do |web_widget| %>
+      <tr>
+        <td><%= web_widget.name %></td>
+        <td><%= web_widget.body %></td>
+        <td><%= link_to 'Show', web_widget %></td>
+        <td><%= link_to 'Edit', edit_web_widget_path(web_widget) %></td>
+        <td><%= link_to 'Destroy', web_widget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Widget', new_web_widget_path %>

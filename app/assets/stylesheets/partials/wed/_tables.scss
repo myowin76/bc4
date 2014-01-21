@@ -1,0 +1,249 @@
+.container{
+	
+	table{
+
+		td{
+			&.company-icon{
+		  	padding: 2px;
+		  	width: 32px;
+		  	img{
+		  		width: 41px;
+		  		height: 41px;
+		  		border: 1px solid $silver;
+		  	}
+		  }
+		}
+
+		&.peer-comparison{
+			tr{
+				td{
+					position: relative;
+				}
+			}
+		}
+
+		&.tbl-peer-comparison{
+			//@include table-style;
+			@include clearfix;
+			td{
+				text-align: center;
+				img{
+					border: 1px solid $silver;
+				}
+			}
+		}
+
+		&.tbl-results{
+			@include clearfix;
+			thead th{
+				width: 150px;
+				height: 55px;
+				background-position: bottom;
+				padding-top: 4px;
+				
+				&.company{
+			  	min-width: 280px;
+			  }
+			}
+		}
+	}
+
+
+	.tbl-score-card{
+
+		@include clearfix;
+		clear: both;
+		border-top: 1px solid $silver;
+		padding-top: 5px;
+
+		li{
+			div{
+				float: left;
+			}
+
+			.title{
+				width: 500px;
+				font-family: $base-font-alt;
+				font-size: 18px;
+				font-weight: bold;
+				
+			}	
+			.my-company{
+				> div{
+					border-right: 1px solid $light-gray;
+					width: 33.3333%;
+					font-family: $base-font;
+				}
+			}
+		}
+
+		.sc-main{
+			@include clearfix;
+			
+			ul{
+				li{
+					@include clearfix;
+					border-bottom: 1px solid $silver;
+
+					+.sub-metrics{
+						display: none;
+
+						> li{
+							border-bottom-color: $light-gray;
+							&:last-child{
+								border-bottom-color: $silver;
+							}
+						}
+
+						.title{
+							span{
+								font-family: $base-font;
+								font-weight: normal;
+								font-size: 15px;
+								background: none;
+								padding-left: 10px;
+							}
+						}
+
+						/*&.show{
+							display: block;
+						}*/
+					}
+
+
+
+					&:first-child{
+						+.sub-metrics{
+							/*display: block;	*/
+						}
+							
+					}
+				}
+
+				li.show-sub{
+
+					+.sub-metrics{
+						display: block;
+					}
+				}
+			}
+
+			.my-company{
+				width: 210px;
+				
+				> div{
+					width: 33.333333%;
+					height: 50px;
+					line-height: 50px;
+					text-align: center;
+					display: block;
+
+					a{
+						color: $font-color;
+						font-size: 15px;
+						&:hover{
+							text-decoration: none;
+							color: $link_color;
+						}
+					}
+
+					&.sc-score{
+						a{
+							font-weight: bold;
+						}
+					}
+				}
+
+
+			}
+
+			.title{
+				span{
+					height: 50px;
+					display: block;
+					padding-left: 25px;
+					line-height: 50px;
+					background: url(/assets/arrow-right.png) no-repeat 3px;
+				}
+
+				&:hover{
+					cursor: pointer;
+				}
+			}
+
+			/* sub metric styles */
+
+			
+		}
+
+		.sc-header{
+			@include clearfix;
+			height: 57px;
+			line-height: 57px;
+			background-color: $light-gray;
+			
+			.title{
+				padding-left: 15px;
+			}
+
+			.my-company{
+				width: 210px;
+				text-align: center;
+				background-color: #d5d5d5;
+
+				> div{
+
+				}
+			}
+		}
+
+		.sc-header2{
+			@include clearfix;
+			height: 17px;
+			border-bottom: 1px solid $silver;
+
+			li div{
+				@include clearfix;
+				
+			}
+
+			.my-company{
+				width: 210px;
+				text-align: center;
+
+				> div{
+					color: #ffffff;
+					background-color: #888888;
+					height: 17px;
+					font-size: 12px;
+					border-bottom: 0;
+				}		
+			}
+		}
+
+		.peer{
+			width: 54px;
+			display: block;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			border-right: 1px solid $light-gray;
+
+			&:last-child{
+				border-right: none;
+			}
+			a{
+				color: $font-color;
+				font-weight: bold;
+
+				&:hover{
+					text-decoration: none;
+					color: $link_color;
+				}
+			}
+		}
+	
+
+
+	}
+}

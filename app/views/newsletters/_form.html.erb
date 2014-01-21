@@ -1,0 +1,57 @@
+<%= simple_form_for(@newsletter) do |f| %>
+  <%= f.error_notification %>
+
+  <article>
+    <header>
+      <h4>Your Details</h4>
+    </header>
+    <section>
+      <p>* Mandatory</p>
+      <fieldset>
+        <%= f.input :email %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :first_name %>
+      </fieldset>  
+      <fieldset>
+        <%= f.input :last_name %>
+      </fieldset>  
+      <fieldset>
+        <%= f.input :company %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :job_title %>
+      </fieldset>  
+      <fieldset>
+        <%= f.association :country, :label => 'Country',
+            input_html: { class: 'form-control' }, :prompt => 'Select Country' %>
+      </fieldset>  
+      <fieldset>
+        <%= f.input :website %>
+      </fieldset>  
+    </section>
+  </article>
+
+  <article>
+    <header>
+      <h4>Newsletter Options</h4>
+    </header>
+    <section class="newsletter-options">
+      <p>Please tick one or more of the boxes below:</p>
+      <fieldset>
+        <%= f.input :bc_tip, :label => 'BC Tips bulletins (twice weekly)' %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :wen, :label => 'Website Effectiveness newsletter (twice monthly, includes BC Tips)' %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :specials, :label => 'Occasional e-mails about our events & special features (always relevant, never spam)' %>
+      </fieldset>
+        
+    </section>
+  </article>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Subscribe", :class => 'btn-save pull-right' %>
+  </div>
+<% end %>

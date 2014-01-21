@@ -1,0 +1,18 @@
+
+/*
+*= require jquery.ui.core
+*= require dataTables/jquery.dataTables
+* require chosen
+*= require select2
+* require jquery.ui.datepicker
+*/
+// to be remove all
+@import "partials/global/base";
+@import "partials/global/mixins";
+
+@import "partials/admin/pages";
+@import "partials/admin/navs";
+@import "partials/pages/reports";
+@import "partials/admin/reports";
+@import "partials/admin/companies";
+@import "partials/admin/search";

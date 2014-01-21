@@ -1,0 +1,71 @@
+<div class="row by-metric">
+
+  <div class="col-lg-3 bp-metrics">
+    <div class="panel-group" id="accordion">
+  
+     <% @metrics.each do |metric| %>
+	      <div class="panel panel-default">
+	        <div class="panel-heading">
+	          <h4 class="panel-title">
+	            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#<%= metric.id %>">
+	              <%= metric.number %>. <%= metric.name %>
+	            </a>
+	          </h4>
+	        </div>
+	        <div id="<%= metric.id %>" class="panel-collapse collapse" style="height: 0px;">
+	          <div class="panel-body">
+	            <ul>
+	            	<% metric.sub_metrics.each do |submetric| %>
+		              <li>
+		              	<a href="#">
+		              		<%= metric.number%>.<%= submetric.number %>
+		              		<%= submetric.name %>
+		              	</a>
+		              </li>
+	              <% end %>
+	            </ul>
+	          </div>
+	        </div>
+	      </div>
+      <% end %>
+
+    </div>
+  </div>
+
+  <div class="col-lg-9 bp-metric-companies">
+    <div class="well">
+      <section>
+        <table class="head">
+          <tbody><tr>
+            <th colspan="3">Construction
+              <!-- <a href="#" class="badge arrow">&nbsp;</a> -->
+            </th>
+          </tr>
+          <tr>
+            <td width="160">Rank</td>
+            <td width="160">Score</td>
+            <td>Company</td>
+          </tr>
+        </tbody></table>
+      </section>  
+    </div>
+
+    <section>
+      <table class="table">
+        <tbody>
+        	<% @companies.order(:name).each do |company| %>
+		        <tr>
+		          <td width="160">1</td>
+		          <td width="160">52</td>
+		          <td width="45">
+		          	<%= link_to image_tag(company.icon.url(:normal)), company.url %>
+		          </td>
+		          <td><%= link_to company.name, company_profile_path(company) %></td>
+		        </tr>
+		      <% end %>
+	      </tbody>
+	    </table>
+    </section>
+  </div>
+
+</div>

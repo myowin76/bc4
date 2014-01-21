@@ -1,0 +1,44 @@
+<div class="page-header">
+  <h1>Commentaries</h1>
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+
+      <th>Title</th>
+      <th>Intro</th>
+      <th>Body</th>
+      <th>Showon admin dashboard</th>
+      <th>Showon wed dashboard</th>
+      <th>Publish from</th>
+      <th>Publish to</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_commentaries.each do |admin_commentary| %>
+      <tr>
+        
+        <td><%= admin_commentary.title %></td>
+        <td><%= admin_commentary.intro %></td>
+        <td><%= admin_commentary.body %></td>
+        <td><%= admin_commentary.showon_admin_dashboard %></td>
+        <td><%= admin_commentary.showon_wed_dashboard %></td>
+        <td><%= admin_commentary.publish_from %></td>
+        <td><%= admin_commentary.publish_to %></td>
+        <td><%= link_to 'Show', admin_commentary %></td>
+        <td><%= link_to 'Edit', edit_admin_commentary_path(admin_commentary) %></td>
+        <td><%= link_to 'Destroy', admin_commentary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Commentary', new_admin_commentary_path %>

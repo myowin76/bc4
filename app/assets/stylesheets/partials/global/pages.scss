@@ -1,0 +1,69 @@
+//-----------------------------------------------
+// The following html5-boilerplate styles should
+// probably be customized for each site
+//-----------------------------------------------
+// $round-to-nearest-half-line: true;
+
+
+
+body, select, input, textarea {
+
+  color: $font-color;
+  font-family: $base-font;
+  font-size: 16px;
+}
+
+
+*{
+   box-sizing: border-box;
+}
+:focus {
+  outline: 0;
+}
+
+//-----------------------------------
+// Add your own custom styles below
+//-----------------------------------
+
+body {
+  margin: 0;
+  padding: 0;
+  background:#fff url('/assets/BowenCraggs_bg.png') left top no-repeat;
+  background-size: 456px 365px;
+}
+
+.container {
+  @include container;
+  // @include susy-grid-background; /* Susy */
+  >header{
+    @include leader( 1, $base-font-size, margin);
+    h1{
+      font-family: $base-font-alt;
+    }  
+  }
+}
+.main, .container{
+  .page-header {
+    padding-bottom: 9px;
+    margin: 20px 0 5px;
+    border-bottom: 1px solid $silver;
+    position: relative;
+
+    h1{
+      font-family: $base-font-alt;
+      font-size: 30px;
+      + a{
+        position: absolute;
+        right: 0;
+        top: 20%;
+      }
+    }
+
+
+
+    .lead{
+      font-family: $base-font;
+      font-size: 15px;
+    }
+  }  
+}

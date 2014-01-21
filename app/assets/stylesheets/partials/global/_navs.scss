@@ -1,0 +1,131 @@
+/*bootstrap overwrite*/
+header{
+  .navbar{
+    border-bottom: 1px solid silver;
+    padding-bottom: 1.66667em;
+    margin: 0;
+  }
+
+  .navbar-brand{
+    padding: 0;
+  }
+
+  .navbar-nav{
+    li{
+      a{
+        font-family: $base-font-alt;
+        font-size: 16px;
+        color: $font-color;
+
+        &:hover{
+          color: $link-color;          
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+
+#main-navigation {
+  @include legacy-pie-clearfix();
+  padding-bottom: 0.83333em;
+  border-bottom: 1px solid silver;
+}
+
+.main-nav{
+
+  @include legacy-pie-clearfix();
+  font-size: 18px;
+  font-family: $base-font-alt;
+  //@include trailer(.5, $base-font-size, margin);
+  margin-top: 0.83333em;
+  @include inline-list-style();
+
+  .sub-nav{
+    margin-top: -1px;
+  }
+
+  ul{
+    position: relative;
+    li{
+      float: left;
+      a{
+        display: block;
+      }
+    }
+  }
+
+  li{
+    border-left: 1px solid $col-line-gray;
+    cursor: pointer;
+    text-align:center;
+    &:first-child{
+      border-left: 0;
+    }
+    a{
+      color: $font-color;
+      padding: 0;
+      &:hover{
+        color: $link-color;
+        text-decoration: none;
+        background: none;
+      }
+    }
+  }
+}
+
+.sub-nav{
+  @include legacy-pie-clearfix();
+  @include leader(.2, 21px, padding);
+  @include trailer(.2, 21px, padding);
+  background: $col-blue;
+
+  li{
+    border-left: 0;
+    display: block;
+    margin: 0 5px;
+    text-align: left;
+    a{
+      color: white;
+      font-size: 18px;
+      &:hover,
+      &:focus{
+        text-decoration: none; 
+        color: white;       
+      }
+    }
+    span{
+      @include leader(.3, 22px, padding);
+      @include trailer(.3, 22px, padding);
+
+      display: block;
+      padding-left: 8px;
+      padding-right: 8px;
+      &:hover{
+        background-color: $col-dark-blue;
+      }
+    }
+    &:before{
+      content: "";
+      display: block;
+      float: left;
+      height: 25px;
+      margin-top: 7px;
+      margin-left: -5px;
+      border-left: 1px solid $col-line-gray;
+    }
+    &:first-child:before{
+      border-left: 0;
+    }
+  }
+  
+  &.item-3 li{}
+  &.item-4 li{}
+  &.item-5 li{
+    max-width: 18%; // (100% / 5items) - margins
+  }
+
+  
+}
+

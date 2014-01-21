@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Publish date:</strong>
+  <%= @project.publish_date %>
+</p>
+
+<p>
+  <strong>Ft index:</strong>
+  <%= @project.ft_index %>
+</p>
+
+<p>
+  <strong>In result table:</strong>
+  <%= @project.in_result_table %>
+</p>
+
+<p>
+  <strong>Can compare:</strong>
+  <%= @project.can_compare %>
+</p>
+
+<p>
+  <strong>Reports count:</strong>
+  <%= @project.reports_count %>
+</p>
+
+<%= link_to 'Edit', edit_admin_project_path(@project) %> |
+<%= link_to 'Back', admin_projects_path %>

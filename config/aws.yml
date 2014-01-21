@@ -1,0 +1,13 @@
+development:
+  access_key_id: AKIAJEHW45WSS6H2CYRA
+  secret_access_key: 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
+  s3_host_name: 's3-eu-west-1.amazonaws.com'
+  s3_endpoint: 's3-eu-west-1.amazonaws.com'
+test:
+  access_key_id: abc...
+  secret_access_key: abc...
+production:
+  access_key_id: AKIAJEHW45WSS6H2CYRA
+  secret_access_key: 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
+  s3_host_name: 's3-eu-west-1.amazonaws.com'
+  s3_endpoint: 's3-eu-west-1.amazonaws.com'

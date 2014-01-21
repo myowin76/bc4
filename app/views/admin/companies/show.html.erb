@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_company.name %>
+</p>
+
+<p>
+  <%= image_tag(@admin_company.icon.url(:normal)) %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @admin_company.url %>
+</p>
+
+<p>
+  <%= image_tag(@admin_company.logo.url(:normal)) %>
+</p>
+
+<p>
+  <strong>Renew date:</strong>
+  <%= @admin_company.renew_date.strftime('%d/%m/%Y') if @admin_company.renew_date.present? %>
+</p>
+
+<p>
+  <strong>Company type:</strong>
+  <%= @admin_company.company_type.name %>
+</p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @admin_company.sector.name %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @admin_company.country.name %>
+</p>
+
+<p>
+  <strong>Reports count:</strong>
+  <%= @admin_company.reports_count %>
+</p>
+
+<%#= link_to 'Edit', edit_admin_company_path(@admin_company) %>
+<%#= link_to 'Back', admin_companies_path %>

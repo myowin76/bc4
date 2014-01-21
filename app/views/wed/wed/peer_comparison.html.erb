@@ -1,0 +1,140 @@
+<% page_title @page_title %>
+<% page_lead @page_lead %>
+
+<div class="well">
+	<section>
+
+		<div class="ddl-download">
+      <select class="form-control">
+          <option>Format</option>
+          <option>Pdf</option>
+          <option>CSV</option>
+      </select>
+      <a href="#" class="btn btn-download"><i></i>Download</a>
+    </div>
+    
+	</section>
+</div>
+
+<div class="well legend">
+  <div class="row">
+    <div class="col-sm-3">No previous report data available</div>
+    <div class="col-sm-3">No change from last report</div>
+    <div class="col-sm-3">Score has increased since last report</div>
+    <div class="col-sm-3">Score has decreased since last report</div>
+  </div>
+</div>
+
+
+<table class="table tbl-peer-comparison">
+  <thead>
+    <tr>
+    	<% Admin::Metric.roots.order(:number).each do |metric| %>
+    		<th><%= metric.name %></th>
+    	<% end %>
+    	<th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  	
+	  	<tr>
+				<td>
+          <img src="/uploads/companies/icons/5ffab4fd-2283-c794-9dc5-d0ba42bb49a7.jpg">
+        </td>
+				<td>
+          <img src="/uploads/companies/icons/6a965886-a3cd-1eb4-75d7-82e2c2eea0ed.jpg">
+        </td>
+				<td>
+          <img src="/uploads/companies/icons/6b396003-e42b-26e4-61c3-4b50eb8e69fb.jpg">
+        </td>
+				<td>
+          <img src="/uploads/companies/icons/6d92df19-af9a-ae04-fda9-f7675c73949e.png">
+        </td>
+				<td>
+          <img src="/uploads/companies/icons/6f08e160-6433-4064-3d56-4ceb30f4d94e.gif">
+        </td>
+				<td>
+          <img src="/uploads/companies/icons/7a138cd2-be36-5e84-a5fc-8f17e2c41f49.jpg">
+        </td>
+				<td>
+          <img src="/uploads/companies/icons/7b31a2e3-8f93-81d4-992c-fcfe5b415972.jpg">
+        </td>
+				<td>
+          <img src="/uploads/companies/icons/7bf095e0-e657-c624-219c-1c0a0dd78dac.jpg">
+        </td>
+				<td>
+          <img src="/uploads/companies/icons/7c73646e-9d17-2c14-8197-308be707a98f.gif">
+        </td>
+				<!-- <td>
+          <img src="/uploads/companies/icons/7de1f99b-a867-1934-e918-4b8a50202b48.jpg">
+        </td> -->
+			</tr>
+
+      <tr>
+        <td>
+          <img src="/uploads/companies/icons/5ffab4fd-2283-c794-9dc5-d0ba42bb49a7.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/6a965886-a3cd-1eb4-75d7-82e2c2eea0ed.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/6b396003-e42b-26e4-61c3-4b50eb8e69fb.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/6d92df19-af9a-ae04-fda9-f7675c73949e.png">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/6f08e160-6433-4064-3d56-4ceb30f4d94e.gif">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/7a138cd2-be36-5e84-a5fc-8f17e2c41f49.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/7b31a2e3-8f93-81d4-992c-fcfe5b415972.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/7bf095e0-e657-c624-219c-1c0a0dd78dac.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/7c73646e-9d17-2c14-8197-308be707a98f.gif">
+        </td>
+        <!-- <td>
+          <img src="/uploads/companies/icons/7de1f99b-a867-1934-e918-4b8a50202b48.jpg">
+        </td> -->
+      </tr>
+
+      <tr>
+        <td>
+          <img src="/uploads/companies/icons/5ffab4fd-2283-c794-9dc5-d0ba42bb49a7.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/6a965886-a3cd-1eb4-75d7-82e2c2eea0ed.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/6b396003-e42b-26e4-61c3-4b50eb8e69fb.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/6d92df19-af9a-ae04-fda9-f7675c73949e.png">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/6f08e160-6433-4064-3d56-4ceb30f4d94e.gif">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/7a138cd2-be36-5e84-a5fc-8f17e2c41f49.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/7b31a2e3-8f93-81d4-992c-fcfe5b415972.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/7bf095e0-e657-c624-219c-1c0a0dd78dac.jpg">
+        </td>
+        <td>
+          <img src="/uploads/companies/icons/7c73646e-9d17-2c14-8197-308be707a98f.gif">
+        </td>
+        <!-- <td>
+          <img src="/uploads/companies/icons/7de1f99b-a867-1934-e918-4b8a50202b48.jpg">
+        </td> -->
+      </tr>
+		
+  </tbody>
+</table>

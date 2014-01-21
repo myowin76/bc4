@@ -1,0 +1,27 @@
+<h1>Listing screengrabs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Caption</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @screengrabs.each do |screengrab| %>
+      <tr>
+        <td><%= screengrab.caption %></td>
+        <td><%#= link_to 'Show', screengrab %></td>
+        <td><%#= link_to 'Edit', edit_screengrab_path(@source) %></td>
+        <td><%#= link_to 'Destroy', screengrab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Screengrab', [:new, @source, :screengrab] %>

@@ -1,0 +1,33 @@
+<% content_for :sub_menu do %>
+  <%= render "admin/shared/projects_sub_menu" %>
+<% end %>
+
+
+<%= simple_form_for(@project) do |f| %>
+  <%= f.error_notification %>
+  <article>
+    <section>
+      <fieldset>
+        <%= f.input :name, :label => 'Project Name',
+            :input_html => {:class => ''} %>
+      </fieldset>  
+      <fieldset>  
+        <%= f.input :publish_date, :as => :string %>
+      </fieldset>
+      <fieldset>  
+        <%= f.input :ft_index, as: :radio_buttons %>
+      </fieldset>
+      <fieldset>  
+        <%= f.input :in_result_table, as: :radio_buttons %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :can_compare, as: :radio_buttons %>
+      </fieldset>
+    </section>
+  </article>      
+
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-save pull-right' %>
+    </div>
+
+<% end %>

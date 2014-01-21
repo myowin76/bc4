@@ -1,0 +1,152 @@
+<div class="well">
+		<section class="commentaries-filter">
+			<h3>Search Tips</h3>
+			<form>
+
+				<div class="row">
+					<div class="col-sm-3">
+						<fieldset>
+							<label>Keywords</label>
+							<input type="text" />
+						</fieldset>
+					</div>
+					
+					<div class="col-sm-3">
+						<fieldset>
+							<label>Tagged with</label>
+							<select class="form-control">
+								<option>Select Tag</option>
+								<option>About us</option>
+								<option>Content</option>
+								<optgroup>Invester</optgroup>
+							</select>
+						</fieldset>
+					</div>
+					
+					<div class="col-sm-3">
+						<fieldset>
+							<label>Published between</label>
+							<input type="text" id="published_from" />
+						</fieldset>
+					</div>
+
+					<div class="col-sm-3">
+						<fieldset>
+							<label>&nbsp;</label>
+							<input type="text" id="published_to" />
+						</fieldset>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<input type="submit" class="btn btn-save" />
+						<button class="btn btn-reset"><i></i>Reset</button>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		
+	</div>
+	
+	<div class="commentaries-list row">
+
+		<%# Admin::Commentary.order(:created_at).each do |commentary| %>
+
+			<!-- <section class="col-sm-3">
+				<header>
+					<h3><%#= link_to commentary.title, admin_commentary_path %></h3>
+				</header>
+				<p><%#= commentary.intro %></p>
+			</section> -->
+			
+			
+		<%# end %>
+			
+
+			<section class="col-sm-4">
+				<header>
+					<h3><a href="#">Where Coke's Journey should lead</a></h3>
+				</header>
+				<p>As Coca-Cola’s new corporate website celebrates its first birthday there are lessons worth learning from its ambition to teach the world to tell stories, David Bowen says.</p>
+			</section>
+
+			<section class="col-sm-4">
+				<header>
+					<h3><a href="#">Where Coke's Journey should lead</a></h3>
+				</header>
+				<p>As Coca-Cola’s new corporate website celebrates its first birthday there are lessons worth learning from its ambition to teach the world to tell stories, David Bowen says.</p>
+			</section>
+
+			<section class="col-sm-4">
+				<header>
+					<h3><a href="#">Where Coke's Journey should lead</a></h3>
+				</header>
+				<p>As Coca-Cola’s new corporate website celebrates its first birthday there are lessons worth learning from its ambition to teach the world to tell stories, David Bowen says.</p>
+			</section>
+
+			<section class="col-sm-4">
+				<header>
+					<h3><a href="#">Where Coke's Journey should lead</a></h3>
+				</header>
+				<p>As Coca-Cola’s new corporate website celebrates its first birthday there are lessons worth learning from its ambition to teach the world to tell stories, David Bowen says.</p>
+			</section>
+
+			<section class="col-sm-4">
+				<header>
+					<h3><a href="#">Where Coke's Journey should lead</a></h3>
+				</header>
+				<p>As Coca-Cola’s new corporate website celebrates its first birthday there are lessons worth learning from its ambition to teach the world to tell stories, David Bowen says.</p>
+			</section>
+
+			<section class="col-sm-4">
+				<header>
+					<h3><a href="#">Where Coke's Journey should lead</a></h3>
+				</header>
+				<p>As Coca-Cola’s new corporate website celebrates its first birthday there are lessons worth learning from its ambition to teach the world to tell stories, David Bowen says.</p>
+			</section>
+
+			<section class="col-sm-4">
+				<header>
+					<h3><a href="#">Where Coke's Journey should lead</a></h3>
+				</header>
+				<p>As Coca-Cola’s new corporate website celebrates its first birthday there are lessons worth learning from its ambition to teach the world to tell stories, David Bowen says.</p>
+			</section>
+
+			<section class="col-sm-4">
+				<header>
+					<h3><a href="#">Where Coke's Journey should lead</a></h3>
+				</header>
+				<p>As Coca-Cola’s new corporate website celebrates its first birthday there are lessons worth learning from its ambition to teach the world to tell stories, David Bowen says.</p>
+			</section>
+
+
+		
+	</div>
+
+	<% content_for :sidebar do %>
+		<div class="widget theme-blue">
+			<section>
+				
+
+				<a href="#" class="btn btn-download">Subscribe</a>
+			</section>
+		</div>
+
+		<div class="widget theme-dark">
+			<section>
+				
+
+				<a href="#" class="btn btn-download">Join the group</a>
+			</section>
+		</div>
+
+		<div class="widget theme-light">
+			<section>
+				
+
+				<a href="#" class="btn btn-download">FT Index database</a>
+			</section>
+		</div>
+
+	<% end %>

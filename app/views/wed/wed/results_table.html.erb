@@ -1,0 +1,174 @@
+<% page_title @page_title %>
+<% page_lead @page_lead %>
+
+<div class="well">
+  <section>
+    <div class="row">
+        <div class="col-sm-4">
+          <div class="ddl-filter-index">
+            <!-- <label>Choose an Index</label> -->
+            <%= select_tag "", options_from_collection_for_select(Admin::Project.order(:name).all, "id", "name"),
+                :class => 'form-control', :prompt => "Choose an Index" %>
+          </div>
+
+
+        </div>
+        <a class="btn btn-filter">
+              <i></i>Show Filter
+            </a>
+        <div class="col-sm-3 pull-right">
+          <div class="ddl-download">
+            <select class="form-control">
+                <option>Export as</option>
+                <option>Pdf</option>
+                <option>CSV</option>
+            </select>
+            <a class="btn btn-download">
+              <i></i>Download
+            </a>
+          </div>
+        </div>    
+    </div>
+    
+    
+    
+  </section>  
+</div>
+
+<!-- filter -->
+<div class="well filters">
+  <section>
+    <%= form_tag @results_table_path, method: :get do |c| %>
+      <div class="row">
+
+        <div class="col-sm-2">
+          <div class="ddl-type">
+            <%= select_tag "", options_from_collection_for_select(@company_types, "id", "name"),
+                 :class => 'form-control', :prompt => "Type" %>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="ddl-sector">
+            <%= select_tag "", options_from_collection_for_select(@company_sectors, "id", "name"),
+                 :class => 'form-control', :prompt => "Sector" %>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="ddl-regions">
+            <%= select_tag "", options_from_collection_for_select(@company_regions, "id", "name"),
+                 :class => 'form-control', :prompt => "Region" %>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="ddl-countries">
+            <%= select_tag "", options_from_collection_for_select(@company_countries, "id", "name"),
+                 :class => 'form-control', :prompt => "Country" %>
+          </div>
+        </div>
+      </div>  
+
+      <div class="row">
+        <div class="col-sm-6">
+          <%= button_tag(:type => "submit", :class => "btn btn-green btn-action-filter") do %>
+            <i></i>Filter
+          <% end %>
+          <a href="#" class="btn btn-reset"><i></i>Reset</a>
+        </div>  
+      </div>
+    <% end %>
+  </section>
+  
+</div>
+
+<!-- <div class="well">
+  <section>
+    <div class="ddl-download">
+      <div class="ddl-type">
+        <select class="form-control">
+            <option>Export as</option>
+            <option>Pdf</option>
+            <option>CSV</option>
+        </select>
+        <a class="btn btn-download">
+          <i></i>Download
+        </a>
+      </div>
+
+    </div>
+    
+                     
+  </section>  
+</div>
+ -->
+
+<table class="table tbl-results">
+  <thead>
+    <tr>
+    	<th>Rank</th>
+    	<th>Metric Score</th>
+    	<th class="company" colspan="2">Company</th>
+    	<% Admin::Metric.roots.order(:number).each do |metric| %>
+    		<th><%= metric.name %></th>
+    	<% end %>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @companies.each do |company| %>
+	  	<tr>
+	  		<td>1</td>
+	  		<td>100</td>
+        <td class="company-icon">
+          <%= image_tag(company.icon.url(:normal)) %>
+        </td>
+				<td><%= link_to company.name, company_profile_path(company) %></td>
+				<td>
+          <a href="#" class="" data-toggle="modal" data-target="#viewReport">
+            43
+          </a>
+        </td>
+				<td>
+          <a href="#" class="" data-toggle="modal" data-target="#viewReport">
+            43
+          </a>
+        </td>
+				<td>
+          <a href="#" class="" data-toggle="modal" data-target="#viewReport">
+            43
+          </a>
+        </td>
+				<td>
+          <a href="#" class="" data-toggle="modal" data-target="#viewReport">
+            43
+          </a>
+        </td>
+				<td>
+          <a href="#" class="" data-toggle="modal" data-target="#viewReport">
+            43
+          </a>
+        </td>
+				<td>
+          <a href="#" class="" data-toggle="modal" data-target="#viewReport">
+            43
+          </a>
+        </td>
+				<td>
+          <a href="#" class="" data-toggle="modal" data-target="#viewReport">
+            43
+          </a>
+        </td>
+				<td>
+          <a href="#" class="" data-toggle="modal" data-target="#viewReport">
+            43
+          </a>
+        </td>
+			</tr>
+		<% end %>
+  </tbody>
+</table>
+
+
+
+<%= render "shared/report_popup" %>
