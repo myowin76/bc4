@@ -11,7 +11,7 @@ gem 'activerecord-deprecated_finders'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
