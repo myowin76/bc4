@@ -25,5 +25,7 @@ module Bc4
     # config.assets.paths << "#{Rails}/assets/fonts"
     config.assets.paths << Rails.root.join("app/assets/fonts")
     config.filter_parameters += [:password]
+
+    config.assets.initialize_on_precompile = false
   end
 end
