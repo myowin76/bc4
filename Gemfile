@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'rails', '~>4.0.0'
 # rails 4 specific
@@ -54,7 +55,8 @@ gem "acts_as_list", "~> 0.3.0"
 	gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.3.0'
 
-
+	gem 'rails_12factor'
+	
 group :development do
 	gem 'debugger'
 
