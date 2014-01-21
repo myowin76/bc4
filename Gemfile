@@ -50,7 +50,7 @@ gem "acts_as_list", "~> 0.3.0"
 	gem 'sass-rails', '~> 4.0.0'
 	gem 'compass', '>= 0.12.2'
 	# gem "compass-rails", "~> 1.0.3"
-  # gem 'susy'
+  gem "susy", "~> 1.0.9"
 	gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.3.0'
 
