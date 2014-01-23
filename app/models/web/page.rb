@@ -35,10 +35,10 @@ class Web::Page < ActiveRecord::Base
 	end
 
 	def self.home_page
-		where('url = ?', "/")
+		where('url = ?', "home")
 	end
 	def self.not_home
-		where('url != ?', "/")
+		where('url != ?', "home")
 	end
 	#scope :not_home, where(:position => 0)
 

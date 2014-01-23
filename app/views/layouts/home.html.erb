@@ -13,16 +13,16 @@
 			<article class="mod-landing">
 		    <header>
 	        <h1>
-            We are experts in global online corporate communications. We help you improve the effectiveness of your websites, mobile sites, <br>social channels and apps.
+            <%= @web_page.page_title %>
 	        </h1>
 		    </header>
-		    <p>
-		    	This site is filled with <a href="/our-thinking/presentations-reports/">practical advice</a> and <a href="/our-thinking/ft-bowen-craggs-index-analysis/">deep analysis</a> for online communications professionals. Browse or search Our thinking now.
-		    </p>
+		    
+		    	<%= raw @web_page.page_intro %>
+		    
 
 			</article>
 
-			<%= yield %>
+			
 			<div class="row">
 			
 			<article class="highlight-index col-sm-5">
@@ -123,21 +123,7 @@
 			</article>
 
 			<article class="highligth-content col-sm-4">
-        <header>
-		    	<h3><a href="/our-thinking/">Our thinking</a></h3>
-        </header>
-	      <section>
-	        <p>Insightful commentary, practical analysis and stimulating observation from our 	expert team led by veteran online commentator David Bowen.
-	        </p>
-	        <ul class="fact-links">
-            <li>
-            	Keep up with our latest <a href="/our-thinking/commentaries/">Commentaries</a> on the corporate web
-            </li>
-            <li>
-            	Consult our twice-weekly <a href="/our-thinking/bc-tips/">BC Tips</a> for best practice features
-            </li>
-	        </ul>
-	      </section>
+        <%= yield %>
 		  </article>
 			
 
@@ -162,7 +148,7 @@
 			</div>
 			</div>
 		</div>
-		
+
 		<%= render 'layouts/web/footer' %>
 	</div>	
 

@@ -13,9 +13,11 @@ class Web::PagesController < Web::WebController
   # GET /web/pages/1.json
   def show
 
-# debugger
-    if @web_page.url == "/"
-      render layout: "home"
+    # debugger
+    unless @web_page.nil?
+      if @web_page.url == "home"
+        render layout: "home"
+      end
     end
   end
 
@@ -26,6 +28,8 @@ class Web::PagesController < Web::WebController
 
   # GET /web/pages/1/edit
   def edit
+
+    # debugger
   end
 
   # POST /web/pages
@@ -77,8 +81,11 @@ class Web::PagesController < Web::WebController
       # debugger  
         @web_page = Web::Page.find_by_url(params[:id].split("/").last)
       else
-        @web_page = Web::Page.find(params[:id])
+        @web_page = Web::Page.find_by_url("home")
+        # debugger
+        # @web_page = Web:Page.where('parent_id = ? AND position = ?', nil, 0)
       end
+      
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
