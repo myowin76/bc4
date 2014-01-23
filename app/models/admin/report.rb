@@ -15,7 +15,8 @@
 #
 
 class Admin::Report < ActiveRecord::Base
-	attr_accessible :name, :project_id, :company_id, :publish_from, :publish_to
+	attr_accessible :id, :name, :project_id, :company_id, :publish_date, 
+    :report_type_id, :created_at, :updated_at
 	self.table_name = "reports"
 
   belongs_to :project, 

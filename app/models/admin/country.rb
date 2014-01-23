@@ -10,7 +10,7 @@
 #
 
 class Admin::Country < ActiveRecord::Base
-	attr_accessible :name, :region_id
+	attr_accessible :id, :name, :region_id, :created_at, :updated_at
 
 	self.table_name = "countries"
 	belongs_to :region

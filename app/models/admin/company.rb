@@ -26,8 +26,8 @@
 #
 
 class Admin::Company < ActiveRecord::Base
-	attr_accessible :name, :url, :renew_date, :company_type_id, :sector_id, :country_id, :reports_count, :company_status_id,
-                :icon, :logo, :icon_file_name, :logo_file_name
+	attr_accessible :id, :name, :url, :renew_date, :company_type_id, :sector_id, :country_id, :reports_count, :company_status_id,
+                :icon, :logo, :icon_file_name, :logo_file_name, :created_at, :updated_at
   
   belongs_to :company_type
   belongs_to :sector

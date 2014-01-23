@@ -4,7 +4,7 @@ class Wed::WedController < ApplicationController
   # respond_to :js, :html, :only => :best_practice 
 
   # to do : add custom layout 2 columns
-  before_action :get_companies, only: [:best_practice, :results_table, :my_peers, :advanced_search]
+  before_action :get_companies, only: [:results_table, :my_peers, :advanced_search]
   before_action :get_my_peers, only: [:dashboard, :company_profile, :score_card, :progress_chart]
 
   def dashboard
@@ -71,7 +71,7 @@ class Wed::WedController < ApplicationController
 
     # top 10 companies order by each metrics scores
     @metrics = Admin::Metric.roots.order(:number)
-    @companies = Admin::Company.all
+    @companies = Admin::Company.order(:name).limit(10)
 
     
     

@@ -394,6 +394,16 @@
       @include icons-sprite(assume-identity);
     }
 
+    .link_print{
+      @extend .link_button_styles;
+      @include icons-sprite(print_icon); 
+      height: 19px;
+      
+      &:hover{
+        @include icons-sprite(print_icon_over); 
+      }
+    }
+
     /**************************/
 
   .well{

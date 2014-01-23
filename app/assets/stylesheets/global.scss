@@ -11,11 +11,10 @@
  *= require_self
  *= require bootstrap
  * require_tree ./partials/global
- 
+
  * require_tree .
  
  */
-@import "susy";
 
 @import "icons/*.png";
 @include all-icons-sprites;
@@ -40,3 +39,4 @@ $icon-spacing: 15px !default;
 @import "partials/global/calendars";
 @import "partials/global/search";
 @import "partials/global/sidebar";
+

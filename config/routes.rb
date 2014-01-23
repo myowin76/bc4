@@ -149,11 +149,13 @@ Bc4::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'admin/companies#index'
 
-  # unless Web::Page.find_by_url("/").nil?
-  #     root 'web/pages#show', :id => Web::Page.find_by_url("/").id
-  # else
+
+  unless Web::Page.find_by_url("/").nil?
+      root 'web/pages#show', :id => Web::Page.find_by_url("/").id
+  else
+
     root 'web/pages#index'
-  # end
+  end
   # Web::Page.all.each do |page|
   #   get page.url, :controller => 'pages', :action => 'show', :id => page
   # end

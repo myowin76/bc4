@@ -9,7 +9,7 @@
 #
 
 class Admin::Sector < ActiveRecord::Base
-	attr_accessible :name
+	attr_accessible :id, :name, :created_at, :updated_at, :mig_id
 	self.table_name = "sectors"
 	
   has_many :companies

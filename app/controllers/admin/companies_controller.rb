@@ -11,7 +11,7 @@ class Admin::CompaniesController < Admin::AdminController
   # GET /companies.json
   def index
     # @admin_companies = Admin::Company.all
-    @admin_companies = Admin::Company.order(:name).paginate :page => params[:page]
+    @admin_companies = Admin::Company.order(:name)
 
     @company_types = Admin::CompanyType.all
     @company_sectors = Admin::Sector.all

@@ -234,27 +234,27 @@
 
       
         # Companies
-        Admin::Company.delete_all
-        Admin::Company.create(id: 1, name: 'IBM', url: "http://ibm.com", company_type_id: 1, renew_date: Time.now, 
-         sector_id: 2, country_id: 2, reports_count: 0, subscription_id: 1, company_status_id: 1, created_at: Time.now)
-        Admin::Company.create(id: 2, name: 'ABB', url: "http://abb.com", company_type_id: 2, renew_date: Time.now, 
-         sector_id: 3, country_id: 10, reports_count: 0,  subscription_id: 1, company_status_id: 1, created_at: Time.now)
-        Admin::Company.create(id: 3, name: 'Abbott', url: "http://ibm.com", company_type_id: 3, renew_date: Time.now, 
-         sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 2, company_status_id: 2, created_at: Time.now)
-        Admin::Company.create(id: 4, name: 'Bank of America', url: "http://bankofamerica.com", company_type_id: 3, renew_date: Time.now, 
-         sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 3, company_status_id: 1, created_at: Time.now)
-        Admin::Company.create(id: 5, name: 'ConocoPhillips', url: "http://conoco-phillips.com", company_type_id: 3, renew_date: Time.now, 
-         sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 1, company_status_id: 3, created_at: Time.now)
-        Admin::Company.create(id: 6, name: 'AIG', url: "http://aig.com", company_type_id: 3, renew_date: Time.now, 
-         sector_id: 1, country_id: 1, reports_count: 0,  subscription_id: 2, company_status_id: 3, created_at: Time.now)
-        Admin::Company.create(id: 5, name: 'Allianz', url: "https://www.allianz.com", company_type_id: 3, renew_date: Time.now, 
-         sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 3, company_status_id: 2, created_at: Time.now)
-        Admin::Company.create(id: 6, name: 'Aviva', url: "http://www.aviva.com/", company_type_id: 3, renew_date: Time.now, 
-         sector_id: 1, country_id: 1, reports_count: 0,  subscription_id: 1, company_status_id: 2, created_at: Time.now)
-        Admin::Company.create(id: 5, name: 'Banco Santander', url: "http://www.santander.com", company_type_id: 3, renew_date: Time.now, 
-         sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 3, company_status_id: 1, created_at: Time.now)
-        Admin::Company.create(id: 6, name: 'Siemens', url: "http://www.siemens.com", company_type_id: 2, renew_date: Time.now, 
-         sector_id: 1, country_id: 1, reports_count: 0,  subscription_id: 2, company_status_id: 1, created_at: Time.now)
+        # Admin::Company.delete_all
+        # Admin::Company.create(id: 1, name: 'IBM', url: "http://ibm.com", company_type_id: 1, renew_date: Time.now, 
+        #  sector_id: 2, country_id: 2, reports_count: 0, subscription_id: 1, company_status_id: 1, created_at: Time.now)
+        # Admin::Company.create(id: 2, name: 'ABB', url: "http://abb.com", company_type_id: 2, renew_date: Time.now, 
+        #  sector_id: 3, country_id: 10, reports_count: 0,  subscription_id: 1, company_status_id: 1, created_at: Time.now)
+        # Admin::Company.create(id: 3, name: 'Abbott', url: "http://ibm.com", company_type_id: 3, renew_date: Time.now, 
+        #  sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 2, company_status_id: 2, created_at: Time.now)
+        # Admin::Company.create(id: 4, name: 'Bank of America', url: "http://bankofamerica.com", company_type_id: 3, renew_date: Time.now, 
+        #  sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 3, company_status_id: 1, created_at: Time.now)
+        # Admin::Company.create(id: 5, name: 'ConocoPhillips', url: "http://conoco-phillips.com", company_type_id: 3, renew_date: Time.now, 
+        #  sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 1, company_status_id: 3, created_at: Time.now)
+        # Admin::Company.create(id: 6, name: 'AIG', url: "http://aig.com", company_type_id: 3, renew_date: Time.now, 
+        #  sector_id: 1, country_id: 1, reports_count: 0,  subscription_id: 2, company_status_id: 3, created_at: Time.now)
+        # Admin::Company.create(id: 5, name: 'Allianz', url: "https://www.allianz.com", company_type_id: 3, renew_date: Time.now, 
+        #  sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 3, company_status_id: 2, created_at: Time.now)
+        # Admin::Company.create(id: 6, name: 'Aviva', url: "http://www.aviva.com/", company_type_id: 3, renew_date: Time.now, 
+        #  sector_id: 1, country_id: 1, reports_count: 0,  subscription_id: 1, company_status_id: 2, created_at: Time.now)
+        # Admin::Company.create(id: 5, name: 'Banco Santander', url: "http://www.santander.com", company_type_id: 3, renew_date: Time.now, 
+        #  sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 3, company_status_id: 1, created_at: Time.now)
+        # Admin::Company.create(id: 6, name: 'Siemens', url: "http://www.siemens.com", company_type_id: 2, renew_date: Time.now, 
+        #  sector_id: 1, country_id: 1, reports_count: 0,  subscription_id: 2, company_status_id: 1, created_at: Time.now)
     
 
 
@@ -426,3 +426,54 @@
             publish_to: Time.now,
             created_at: Time.now
         )    
+
+
+
+        Admin::Sector.delete_all
+        Admin::Sector.create(id: 1, name: 'Agricultural', created_at: DateTime.parse('11/09/2009 16:35'), updated_at: DateTime.parse('10/10/2009 16:26'))
+        Admin::Sector.create(id: 2, name: 'Automobiles & parts', created_at: DateTime.parse('1/09/2009 16:35'), updated_at: DateTime.parse('15/12/2009 09:51'))
+        Admin::Sector.create(id: 3, name: 'Banks', created_at: DateTime.parse('1/09/2009 16:35'), updated_at: DateTime.parse('15/12/2009 09:52'))
+        Admin::Sector.create(id: 4, name: 'Chemical', created_at: DateTime.parse('11/09/2009 16:35'), updated_at: DateTime.parse('15/12/2009 09:52'))
+        Admin::Sector.create(id: 5, name: 'Communications', created_at: DateTime.parse('11/09/2009 16:35'), updated_at: DateTime.parse('15/12/2009 09:54'))
+        Admin::Sector.create(id: 6, name: 'Construction & materials', created_at: DateTime.parse('11/09/2009 16:35'), updated_at: DateTime.parse('15/12/2009 09:53'))
+        Admin::Sector.create(id: 7, name: 'Media', created_at: DateTime.parse('1/09/2009 16:35'), updated_at: DateTime.parse('15/12/2009 09:55'))
+        Admin::Sector.create(id: 8, name: 'Aerospace & defense', created_at: DateTime.parse('1/09/2009 16:35'), updated_at: DateTime.parse('15/12/2009 10:21'))
+        Admin::Sector.create(id: 9, name: 'Education', created_at: DateTime.parse('1/09/2009 16:35'), updated_at: DateTime.parse('11/09/2009 16:35'))
+        Admin::Sector.create(id: 10, name: 'Industrial engineering', created_at: DateTime.parse('11/09/2009 16:35'), updated_at: DateTime.parse('15/12/2009 10:01'))
+        Admin::Sector.create(id: 11, name: 'Financial Services', created_at: DateTime.parse('11/09/2009 16:35'), updated_at: DateTime.parse('11/09/2009 16:35'))
+        Admin::Sector.create(id: 12, name: 'Health care equipment & services', created_at: DateTime.parse('11/09/2009 16:35'), updated_at: DateTime.parse('15/12/2009 10:17'))
+        Admin::Sector.create(id: 13, name: 'Technology hardware & equipment', created_at: DateTime.parse('1/09/2009 16:35'), updated_at: DateTime.parse('15/12/2009 09:58'))
+        Admin::Sector.create(id: 14, name: 'Legal Services', created_at: DateTime.parse('11/09/2009 16:35'), updated_at: DateTime.parse('11/09/2009 16:35'))
+        Admin::Sector.create(id: 15, name: 'Leisure goods', created_at: DateTime.parse('1/09/2009 16:35'), updated_at: DateTime.parse('15/12/2009 10:18'))
+        Admin::Sector.create(id: 16, name: 'Oil & Gas producers', created_at: DateTime.parse('4/10/2009 14:40'), updated_at: DateTime.parse('15/12/2009 10:00'))
+        Admin::Sector.create(id: 17, name: 'Pharmaceuticals & biotechnology', created_at: DateTime.parse('4/10/2009 16:03'), updated_at: DateTime.parse('15/12/2009 09:59'))
+        Admin::Sector.create(id: 18, name: 'FMCG', created_at: DateTime.parse('27/10/2009 12:10'), updated_at: DateTime.parse('15/12/2009 09:56'))
+        Admin::Sector.create(id: 19, name: 'Food & drug retailers', created_at: DateTime.parse('4/11/2009 13:51'), updated_at: DateTime.parse('15/12/2009 09:59'))
+        Admin::Sector.create(id: 20, name: 'Mining', created_at: DateTime.parse('24/11/2009 10:16'), updated_at: DateTime.parse('24/11/2009 10:16'))
+        Admin::Sector.create(id: 21, name: 'Technology hardware and equipment', created_at: DateTime.parse('2/12/2009 14:44'), updated_at: DateTime.parse('15/12/2009 09:58'))
+        Admin::Sector.create(id: 22, name: 'Manufacturing', created_at: DateTime.parse('8/12/2009 16:40'), updated_at: DateTime.parse('08/12/2009 16:40'))
+        Admin::Sector.create(id: 23, name: 'Beverages', created_at: DateTime.parse('5/12/2009 09:52'), updated_at: DateTime.parse('15/12/2009 09:52'))
+        Admin::Sector.create(id: 24, name: 'Construction & materials', created_at: DateTime.parse('15/12/2009 09:53'), updated_at: DateTime.parse('15/12/2009 09:53'))
+        Admin::Sector.create(id: 25, name: 'Electricity', created_at: DateTime.parse('5/12/2009 09:54'), updated_at: DateTime.parse('15/12/2009 09:54'))
+        Admin::Sector.create(id: 26, name: 'Electronic & electrical equipment', created_at: DateTime.parse('5/12/2009 09:54'), updated_at: DateTime.parse('15/12/2009 09:54'))
+        Admin::Sector.create(id: 27, name: 'Fixed line telecommunications', created_at: DateTime.parse('5/12/2009 09:56'), updated_at: DateTime.parse('15/12/2009 09:56'))
+        Admin::Sector.create(id: 28, name: 'Food producers', created_at: DateTime.parse('15/12/2009 10:15'), updated_at: DateTime.parse('15/12/2009 10:15'))
+        Admin::Sector.create(id: 29, name: 'Gas, water & multiutilities', created_at: DateTime.parse('5/12/2009 10:16'), updated_at: DateTime.parse('15/12/2009 10:16'))
+        Admin::Sector.create(id: 30, name: 'General industrials', created_at: DateTime.parse('5/12/2009 10:17'), updated_at: DateTime.parse('15/12/2009 10:17'))
+        Admin::Sector.create(id: 31, name: 'General retailers', created_at: DateTime.parse('5/12/2009 10:17'), updated_at: DateTime.parse('15/12/2009 10:17'))
+        Admin::Sector.create(id: 32, name: 'Household goods & home construction', created_at: DateTime.parse('5/12/2009 10:18'), updated_at: DateTime.parse('15/12/2009 10:18'))
+        Admin::Sector.create(id: 33, name: 'Industrial metals & mining', created_at: DateTime.parse('15/12/2009 10:18'), updated_at: DateTime.parse('15/12/2009 10:18'))
+        Admin::Sector.create(id: 34, name: 'Industrial transportation', created_at: DateTime.parse('5/12/2009 10:18'), updated_at: DateTime.parse('15/12/2009 10:18'))
+        Admin::Sector.create(id: 35, name: 'Life insurance', created_at: DateTime.parse('15/12/2009 10:19'), updated_at: DateTime.parse('15/12/2009 10:19'))
+        Admin::Sector.create(id: 36, name: 'Aerospace & defence', created_at: DateTime.parse('5/12/2009 10:19'), updated_at: DateTime.parse('15/12/2009 10:21'))
+        Admin::Sector.create(id: 37, name: 'Alternative energy', created_at: DateTime.parse('15/12/2009 10:20'), updated_at: DateTime.parse('15/12/2009 10:20'))
+        Admin::Sector.create(id: 38, name: 'Mobile telecommunications', created_at: DateTime.parse('5/12/2009 10:22'), updated_at: DateTime.parse('15/12/2009 10:22'))
+        Admin::Sector.create(id: 39, name: 'Oil equipment & services', created_at: DateTime.parse('15/12/2009 10:23'), updated_at: DateTime.parse('15/12/2009 10:23'))
+        Admin::Sector.create(id: 40, name: 'Personal goods', created_at: DateTime.parse('15/12/2009 10:23'), updated_at: DateTime.parse('15/12/2009 10:23'))
+        Admin::Sector.create(id: 41, name: 'Real estate investment & services', created_at: DateTime.parse('5/12/2009 10:23'), updated_at: DateTime.parse('15/12/2009 10:23'))
+        Admin::Sector.create(id: 42, name: 'Real estate investment trusts', created_at: DateTime.parse('5/12/2009 10:23'), updated_at: DateTime.parse('15/12/2009 10:23'))
+        Admin::Sector.create(id: 43, name: 'Software & computer services', created_at: DateTime.parse('15/12/2009 10:24'), updated_at: DateTime.parse('15/12/2009 10:24'))
+        Admin::Sector.create(id: 44, name: 'Support services', created_at: DateTime.parse('15/12/2009 10:24'), updated_at: DateTime.parse('15/12/2009 10:24'))
+        Admin::Sector.create(id: 45, name: 'Tobacco', created_at: DateTime.parse('5/12/2009 10:24'), updated_at: DateTime.parse('15/12/2009 10:24'))
+        Admin::Sector.create(id: 46, name: 'Travel & leisure', created_at: DateTime.parse('15/12/2009 10:24'), updated_at: DateTime.parse('15/12/2009 10:24'))
+        Admin::Sector.create(id: 47, name: 'Nonlife insurance', created_at: DateTime.parse('5/12/2009 10:27'), updated_at: DateTime.parse('15/12/2009 10:27'))      

@@ -15,10 +15,14 @@
 //= require bootstrap
 //= require dataTables/jquery.dataTables
 //= require jquery.ui.datepicker
+//= require select2
 // require_tree .
 
 
 $(function() {
+
+
+    $(".share-users").select2();
 
     $(".rpt-view-container #metric_accordion").collapse('show')
 
