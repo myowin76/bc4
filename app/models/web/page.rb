@@ -29,6 +29,10 @@ class Web::Page < ActiveRecord::Base
 
 	before_validation :generate_url
 
+
+	has_many :page_widgets, :class_name => "Web::PageWidget"
+  has_many :widgets, through: :page_widgets, :class_name => "Web::Widget"
+
 	scope :top_level, where(:ancestry => nil)
 	def to_param
 		url
