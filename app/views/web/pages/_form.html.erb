@@ -45,7 +45,8 @@
         <%= f.input :position %>
       </fieldset>
       <fieldset>
-
+        <%= f.collection_select :widget_ids, Web::Widget.order(:name), :id, :name,
+           { :class => 'form-control'}, { multiple: true } %>
       </fieldset>
     </section>
   </article>
@@ -58,6 +59,6 @@
   <script type="text/javascript">
     CKEDITOR.replace( 'web_page_body' );
     CKEDITOR.replace( 'web_page_page_intro' );
-
+    $('#web_page_widget_ids').select2();
   </script>  
 <% end %>

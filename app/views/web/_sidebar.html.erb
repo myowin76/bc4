@@ -1,0 +1,12 @@
+
+	<% if @web_page.widgets.present? %>
+		<% @web_page.widgets.each do |widget| %>
+			
+			<div class="widget">
+				<section>
+					<%= raw widget.body %>
+				</section>
+			</div>
+
+		<% end %>
+	<% end %>

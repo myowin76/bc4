@@ -70,6 +70,6 @@ class Web::WidgetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def web_widget_params
-      params.require(:web_widget).permit(:name, :body)
+      params.require(:web_widget).permit(:name, :body, :theme)
     end
 end

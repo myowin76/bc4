@@ -19,7 +19,7 @@
 
 class Web::Page < ActiveRecord::Base
 	attr_accessible :meta_title, :meta_desc, :meta_keyword, :name, :page_title, :page_intro, 
-					:url, :body, :parent_id, :position
+					:url, :body, :parent_id, :position, :widget_ids
 
 	# act_as_list
 	has_ancestry
@@ -31,9 +31,10 @@ class Web::Page < ActiveRecord::Base
 
 
 	has_many :page_widgets, :class_name => "Web::PageWidget"
-  has_many :widgets, through: :page_widgets, :class_name => "Web::Widget"
+  has_many :widgets, -> { order('page_widgets.position DESC')}, through: :page_widgets, 
+  				:class_name => "Web::Widget"
 
-	scope :top_level, where(:ancestry => nil)
+	scope :top_level, -> {where(:ancestry => nil)}
 	def to_param
 		url
 	end
