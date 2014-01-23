@@ -150,12 +150,12 @@ Bc4::Application.routes.draw do
   # root 'admin/companies#index'
 
 
-  unless Web::Page.find_by_url("home").nil?
-      root 'web/pages#show', :id => Web::Page.find_by_url("home").id
-  else
+  # unless Web::Page.find_by_url("home").nil?
+  #     root 'web/pages#show', :id => Web::Page.find_by_url("home").id
+  # else
 
     root 'web/pages#index'
-  end
+  # end
   # Web::Page.all.each do |page|
   #   get page.url, :controller => 'pages', :action => 'show', :id => page
   # end
