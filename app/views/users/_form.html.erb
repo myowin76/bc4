@@ -1,21 +1,56 @@
 <%= simple_form_for(@user) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :username %>
-    <%= f.input :email %>
-    <%= f.input :firstname %>
-    <%= f.input :lastname %>
-    <%= f.input :job_title %>
-    <%= f.input :super_user %>
-    <%= f.input :approver %>
-    <%= f.input :dashboard_alerts %>
-    <%= f.input :active %>
-    <%= f.input :deleted %>
-    <%= f.association :company %>
-  </div>
+    <article>
+      <section>
+        <fieldset>
+          <%#= f.collection_select :role_ids,
+              Admin::Role.order(:name), :id, :name,
+              {}, { :class => 'form-control'} %>
+          <%= f.association :role,
+            input_html: { class: 'form-control' }, :prompt => 'User Type' %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :username %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :email %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :password %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :password_confirmation %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :firstname %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :lastname %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :job_title %>
+        </fieldset>
+        <fieldset>
+          <%= f.association :company,
+            input_html: { class: 'form-control' }, :prompt => 'Select Company' %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :approver %>
+        </fieldset>
+        <fieldset>
+          <%= f.input :dashboard_alerts %>
+        </fieldset>
+      </section>
+    </article>
+  
+    <%#= f.input :super_user %>
+  
+    
+    <%#= f.input :active %>
+    <%#= f.input :deleted %>
+  
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => 'pull-right btn-save' %>
   </div>
 <% end %>

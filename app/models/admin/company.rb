@@ -35,19 +35,26 @@ class Admin::Company < ActiveRecord::Base
   belongs_to :subscription
   belongs_to :company_status
   has_many :reports
+
+  
+  # has_many :company_commentaries, :class_name => "Admin::CompanyCommentary"
+  # has_many :commentaries, -> { order('page_widgets.position DESC')}, 
+  #         through: :company_commentaries, 
+  #         :class_name => "Admin::CompanyCommentary"
   # has_many :users, :foreign_key => "company_id"
 
   self.table_name = "companies"
   
   # validation
-  validates :name,:renew_date, :company_type_id, :sector_id, :country_id, :company_status_id, :presence => true
+  # validates :name,:renew_date, :company_type_id, :sector_id, :country_id, :company_status_id, :presence => true
 
   # attachment
   has_attached_file :icon, 
   	:styles => {:normal => '41x41'},
   	:default_url => "/assets/default_:style_avatar.png",
   	:url  => "/assets/icons/:style/:basename.:extension",
-    :path => "/assets/companies/:id/icons/:style/:basename.:extension",
+    # :path => "/assets/companies/:id/icons/:style/:basename.:extension",
+    :path => "/assets/companies/icons/:basename.:extension",
     # :storage => :filesystem,
 
     :storage => :s3,
@@ -76,7 +83,8 @@ class Admin::Company < ActiveRecord::Base
   	:styles => {:normal => '210x65'},
   	:default_url => "/images/default_:style_avatar.png",
   	:url  => "/assets/logos/:style/:basename.:extension",
-    :path => "/assets/companies/:id/logos/:style/:basename.:extension",
+    # :path => "/assets/companies/:id/logos/:style/:basename.:extension",
+    :path => "/assets/companies/logos/:basename.:extension",
     
     :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/aws.yml",
@@ -102,7 +110,11 @@ class Admin::Company < ActiveRecord::Base
   # find companies with public reports?
   # find active companies
   # super user
-  
+  scope :order_by, lambda { |option|
+    # includes(:editors).
+    # where('user_id = ? AND IS NOT NULL', user.id)
+  }
+
   scope :last_updated_by, lambda { |user|
     # includes(:editors).
     # where('user_id = ? AND IS NOT NULL', user.id)

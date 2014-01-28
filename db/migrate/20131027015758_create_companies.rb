@@ -11,7 +11,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.integer :reports_count
       t.integer :users_count
 
-      # t.boolean :active
+      t.boolean :active
       # t.boolean :deleted
       # t.integer :updated_by
       # t.integer :deleted_by

@@ -116,14 +116,24 @@
   <tbody>
     <% @reports.each do |report| %>
       <tr>
-        <td><%= report.name %></td>
+        <td>
+          <% unless report.name.blank? %>
+            <%= report.name %>
+          <% else %>
+            <%= report.company.name  unless report.company.nil? %>
+            <%= report.report_type.name unless report.report_type.nil? %>
+            <%= report.publish_date.strftime("%Y") unless report.publish_date.nil? %>
+          <% end %>
+        </td>
         <td><%= report.project.name unless report.project.nil? %></td>
         <td><%= report.company.name unless report.company.nil? %></td>
         <td>
-          <%= link_to 'Edit', manage_report_path(report), :class => 'link_edit' %>
+          <%= link_to 'Edit', manage_report_path(report), {:class => 'link_edit',
+                :'data-toggle' => 'tooltip', :title => 'Edit' } %>
         </td>
         <td><%= link_to 'Destroy', report, :class => 'link_destroy',
-            method: :delete, data: { confirm: 'Are you sure?' } %></td>
+             :title => 'Edit',
+            method: :delete, data: { toggle: 'tooltip', confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -25,7 +25,7 @@
       <i></i>Unpublish
     </button>
 
-    <button class="btn-notes">
+    <button class="btn-notes" data-toggle="modal" data-target="#report_notes_form">
       <i></i>Notes (<%= @report.notes.count %>)
     </button>
 
@@ -61,13 +61,13 @@
 <div class="tab-content">
   
   <!-- report overview content -->
-  <div class="tab-pane active" id="overview">
+  <div class="tab-pane" id="overview">
   	<%#= @report.company.name %>
   	<%#= link_to @report.company.url, @report.company.url, :target => '_blank' %>
   	<%#= @report.company.country.name %>
   	<%#= @report.company.country.region.name %>
 
-  	<%#= render "admin/reports/show" %>
+  	<%#= render "admin/reports/manage_report_overview" %>
   	<article>
   		<header>
   			<h4>Company</h4>
@@ -76,8 +76,8 @@
 
   </div>
 	
-	
   <!-- report edit form content -->
+  <%#= render "admin/reports/manage_report_form" %>
   <div class="tab-pane" id="report">
 
   	<div class="rpt-view-totalscore">
@@ -278,3 +278,4 @@
 <% end %>
 
 <%= render "shared/report_popup" %>
+<%= render "admin/shared/report_notes_popup" %>

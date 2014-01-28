@@ -24,15 +24,15 @@ class Admin::ReportsController < Admin::AdminController
   
     if params[:company_id].present?
       @reports = Admin::Report.where("company_id = ?", params[:company_id])
-          .paginate :page => params[:page]
+          
     
     elsif params[:project_id].present?
       @reports = Admin::Report.where("project_id = ?", params[:project_id])
-          .paginate :page => params[:page]
+          
     
     else
       
-    @reports = Admin::Report.paginate :page => params[:page]
+    @reports = Admin::Report.order(:created_at)
                 
     end            
 

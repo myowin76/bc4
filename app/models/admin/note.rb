@@ -12,7 +12,8 @@
 #
 
 class Admin::Note < ActiveRecord::Base
-	attr_accessible :note, :type
+	attr_accessible :note, :created_at, :updated_at, :note_source_type,
+				:note_source_id
 	self.table_name = "notes"
 	
 	belongs_to :notable,

@@ -49,6 +49,9 @@ class Admin::Report < ActiveRecord::Base
     # where('user_id = ? AND IS NOT NULL', user.id)
   }
 
+  def report_name
+    "#{company.name} #{report_type.name} #{publish_date.strftime("%Y")}"
+  end
   # to do - pending for publish reports( where containing project is not yet publishd -join project)
   # scope :pending_for_publish -> { }
 

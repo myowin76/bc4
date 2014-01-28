@@ -34,7 +34,11 @@ class Web::Page < ActiveRecord::Base
   has_many :widgets, -> { order('page_widgets.position DESC')}, through: :page_widgets, 
   				:class_name => "Web::Widget"
 
-	scope :top_level, -> {where(:ancestry => nil)}
+	scope :top_level, lambda {where(:ancestry => nil)}
+	scope :sort, lambda {order("web_pages.position ASC")}
+	scope :search, lambda {|query|
+		where(["name LIKE ?", "%#{query}%"])
+	}
 	def to_param
 		url
 	end

@@ -1,41 +1,24 @@
 Bc4::Application.routes.draw do
 
-  namespace :web do
-    resources :widgets
-  end
+  # get "password_resets/new"
+  # get "sessions/create"
+  # get "sessions/destroy"
+  
+  
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+  resources :sessions
+  resources :password_resets
+  resources :users
+  # get '/admin/users/new', to: redirect('/users/sign_up')
+  resources :newsletters
+  match 'subscribe' => 'newsletters#new', via: :get, :as => :subscribe_newsletter
+  # match 'newsletters/subscribe' => 'newsletters#new', via: :get, :as => :subscribe_newsletter
 
   # get "cms_desk/index"
-
-  namespace :admin do
-    resources :report_tags
-  end
-
-  namespace :admin do
-    resources :subscriptions
-  end
-
-  namespace :admin do
-    resources :bctips
-  end
-
-  namespace :admin do
-    resources :commentaries
-  end
-
   # match 'web/cmsdesk' => 'web/pages#index', via: :get, :as => :web_cms
-
-  namespace :web do
-    resources :pages, only: [:index, :new, :create]
-    resources :pages, path: "", except: [:index, :new, :create]
-  end
-
-  resources :users
-
-  match 'subscribe' => 'newsletters#new', via: :get, :as => :subscribe_newsletter
-
-  resources :newsletters
-
-  # match 'newsletters/subscribe' => 'newsletters#new', via: :get, :as => :subscribe_newsletter
 
   get "home/index"
   get "wed/wed/dashboard"
@@ -48,8 +31,6 @@ Bc4::Application.routes.draw do
   # get "wed/consultancy"
   # get "wed/wen"
 
-  # get '/admin/users/new', to: redirect('/users/sign_up')
-
   match 'wed' => 'wed/wed#dashboard', via: :get
   match 'wed/dashboard' => 'wed/wed#dashboard', via: :get, :as => :wed_dashboard
   match 'wed/score-card' => 'wed/wed#score_card', via: :get, :as => :score_card
@@ -61,11 +42,9 @@ Bc4::Application.routes.draw do
   match 'wed/consultancy' => 'wed/wed#consultancy', via: :get, :as => :wed_consultancy
   match 'wed/wen' => 'wed/wed#wen', via: :get, :as => :wed_wen
 
-
   match 'admin' => 'admin/admin#dashboard', via: :get, :as => :admin_dashboard
   match 'admin/advanced-search' => 'admin/admin#advanced_search', via: :get, :as => :admin_advanced_search
   match 'admin/manage-report/:id' => 'admin/reports#manage_report', via: :get, :as => :manage_report
-  
 
   # CMSDESK
   match 'admin/cmsdesk' => 'admin/cms_desk#index', via: :get, :as => :cms_desk
@@ -84,10 +63,16 @@ Bc4::Application.routes.draw do
   match 'wed/search' => 'wed/wed#search', via: :get, :as => :wed_search
   match 'wed/advanced-search' => 'wed/wed#advanced_search', via: :get, :as => :wed_advanced_search
 
-  
+  namespace :web do
+    resources :widgets
+    resources :pages, only: [:index, :new, :create]
+    resources :pages, path: "", except: [:index, :new, :create]
+  end
+
   namespace :admin do
 
-    resources :users
+    resources :users, :roles
+
     resources :companies do
       collection do
         post :best_practice_all
@@ -95,15 +80,16 @@ Bc4::Application.routes.draw do
 
       resources :reports
     end
-    resources :company_types
-    resources :company_statuses
+
+    resources :company_types, :company_statuses, :sectors, :regions, :countries, :subscriptions
     resources :metrics do
       # resources :notes
     end
 
     resources :reports do
-      # resources :notes
+      resources :notes
       resources :metrics
+      resources :screengrabs
 
       collection do
         # get :generate_pdf
@@ -113,27 +99,13 @@ Bc4::Application.routes.draw do
       resources :reports
     end
 
-    resources :company_statuses
-    resources :report_states
-    
-    resources :sectors
-
-    resources :report_types
-    resources :regions
-
-    resources :countries
-
-    resources :roles
-    resources :user#, :controller => "user"
+    resources :report_states, :report_types, :report_tags
+  
+    resources :bctips, :commentaries
 
     resources :best_practices do
       resources :screengrabs  
     end
-
-    resources :reports do
-      resources :screengrabs
-    end
-
   end
 
   
@@ -150,12 +122,12 @@ Bc4::Application.routes.draw do
   # root 'admin/companies#index'
 
 
-  unless Web::Page.find_by_url("home").nil?
-      root 'web/pages#show', :id => Web::Page.find_by_url("home").id
-  else
+  # unless Web::Page.find_by_url("home").nil?
+  #     root 'web/pages#show', :id => Web::Page.find_by_url("home").id
+  # else
 
     root 'web/pages#index'
-  end
+  # end
   # Web::Page.all.each do |page|
   #   get page.url, :controller => 'pages', :action => 'show', :id => page
   # end

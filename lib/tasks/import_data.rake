@@ -5,6 +5,7 @@ namespace :import do
   task :companies => :environment do
 		Admin::Company.delete_all
     CSV.foreach(File.join(Rails.root, 'bin', 'companies.csv')) do |row|
+		
 		  unless row.join.blank?
 			  # cells map
 			  id_cell = row[0]
@@ -17,13 +18,13 @@ namespace :import do
 			  icon_cell = row[7]
 			  logo_cell = row[8]
 			  url_cell = row[9]
-			  # active_cell = row[11]
+			  active_cell = row[10]
 			  renew_date_cell = row[11]
 			  created_cell = row[14]
 			  updated_cell = row[16]
 			  
 			  
- 				Admin::Company.create(
+ 				record = Admin::Company.new(
  					:id => id_cell,
 			  	:company_type_id => type_cell,
 			  	:company_status_id => status_cell,
@@ -34,11 +35,13 @@ namespace :import do
 			  	:icon_file_name => icon_cell,
 			  	:logo_file_name => logo_cell,
 			  	:url => url_cell,
-			  	# :active => address3_cell,
+			  	:active => active_cell,
 			  	:renew_date => renew_date_cell,
 			  	:created_at => created_cell,
 			  	:updated_at => updated_cell
 		  	)
+
+		  	record.save!
 
 			end # one row end
 		end # csv end
@@ -59,6 +62,7 @@ namespace :import do
  				Admin::Country.create(
  					:id => id_cell,
 			  	:name => name_cell,
+			  	:region_id => 1,
 			  	:created_at => created_cell,
 			  	:updated_at => updated_cell
 		  	)
@@ -94,5 +98,70 @@ namespace :import do
 			end # one row end
 		end # csv end
   end # task end
+
+  task :report_notes => :environment do
+		
+		Admin::Note.delete_all
+    CSV.foreach(File.join(Rails.root, 'bin', 'report_notes.csv')) do |row|
+		  unless row.join.blank?
+			  # cells map
+			  id_cell = row[1]
+			  note_cell = row[2]
+			  created_cell = row[4]
+			  updated_cell = row[6]
+			  
+ 				record = Admin::Note.new(
+			  	:note => note_cell,
+			  	:note_source_id => id_cell,
+			  	:note_source_type => 'Admin::Report',
+			  	:created_at => created_cell,
+			  	:updated_at => updated_cell
+		  	)
+		  	record.save!
+
+			end # one row end
+		end # csv end
+  end # task end
+
+
+  task :users => :environment do
+		
+		User.delete_all
+    CSV.foreach(File.join(Rails.root, 'bin', 'users.csv')) do |row|
+		  unless row.join.blank?
+			  # cells map
+			  id_cell = row[1]
+			  username_cell = row[2]
+			  firstname_cell = row[2]
+			  lastname_cell = row[2]
+			  email_cell = row[2]
+			  password_cell = row[2]
+			  confirm_cell = row[2]
+			  role_id_cell = row[2]
+			  company_id_cell = row[2]
+				job_title_cell = row[2]
+			  created_cell = row[4]
+			  updated_cell = row[6]
+			  
+ 				record = User.new(
+			  	:id => id_cell,
+			  	:username => username_cell,
+			  	:email => email_cell,
+			  	:password => password_cell,
+			  	:password_confirmation => confirm_cell,
+			  	:firstname => firstname_cell,
+			  	:lastname => lastname_cell,
+			  	:company_id => company_id_cell,
+			  	:role_id => role_id_cell,
+			  	:job_title => job_title_cell,
+			  	:created_at => created_cell,
+			  	:updated_at => updated_cell
+		  	)
+		  	record.save!
+
+			end # one row end
+		end # csv end
+  end # task end
+
 
 end # namespace end

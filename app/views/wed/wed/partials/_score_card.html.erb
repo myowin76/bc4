@@ -45,8 +45,7 @@
       <div class="title">Metric / Sub metric [max score]</div>
       <div class="my-company">
         <a href="#">
-          <img src="/uploads/companies/icons/8ee7e6c0-3523-98b4-f9ec-5514b6f1dd1e.jpg" alt="" />
-          <%#= image_tag(@company.icon.url(:normal)) %>
+          <%= image_tag(current_user.company.icon.url(:normal)) %>
         </a>
       </div>
       <% @my_peers.each do |my_peer| %>

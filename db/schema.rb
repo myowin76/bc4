@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140123132126) do
+ActiveRecord::Schema.define(version: 20140128105537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20140123132126) do
     t.integer  "country_id"
     t.integer  "reports_count"
     t.integer  "users_count"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "icon_file_name"
@@ -262,6 +263,11 @@ ActiveRecord::Schema.define(version: 20140123132126) do
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
+    t.integer  "role_id"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "users", ["company_id"], name: "index_users_on_company_id", using: :btree
@@ -277,6 +283,9 @@ ActiveRecord::Schema.define(version: 20140123132126) do
     t.text     "body"
     t.string   "ancestry"
     t.integer  "position"
+    t.boolean  "published"
+    t.boolean  "hide_on_nav"
+    t.string   "content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

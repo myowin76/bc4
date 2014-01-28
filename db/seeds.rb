@@ -1,26 +1,42 @@
   #       # Roles
-  #       Admin::Role.delete_all
-  #       Admin::Role.create(id: 1, name: 'Admin', created_at: Time.now)
-  #       Admin::Role.create(id: 2, name: 'Editor', created_at: Time.now)
-  #       Admin::Role.create(id: 3, name: 'Company Super User', created_at: Time.now)
-  #       Admin::Role.create(id: 4, name: 'Company User', created_at: Time.now)
+        Admin::Role.delete_all
+        Admin::Role.create(id: 1, name: 'Administrator', created_at: Time.now)
+        Admin::Role.create(id: 2, name: 'Report Editor', created_at: Time.now)
+        Admin::Role.create(id: 3, name: 'Company Super User', created_at: Time.now)
+        Admin::Role.create(id: 4, name: 'Company User', created_at: Time.now)
 
         # Reports
         Web::Page.delete_all
-        Web::Page.create(id: 1, name: 'Home', page_title: 'Home', 
-            page_intro: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
-            url: '/', body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
-            meta_title: 'Bowen Craggs', meta_desc: 'Bowen Craggs description', meta_keyword: 'Bowen Craggs meta_keyword',
-            position: 0, created_at: Time.now)
 
-        Web::Page.create(id: 1, name: 'About us', page_title: 'About us', 
+        Web::Page.create(id: 1, name: 'Home', page_title: 'We are experts in global online corporate communications. We help you improve the effectiveness of your websites, mobile sites, 
+                social channels and apps.', 
+            page_intro: 'This site is filled with <a href="/our-thinking/presentations-reports/">practical advice</a> and <a href="/our-thinking/ft-bowen-craggs-index-analysis/">deep analysis</a> for online communications professionals. Browse or search Our thinking now.',
+            url: 'home', body: 'Our thinking
+                Insightful commentary, practical analysis and stimulating observation from our expert team led by veteran online commentator David Bowen.
+                Keep up with our latest Commentaries on the corporate web Consult our twice-weekly BC Tips for best practice features',
+            meta_title: 'Bowen Craggs', meta_desc: 'Bowen Craggs description', meta_keyword: 'Bowen Craggs meta_keyword',
+            position: 0, created_at: Time.now
+        )
+
+        Web::Page.create(id: 1, name: 'About us', page_title: 'About Bowen Craggs', 
             page_intro: 'Bowen Craggs & Co is a unique research and consultancy group. Our sole focus is online corporate communications - websites, social media and apps.',
-            url: 'about-us', body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
+            url: 'about-us', body: 'Overview
+              Bowen Craggs & Co helps large organisations maximise the effectiveness of their websites and other online tools, using techniques that we have refined over the past 15 years. Our goal is to help them close the gap between what they are doing online and what they could be doing.
+              We start from the belief that an effective web presence should be aligned with business goals and visitors’ needs. We then help clients bring these closer together through internal, external and expert views that combine deep analysis with actionable recommendations.
+              We are based in London, but have a worldwide client base. We have worked for more than 50 of the biggest global corporations as well as large public sector organisations.
+              We have built up a powerful network of online communications professionals, including managers from more than 400 organisations in 26 countries. We have regular physical meetings, including an annual conference, as well as an online forum.
+              Every year we publish the Financial Times Bowen Craggs Index of corporate online effectiveness, which is established as the most credible ranking of large corporate websites, and provides a deep database of best practice.
+              On this site you will find (in English) coverage of the latest Index as well as a library of pieces written exclusively by David Bowen, our co-founder and a long-standing columnist for the Financial Times and ft.com. and other consultants from the company.',
             meta_title: 'about us', meta_desc: 'about us description', meta_keyword: ' meta_keyword',
             position: 1, created_at: Time.now)
         Web::Page.create(id: 1, name: 'What we do', page_title: 'What we do', 
             page_intro: 'We help organisations turn their online communications into a set of powerful tools that polish their reputation, increase sales, satisfy investors, inform journalists, improve customer service, raise the quality of recruits and much more.',
-            url: 'what-we-do', body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
+            url: 'what-we-do', body: 'Services to improve your online effectiveness
+                Bowen Craggs & Co delivers unique web effectiveness research and consultancy to help you improve the effectiveness of your online channels – websites, social media and relevant developments such as mobile and apps.
+                We provide website benchmarking and analysis, market research, online strategy, measurement and best practice. We do not build websites or other platforms (this means you can rely on the independence of our advice). Deliverables are typically clear documents and management presentations that combine deep analysis with actionable recommendations.
+                We combine advice with the transfer of knowledge to you – so that you can benefit from online communications that are
+                aligned with your company’s overall business vision
+                best in class meet the needs of your customers and other stakeholders.',
             meta_title: '', meta_desc: 'description', meta_keyword: ' meta_keyword',
             position: 2, created_at: Time.now)
         Web::Page.create(id: 1, name: 'FT Bowen Craggs Index', page_title: 'FT Bowen Craggs Index', 
@@ -46,16 +62,12 @@
             url: 'our-five-strengths', 
             body: '1. Global understanding
                 We think globally and act globally. We understand cultural and other issues that affect the corporate communications needs of organisations in different parts of the world. Our working language is English, but we have associates who are fluent in a range of languages.
-
                 2. Independence
                 We do not build websites, manage campaigns, develop content, or sell software. Our only interest is in providing impartial advice.
-
                 3. Expertise
                 We have been analysing commercial and organisational websites since the mid-1990s. Our analysts are experts in both business and the web – we do not use junior staff.
-
                 4. Credibility
                 Our client list and collaboration with the Financial Times speak for themselves. Please ask if you would like to talk to a past or existing client.
-
                 5. Clarity
                 Our founders worked as business journalists and understand that clarity of expression is critical. We avoid jargon and produce reports or presentations in clear language. They can be translated if required.',
             meta_title: '', meta_desc: 'description', meta_keyword: 'meta_keyword',
@@ -180,11 +192,14 @@
 
 
 
-        # # User
-        # User.delete_all
-        # User.create(id: 1, email: 'myowin76@hotmail.com', 
-        #     encrypted_password: '$2a$10$jHlM6q.d9D/GwIDIQK4xQOK.iomzjoR9O1nMjT7IgH5M5VV21kakm',
-        #     created_at: Time.now)
+        # User
+        User.delete_all
+        User.create(id: 1, username: 'myowin76', email: 'myowin76@hotmail.com', 
+            password: 'skyron', password_confirmation: 'skyron', firstname: 'Aung', lastname: 'Win',
+            job_title: 'Web Developer', company_id: 1, role_id: 1, dashboard_alerts: true,
+            created_at: Time.now)
+
+
         # Sectors
         Admin::Sector.delete_all
         Admin::Sector.create(id: 1, name: 'Aerospace & defense', created_at: Time.now)
@@ -231,31 +246,6 @@
         Admin::CompanyType.create(id: 2, name: 'B2C', created_at: Time.now)
         Admin::CompanyType.create(id: 3, name: 'Both', created_at: Time.now)
         Admin::CompanyType.create(id: 4, name: 'Neither', created_at: Time.now)
-
-      
-        # Companies
-        # Admin::Company.delete_all
-        # Admin::Company.create(id: 1, name: 'IBM', url: "http://ibm.com", company_type_id: 1, renew_date: Time.now, 
-        #  sector_id: 2, country_id: 2, reports_count: 0, subscription_id: 1, company_status_id: 1, created_at: Time.now)
-        # Admin::Company.create(id: 2, name: 'ABB', url: "http://abb.com", company_type_id: 2, renew_date: Time.now, 
-        #  sector_id: 3, country_id: 10, reports_count: 0,  subscription_id: 1, company_status_id: 1, created_at: Time.now)
-        # Admin::Company.create(id: 3, name: 'Abbott', url: "http://ibm.com", company_type_id: 3, renew_date: Time.now, 
-        #  sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 2, company_status_id: 2, created_at: Time.now)
-        # Admin::Company.create(id: 4, name: 'Bank of America', url: "http://bankofamerica.com", company_type_id: 3, renew_date: Time.now, 
-        #  sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 3, company_status_id: 1, created_at: Time.now)
-        # Admin::Company.create(id: 5, name: 'ConocoPhillips', url: "http://conoco-phillips.com", company_type_id: 3, renew_date: Time.now, 
-        #  sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 1, company_status_id: 3, created_at: Time.now)
-        # Admin::Company.create(id: 6, name: 'AIG', url: "http://aig.com", company_type_id: 3, renew_date: Time.now, 
-        #  sector_id: 1, country_id: 1, reports_count: 0,  subscription_id: 2, company_status_id: 3, created_at: Time.now)
-        # Admin::Company.create(id: 5, name: 'Allianz', url: "https://www.allianz.com", company_type_id: 3, renew_date: Time.now, 
-        #  sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 3, company_status_id: 2, created_at: Time.now)
-        # Admin::Company.create(id: 6, name: 'Aviva', url: "http://www.aviva.com/", company_type_id: 3, renew_date: Time.now, 
-        #  sector_id: 1, country_id: 1, reports_count: 0,  subscription_id: 1, company_status_id: 2, created_at: Time.now)
-        # Admin::Company.create(id: 5, name: 'Banco Santander', url: "http://www.santander.com", company_type_id: 3, renew_date: Time.now, 
-        #  sector_id: 1, country_id: 5, reports_count: 0,  subscription_id: 3, company_status_id: 1, created_at: Time.now)
-        # Admin::Company.create(id: 6, name: 'Siemens', url: "http://www.siemens.com", company_type_id: 2, renew_date: Time.now, 
-        #  sector_id: 1, country_id: 1, reports_count: 0,  subscription_id: 2, company_status_id: 1, created_at: Time.now)
-    
 
 
         # Projects

@@ -15,12 +15,10 @@
       </div>
       
       <ul class="nav navbar-nav pull-right">
-        <%# if user_signed_in? %>
-        <!--   <li><%#= link_to "My Account", edit_user_registration_path %>My Account</li>
-          <li><%#= link_to "Sign out", destroy_user_session_path, :method => :delete %>Sign In</li>
-        <%# end %>
-        <li><a href="/contact.html"><span>Contact</span></a></li>
-        <li><a href="/advance-search.html"><span>Advance Search</span></a></li> -->
+        
+        <% if current_user %>  
+          <li><%= link_to "Logout", logout_path %></li>
+        <% end %>  
         <li>
           <%= link_to admin_advanced_search_path do %>
             <span>Advanced search</span>
@@ -59,8 +57,8 @@
           <%= link_to "Projects/Reports", admin_projects_path %>
         </li>
         <li>
-          <%#= link_to "Users", users_path %>
-          <a href="#">Users</a>
+          <%= link_to "Users", users_path %>
+          
         </li>
         <li>
           <a href="#">Emails</a>

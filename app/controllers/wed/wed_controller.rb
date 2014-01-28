@@ -7,6 +7,8 @@ class Wed::WedController < ApplicationController
   before_action :get_companies, only: [:results_table, :my_peers, :advanced_search]
   before_action :get_my_peers, only: [:dashboard, :company_profile, :score_card, :progress_chart]
 
+  before_action :authorize
+
   def dashboard
     
 
@@ -41,7 +43,8 @@ class Wed::WedController < ApplicationController
     @latest_report = Admin::Report.last
     # current user's company's all reports
     # @company_reports = Admin::Company.reports
-    @company_reports = Admin::Report.all
+    @company = Admin::Company.first
+    @company_reports = @company.reports.order(:created_at)
 
     @metrics = Admin::Metric.order(:number)
     @first_metric = @metrics.first
@@ -82,7 +85,7 @@ class Wed::WedController < ApplicationController
   def results_table
     @page_title = "Results Table"
     @page_lead = "Lorem itsum Lorem itsum Lorem itsum Lorem itsum Lorem itsum"
-
+    @companies = @companies.limit(10)
     @company_types = Admin::CompanyType.all
     @company_sectors = Admin::Sector.all
     @company_regions = Admin::Region.all

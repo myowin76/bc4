@@ -25,7 +25,7 @@
 
 $(function() {
 
-
+	$('.link_edit').tooltip();
 	$('#rpt-tag').select2();
 	$(".peer-companies").select2();
 
