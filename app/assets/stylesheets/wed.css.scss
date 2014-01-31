@@ -1,5 +1,6 @@
+
 /*
-*= require select2
+* require select2
 */
 // to be remove all
 @import "partials/global/base";
@@ -114,7 +115,7 @@
 			padding: 15px;
 		}
 
-		#peer-companies{
+		#peer-companies , #s2id_peer-companies{
 			width: 300px;
 			float: left;
 		}

@@ -7,6 +7,17 @@
 @import "partials/web/home";
 
 
+.cms-body{
+
+	ul{
+		margin-left: 50px;
+		li{
+			display: list-item;
+			list-style-type: square;
+			margin-bottom: 12px;
+		}
+	}
+}
 
 /*commentaries/bc-tips styles*/
 .commentaries-filter{

@@ -1,19 +1,31 @@
 <%= simple_form_for(@web_widget) do |f| %>
   <%= f.error_notification %>
   
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :theme %>
-    <%= f.input :body %>
-  </div>
-
+  <article>
+    <section>
+      <fieldset>
+        <%= f.input :name %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :theme, collection:  Web::Widget::THEMES, 
+          :input_html => {:class => 'form-control'}, :prompt => 'Choose Theme' %>
+      </fieldset>
+      <fieldset>
+        <%= f.label 'Body' %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :body, :label => false %>
+      </fieldset>
+    </section>
+  </article>
+  
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => 'btn-save pull-right' %>
   </div>
 <% end %>
 
 <% content_for :scripts do %>
   <script type="text/javascript">
-		CKEDITOR.replace( 'q1' );
+		CKEDITOR.replace( 'web_widget_body' );
 	</script>  
 <% end %>

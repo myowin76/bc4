@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: user_peer_companies
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  company_id :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  company_id: 
+
+two:
+  user_id: 
+  company_id: 

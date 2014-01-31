@@ -13,7 +13,6 @@ class Web::PagesController < Web::WebController
   # GET /web/pages/1.json
   def show
 
-    # debugger
     unless @web_page.nil?
       if @web_page.url == "home"
         render layout: "home"

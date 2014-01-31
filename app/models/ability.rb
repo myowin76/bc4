@@ -6,10 +6,20 @@ class Ability
     #
       user ||= User.new # guest user (not logged in)
 
-      if user.admin?
+      if user.is_admin?
         can :manage, :all
-      else
+      elsif user.is_editor?
         can :read, :all
+      elsif user.is_company_usperuser?
+
+      elsif user.is_company_user?
+
+      else
+
+        
+        # can :read, Store do |store|
+        # end
+        # cannot [ :show, :edit ], :photos
       end
     #
     # The first argument to `can` is the action you are giving the user 

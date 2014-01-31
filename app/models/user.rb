@@ -2,20 +2,25 @@
 #
 # Table name: users
 #
-#  id               :integer          not null, primary key
-#  username         :string(255)
-#  email            :string(255)
-#  firstname        :string(255)
-#  lastname         :string(255)
-#  job_title        :string(255)
-#  super_user       :boolean
-#  approver         :boolean
-#  dashboard_alerts :boolean
-#  active           :boolean
-#  deleted          :boolean
-#  company_id       :integer
-#  created_at       :datetime
-#  updated_at       :datetime
+#  id                     :integer          not null, primary key
+#  username               :string(255)
+#  email                  :string(255)
+#  firstname              :string(255)
+#  lastname               :string(255)
+#  job_title              :string(255)
+#  super_user             :boolean
+#  approver               :boolean
+#  dashboard_alerts       :boolean
+#  active                 :boolean
+#  deleted                :boolean
+#  company_id             :integer
+#  created_at             :datetime
+#  updated_at             :datetime
+#  password_digest        :string(255)
+#  role_id                :integer
+#  auth_token             :string(255)
+#  password_reset_token   :string(255)
+#  password_reset_sent_at :datetime
 #
 
 class User < ActiveRecord::Base
@@ -36,6 +41,10 @@ class User < ActiveRecord::Base
 		counter_cache: true
 	# has_and_belongs_to_many :roles, :class_name => 'Admin::Role'
 	belongs_to :role, :class_name => 'Admin::Role'
+	has_many :user_peer_companies, :class_name => "UserPeerCompany"
+  # has_many :companies, through: :user_peer_companies, 
+  				# :class_name => "UserPeerCompany"
+
 
 	has_secure_password
 	# has_many :login_histories
@@ -59,13 +68,16 @@ class User < ActiveRecord::Base
   # def role?(role)
   #     return !!self.roles.find_by_name(role.to_s)
   # end
+  def is_admin?
+  	role.name == 'Administrator'
+  end
 
 	def is_approver?
 		!!self.is_approver
 	end
 	
 	def is_editor?
-		
+		role.name == 'Report Editor'
 	end
 
 	def is_super_user?

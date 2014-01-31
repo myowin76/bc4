@@ -28,5 +28,11 @@ $(function() {
 	$('.link_edit').tooltip();
 	$('#rpt-tag').select2();
 	$(".peer-companies").select2();
+	$(".company-ddl-types").select2();
+
+	$(".company-ddl-statuses").select2();
+	$(".company-ddl-countries").select2();
+	$(".company-ddl-regions").select2();
+	$(".company-ddl-sectors").select2();
 
 })

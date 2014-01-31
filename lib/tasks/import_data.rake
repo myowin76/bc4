@@ -1,6 +1,36 @@
 require 'csv'    
 
 namespace :import do
+
+	
+
+
+	# IMPORT COUNTRIES
+	  task :countries => :environment do
+		
+		Admin::Country.delete_all
+    CSV.foreach(File.join(Rails.root, 'bin', 'countries.csv')) do |row|
+		  unless row.join.blank?
+			  # cells map
+			  id_cell = row[0]
+			  name_cell = row[1]
+			  created_cell = row[3]
+			  updated_cell = row[5]
+			  
+			  
+ 				Admin::Country.create(
+ 					:id => id_cell,
+			  	:name => name_cell,
+			  	:region_id => 1,
+			  	:created_at => created_cell,
+			  	:updated_at => updated_cell
+		  	)
+
+			end # one row end
+		end # csv end
+  end # task end
+
+  # IMPORT COMPANIES
   
   task :companies => :environment do
 		Admin::Company.delete_all
@@ -40,65 +70,138 @@ namespace :import do
 			  	:created_at => created_cell,
 			  	:updated_at => updated_cell
 		  	)
-
 		  	record.save!
-
 			end # one row end
 		end # csv end
   end # task end
 
-  task :countries => :environment do
+
+  # IMPORT USERS
+	  task :users => :environment do
+			
+			User.delete_all
+	    CSV.foreach(File.join(Rails.root, 'bin', 'users.csv')) do |row|
+			  unless row.join.blank?
+				  # cells map
+				  id_cell = row[1]
+				  username_cell = row[2]
+				  firstname_cell = row[2]
+				  lastname_cell = row[2]
+				  email_cell = row[2]
+				  password_cell = row[2]
+				  role_id_cell = row[2]
+				  company_id_cell = row[2]
+					job_title_cell = row[2]
+				  created_cell = row[4]
+				  updated_cell = row[6]
+				  
+	 				record = User.new(
+				  	:id => id_cell,
+				  	:username => username_cell,
+				  	:email => email_cell,
+				  	:password => password_cell,
+				  	:password_confirmation => password_cell,
+				  	:firstname => firstname_cell,
+				  	:lastname => lastname_cell,
+				  	:company_id => company_id_cell,
+				  	:role_id => role_id_cell,
+				  	:job_title => job_title_cell,
+				  	:created_at => created_cell,
+				  	:updated_at => updated_cell
+			  	)
+			  	record.save!
+
+				end # one row end
+			end # csv end
+	  end # task end
+
+
+
+  # IMPORT PROJECTS
+  task :projects => :environment do
 		
-		Admin::Country.delete_all
-    CSV.foreach(File.join(Rails.root, 'bin', 'countries.csv')) do |row|
+		Admin::Project.delete_all
+    CSV.foreach(File.join(Rails.root, 'bin', 'projects.csv')) do |row|
 		  unless row.join.blank?
 			  # cells map
 			  id_cell = row[0]
 			  name_cell = row[1]
-			  created_cell = row[3]
-			  updated_cell = row[5]
+			  publish_date_cell = row[2]
+			  # created_by_cell = row[3]
+			  created_at_cell = row[4]
+			  # updated_by_cell = row[5]
+			  updated_at_cell = row[6]
 			  
 			  
- 				Admin::Country.create(
+ 				Admin::Project.create(
  					:id => id_cell,
 			  	:name => name_cell,
-			  	:region_id => 1,
-			  	:created_at => created_cell,
-			  	:updated_at => updated_cell
-		  	)
-
-			end # one row end
-		end # csv end
-  end # task end
-
-  task :reports => :environment do
-		
-		Admin::Report.delete_all
-    CSV.foreach(File.join(Rails.root, 'bin', 'reports.csv')) do |row|
-		  unless row.join.blank?
-			  # cells map
-			  id_cell = row[0]
-			  company_id_cell = row[2]
-			  report_type_id_cell = row[1]
-			  publish_date_cell = row[7]
-			  created_cell = row[10]
-			  updated_cell = row[12]
-			  
-			  
- 				Admin::Report.create(
- 					:id => id_cell,
-			  	# :name => name_cell,
-			  	:report_type_id => report_type_id_cell,
-			  	:company_id => company_id_cell,
 			  	:publish_date => publish_date_cell,
-			  	:created_at => created_cell,
-			  	:updated_at => updated_cell
+			  	# :created_by => created_cell,
+			  	:created_at => created_at_cell,
+			  	# :updated_by => updated_cell,
+			  	:updated_at => updated_at_cell
 		  	)
 
 			end # one row end
 		end # csv end
   end # task end
 
+
+	# IMPORT COUNTRIES
+		  task :report_types => :environment do
+			
+			Admin::ReportType.delete_all
+	    CSV.foreach(File.join(Rails.root, 'bin', 'report_types.csv'), { :header => true }) do |row|
+			  unless row.join.blank?
+				  # cells map
+				  id_cell = row[10]
+				  name_cell = row[0]
+				  created_cell = row[5]
+				  updated_cell = row[7]
+				  
+				  
+	 				Admin::ReportType.create(
+	 					:id => id_cell,
+				  	:name => name_cell,
+				  	:created_at => created_cell,
+				  	:updated_at => updated_cell
+			  	)
+
+				end # one row end
+			end # csv end
+	  end # task end
+  # IMPORT REPORTS
+    task :reports => :environment do
+                
+      Admin::Report.delete_all
+		    CSV.foreach(File.join(Rails.root, 'bin', 'reports.csv')) do |row|
+		    unless row.join.blank?
+          # cells map
+          id_cell = row[0]
+          company_id_cell = row[2]
+          report_type_id_cell = row[1]
+          publish_date_cell = row[7]
+          created_cell = row[10]
+          updated_cell = row[12]
+          
+          
+          Admin::Report.create(
+            :id => id_cell,
+            # :name => name_cell,
+            :report_type_id => report_type_id_cell,
+            :company_id => company_id_cell,
+            :publish_date => publish_date_cell,
+            :created_at => created_cell,
+            :updated_at => updated_cell
+          )
+
+        end # one row end
+		  end # csv end
+		end # task end
+
+
+  # IMPORT REPORT NOTES
   task :report_notes => :environment do
 		
 		Admin::Note.delete_all
@@ -122,46 +225,5 @@ namespace :import do
 			end # one row end
 		end # csv end
   end # task end
-
-
-  task :users => :environment do
-		
-		User.delete_all
-    CSV.foreach(File.join(Rails.root, 'bin', 'users.csv')) do |row|
-		  unless row.join.blank?
-			  # cells map
-			  id_cell = row[1]
-			  username_cell = row[2]
-			  firstname_cell = row[2]
-			  lastname_cell = row[2]
-			  email_cell = row[2]
-			  password_cell = row[2]
-			  confirm_cell = row[2]
-			  role_id_cell = row[2]
-			  company_id_cell = row[2]
-				job_title_cell = row[2]
-			  created_cell = row[4]
-			  updated_cell = row[6]
-			  
- 				record = User.new(
-			  	:id => id_cell,
-			  	:username => username_cell,
-			  	:email => email_cell,
-			  	:password => password_cell,
-			  	:password_confirmation => confirm_cell,
-			  	:firstname => firstname_cell,
-			  	:lastname => lastname_cell,
-			  	:company_id => company_id_cell,
-			  	:role_id => role_id_cell,
-			  	:job_title => job_title_cell,
-			  	:created_at => created_cell,
-			  	:updated_at => updated_cell
-		  	)
-		  	record.save!
-
-			end # one row end
-		end # csv end
-  end # task end
-
 
 end # namespace end

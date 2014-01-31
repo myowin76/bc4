@@ -4,12 +4,10 @@ class SessionsController < ApplicationController
 
     @page_title = "Login"
     @page_lead = "Welcome to the Bowen Craggs Web Effectiveness Index database.<br />
-          Subscribers to our Web Effectiveness Index database get exclusive access to scores and 
-          commentary for all the companies in the FT Index plus best practice from the top performers. 
-          Pick up incisive granular advice on what to do and how to do it, reduce mistakes, 
-          cut development time - saving you effort and money."
-    @page_body = "If you are not a subscriber find out more about this unique resource or contact us to discuss your needs. Your company need not feature in the Index 
-          for you to use the service; we will review your website and add it to the database when you subscribe."
+          Subscribers to our Web Effectiveness Index database get exclusive access to scores and commentary for all the companies in the FT Index plus best practice from the top performers. 
+          
+          Pick up incisive granular advice on what to do and how to do it, reduce mistakes, cut development time - saving you effort and money."
+    @page_body = "If you are not a subscriber find out more about this unique resource or contact us to discuss your needs. Your company need not feature in the Index for you to use the service; we will review your website and add it to the database when you subscribe."
 		# @user = User.new	
 	end
 

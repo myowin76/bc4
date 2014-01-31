@@ -2,7 +2,7 @@
 	<% unless @web_page.nil? || @web_page.widgets.nil? %>
 		<% @web_page.widgets.each do |widget| %>
 			
-			<div class="widget">
+			<div class="widget <%= widget.theme %> <%= widget.name %>">
 				<section>
 					<%= raw widget.body %>
 				</section>

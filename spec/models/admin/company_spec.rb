@@ -12,6 +12,7 @@
 #  country_id        :integer
 #  reports_count     :integer
 #  users_count       :integer
+#  active            :boolean
 #  created_at        :datetime
 #  updated_at        :datetime
 #  icon_file_name    :string(255)

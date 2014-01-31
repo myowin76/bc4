@@ -1,1 +1,4 @@
-wed.js
+
+$(function(){
+	$('#peer-companies').select2();
+});

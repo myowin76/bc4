@@ -2,7 +2,7 @@
 header{
   .navbar{
     border-bottom: 1px solid silver;
-    padding-bottom: 1.66667em;
+    padding-bottom: 27px;
     margin: 0;
   }
 
@@ -36,7 +36,7 @@ header{
 .main-nav{
 
   @include legacy-pie-clearfix();
-  font-size: 18px;
+  font-size: 19px;
   font-family: $base-font-alt;
   //@include trailer(.5, $base-font-size, margin);
   margin-top: 0.83333em;
@@ -86,6 +86,17 @@ header{
     display: block;
     margin: 0 5px;
     text-align: left;
+
+    &.Web-Effectiveness-database{
+      width: 165px;
+    }
+    &.strategic-consulting{
+      width: 165px;
+    }
+    &.audience-research-and-measurement{
+      width: 165px;
+    }
+
     a{
       color: white;
       font-size: 18px;

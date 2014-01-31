@@ -45,6 +45,7 @@
         <%= f.input :position %>
       </fieldset>
       <fieldset>
+        <label>Sidebar Widgets</label>
         <%= f.collection_select :widget_ids, Web::Widget.order(:name), :id, :name,
            { :class => 'form-control'}, { multiple: true } %>
       </fieldset>

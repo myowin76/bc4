@@ -39,6 +39,37 @@ textarea {
     //font-weight: 600;
     color: $font-color;
   }  
+
+  p{
+    font-size: 15px;
+  }
+
+  .cms-body{
+    h1, h2, h3, h4{
+      margin-top: 0;
+      font-weight: bold;
+      padding: 8px;
+
+      &.underline{
+        border-bottom: 1px solid $silver;
+        padding-left: 0;
+      }
+    }
+
+    p{
+      line-height: 25px;
+      margin-bottom: 15px;
+    }
+
+    ul{
+      margin-left: 50px;
+      li{
+        display: list-item;
+        list-style-type: square;
+        margin-bottom: 12px;
+      }
+    }
+  }
 }
 
 /*

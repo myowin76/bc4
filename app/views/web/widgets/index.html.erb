@@ -1,15 +1,29 @@
 <% content_for :sub_menu do %>
   <%= render "admin/shared/cms_sub_menu" %>
 <% end %>
+<div class="page-header">
+  <h1>Widgets</h1>
+</div>
 
-<h1>Listing web_widgets</h1>
+<div class="well">
+  <section>
+    <div class="table-search">
+      <input type="text" placeholder="search" />
+    </div>
+    
+    <%= link_to new_web_widget_path, :class => 'btn btn-new pull-right' do %>
+      <i></i>
+      New Widget
+    <% end %>
 
-<table>
+  </section>
+</div>
+
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Body</th>
-      <th></th>
+      
       <th></th>
       <th></th>
     </tr>
@@ -18,16 +32,12 @@
   <tbody>
     <% @web_widgets.each do |web_widget| %>
       <tr>
-        <td><%= web_widget.name %></td>
-        <td><%= web_widget.body %></td>
-        <td><%= link_to 'Show', web_widget %></td>
+        <td><%= link_to web_widget.name, web_widget %></td>
+        
+        
         <td><%= link_to 'Edit', edit_web_widget_path(web_widget) %></td>
         <td><%= link_to 'Destroy', web_widget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Widget', new_web_widget_path %>

@@ -13,12 +13,15 @@
 #  body         :text
 #  ancestry     :string(255)
 #  position     :integer
+#  published    :boolean
+#  hide_on_nav  :boolean
+#  content_type :string(255)
 #  created_at   :datetime
 #  updated_at   :datetime
 #
 
 class Web::Page < ActiveRecord::Base
-	attr_accessible :meta_title, :meta_desc, :meta_keyword, :name, :page_title, :page_intro, 
+	attr_accessible :id, :meta_title, :meta_desc, :meta_keyword, :name, :page_title, :page_intro, 
 					:url, :body, :parent_id, :position, :widget_ids
 
 	# act_as_list
@@ -35,6 +38,7 @@ class Web::Page < ActiveRecord::Base
   				:class_name => "Web::Widget"
 
 	scope :top_level, lambda {where(:ancestry => nil)}
+	scope :nav_items, lambda {where(:hide_on_nav => false)}
 	scope :sort, lambda {order("web_pages.position ASC")}
 	scope :search, lambda {|query|
 		where(["name LIKE ?", "%#{query}%"])
@@ -46,6 +50,8 @@ class Web::Page < ActiveRecord::Base
 	def self.home_page
 		where('url = ?', "home")
 	end
+
+	
 	def self.not_home
 		where('url != ?', "home")
 	end

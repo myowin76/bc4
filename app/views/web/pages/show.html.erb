@@ -1,18 +1,16 @@
 <!-- breadcrumb -->
+
 <% content_for :sub_menu do %>
 	<% unless @web_page.root.is_childless? %>
 	  <ul class="sub-nav">
 	    <% @web_page.root.children.order(:position).each do |page| %>
-	    
-	      <li>
+	      <li class="<%= page.url %>">
 	        <span><%= link_to_unless_current page.name, nested_page_path(page) %></span>
 	      </li>
 	    <% end %>
 	  </ul>
 	<% end %> 
 <% end %>
-
-
 
 <% if @web_page.url == 'interactive-results-table' %>
 	
@@ -32,19 +30,34 @@
 
 <% else %>
 
-	<p>
-	  <%= h(simple_format @web_page.body) %>
-	</p>	
+	<div class="cms-body">
+		<%=h raw @web_page.body %>
+	</div>
+	
 
 <% end %>
 
 
-
-<!-- <p>
-  <strong>Position:</strong>
-  <%#	=  @web_page.position %>
-</p> -->
-
+<% if @web_page.has_children? %>
+	<article class="in-this-section">
+		<header>
+			<h3>In this section</h3>
+		</header>
+		<section class="row">
+			<% unless @web_page.root.is_childless? %>
+			  
+			    <% @web_page.root.children.order(:position).each do |page| %>
+			    
+			      <div class="col-sm-6">
+			        <h3><%= link_to_unless_current page.name, nested_page_path(page) %></h3>
+			      </div>
+			      
+			    <% end %>
+			  
+			<% end %>
+		</section>
+	</article>
+<% end %>
 
 <%#= link_to 'Edit', edit_web_page_path(@web_page) %>
 <%= link_to 'Edit', cms_desk_edit_web_page_path(@web_page) %>

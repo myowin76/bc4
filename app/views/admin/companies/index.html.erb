@@ -34,38 +34,35 @@
         <div class="col-sm-2">
           <div class="ddl-type">
             <%= select_tag "", options_from_collection_for_select(@company_types, "id", "name"),
-                 :class => 'form-control', :prompt => "Type" %>
+                 :class => 'company-ddl-types', :prompt => "Type" %>
           </div>
         </div>
 
         <div class="col-sm-2">
           <div class="ddl-sector">
             <%= select_tag "", options_from_collection_for_select(@company_sectors, "id", "name"),
-                 :class => 'form-control', :prompt => "Sector" %>
+                 :class => 'company-ddl-sectors', :prompt => "Sector" %>
           </div>
         </div>
 
         <div class="col-sm-2">
           <div class="ddl-regions">
             <%= select_tag "", options_from_collection_for_select(@company_regions, "id", "name"),
-                 :class => 'form-control', :prompt => "Region" %>
+                 :class => 'company-ddl-regions', :prompt => "Region" %>
           </div>
         </div>
 
         <div class="col-sm-2">
           <div class="ddl-countries">
             <%= select_tag "", options_from_collection_for_select(@company_countries, "id", "name"),
-                 :class => 'form-control', :prompt => "Country" %>
+                 :class => 'company-ddl-countries', :prompt => "Country" %>
           </div>
         </div>
 
         <div class="col-sm-2">
           <div class="ddl-type">
-            <select class="form-control">
-                <option>Status</option>
-                <option>Pdf</option>
-                <option>CSV</option>
-            </select>
+            <%= select_tag "", options_from_collection_for_select(Admin::CompanyStatus.all, "id", "name"),
+                 :class => 'company-ddl-statuses', :prompt => "Status" %>
           </div>
         </div>
       </div>  

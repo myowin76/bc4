@@ -36,10 +36,18 @@ body {
   @include container;
   // @include susy-grid-background; /* Susy */
   >header{
-    @include leader( 1, $base-font-size, margin);
+
+    margin-top: 24px;
     h1{
       font-family: $base-font-alt;
     }  
+  }
+  &.login{
+    width: 960px;
+
+    .container{
+      width: 960px;
+    }
   }
 }
 .main, .container{
@@ -59,11 +67,17 @@ body {
       }
     }
 
+    
 
 
-    .lead{
-      font-family: $base-font;
-      font-size: 15px;
+
+    .lead, .lead p{
+      font-family: $base-font-alt;
+      font-size: 20px;
+      line-height: 28px;
+    
     }
   }  
+
+
 }

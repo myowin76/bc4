@@ -59,9 +59,10 @@ Bc4::Application.routes.draw do
   # match 'wed' => 'pages#index', via: :get, :as => :wed
   match 'wed/company-profile/:id' => 'wed/wed#company_profile', via: :get, :as => :company_profile
   match 'wed/account/my-peers' => 'wed/wed#my_peers', via: :get, :as => :my_peers
-  match 'wed/account/my-account ' => 'wed/wed#my_account', via: :get, :as => :my_account
+  match 'wed/account/my-account' => 'wed/wed#my_account', via: :get, :as => :my_account
   match 'wed/search' => 'wed/wed#search', via: :get, :as => :wed_search
   match 'wed/advanced-search' => 'wed/wed#advanced_search', via: :get, :as => :wed_advanced_search
+  # match 'contact-us' => 'web/pages#show', via: :get, :as => :web_contact_page
 
   namespace :web do
     resources :widgets

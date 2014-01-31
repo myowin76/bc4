@@ -34,14 +34,46 @@ CKEDITOR.stylesSet.add( 'default', [
 	{ name: 'Italic Title',		element: 'h2', styles: { 'font-style': 'italic' } },
 	{ name: 'Subtitle',			element: 'h3', styles: { 'color': '#aaa', 'font-style': 'italic' } },
 	{
-		name: 'Special Container',
+		name: 'Gray Container',
 		element: 'div',
 		styles: {
 			padding: '5px 10px',
-			background: '#eee',
-			border: '1px solid #ccc'
+			background: '#f0f1f1'
 		}
 	},
+	{
+		name: 'Blue Container',
+		element: 'div',
+		styles: {
+			padding: '5px 10px',
+			background: '#8fa5b3'
+		}
+	},
+
+	// bc styles
+	{ name: 'header h2',	element: 'h2', styles: { 'font-family': 'Garamond' } },
+	{ name: 'header h3',	element: 'h3', styles: { 'font-family': 'Garamond' } },
+	{ name: 'section', element: 'header' },
+	// { 
+	// 	name: 'Gray header(h3)',		element: 'h3', 
+	// 	styles: { 
+	// 		'background-color': '#f0f1f1', 
+	// 		'font-family': 'Garamond', 
+	// 		'font-size': '24px;',
+	// 		'padding': '6px' } 
+	// },
+	{ 
+		name: 'Gray header(h3)',		element: 'h3', 
+		styles: { 
+			'background-color': '#f0f1f1', 
+			'font-family': 'Garamond', 
+			'font-size': '24px;',
+			'padding': '6px' } 
+	},
+
+	
+
+	// bc styles end
 
 	/* Inline Styles */
 
@@ -57,8 +89,15 @@ CKEDITOR.stylesSet.add( 'default', [
 	{ name: 'Superscript',		element: 'sup' },
 	*/
 
-	{ name: 'Marker',			element: 'span', attributes: { 'class': 'marker' } },
+	//bc styles
+	
 
+	{ name: 'Marker',	element: 'span', attributes: { 'class': 'marker' } },
+	{ name: 'Button',	element: 'button', attributes: { 'class': 'btn' } },
+	{ 
+		name: 'Header Underline',		element: 'h3', 
+		attributes: { 'class': 'underline' }
+	},
 	{ name: 'Big',				element: 'big' },
 	{ name: 'Small',			element: 'small' },
 	{ name: 'Typewriter',		element: 'tt' },

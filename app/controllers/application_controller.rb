@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
     redirect_to login_url, alert: "Not authorized" if current_user.nil?
   end
 
+  def current_page
+    request.fullpath.split("/").last
+  end
+
   private
 
   def current_user
@@ -16,5 +20,5 @@ class ApplicationController < ActionController::Base
   def authorize
 	  redirect_to login_url, alert: "Not authorized" if current_user.nil?
 	end
-  helper_method :current_user
+  helper_method :current_user, :current_page
 end
