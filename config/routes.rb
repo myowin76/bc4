@@ -27,9 +27,7 @@ Bc4::Application.routes.draw do
   get "wed/peer_comparison"
   get "wed/best_practice"
   get "wed/results_table"
-  # get "wed/company_profile"
-  # get "wed/consultancy"
-  # get "wed/wen"
+  
 
   match 'wed' => 'wed/wed#dashboard', via: :get
   match 'wed/dashboard' => 'wed/wed#dashboard', via: :get, :as => :wed_dashboard
@@ -54,15 +52,11 @@ Bc4::Application.routes.draw do
   match 'admin/cmsdesk/commentaries' => 'admin/commentaries#index', via: :get, :as => :cms_desk_commentaries
   match 'admin/cmsdesk/bctips' => 'admin/bctips#index', via: :get, :as => :cms_desk_bctips
 
-  # match 'admin/cmsdesk/wed' => 'web/pages#index', via: :get, :as => :cms_desk_web_pages
-
-  # match 'wed' => 'pages#index', via: :get, :as => :wed
   match 'wed/company-profile/:id' => 'wed/wed#company_profile', via: :get, :as => :company_profile
   match 'wed/account/my-peers' => 'wed/wed#my_peers', via: :get, :as => :my_peers
   match 'wed/account/my-account' => 'wed/wed#my_account', via: :get, :as => :my_account
   match 'wed/search' => 'wed/wed#search', via: :get, :as => :wed_search
   match 'wed/advanced-search' => 'wed/wed#advanced_search', via: :get, :as => :wed_advanced_search
-  # match 'contact-us' => 'web/pages#show', via: :get, :as => :web_contact_page
 
   namespace :web do
     resources :widgets

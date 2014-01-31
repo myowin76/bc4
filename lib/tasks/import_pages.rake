@@ -322,7 +322,7 @@ namespace :import do
             parent_id: 6,
             position: 3, created_at: Time.now)
 
-        Web::Page.create(id: 25, name: 'Contact us', page_title: 'Contact us', 
+        Web::Page.create(id: 26, name: 'Contact us', page_title: 'Contact us', 
             page_intro: '<p>Bowen Craggs &amp; Co can be contacted in the following ways.</p>',
             url: 'contact-us', body: '
                 <p>For all commercial enquiries:</p>
@@ -359,7 +359,7 @@ namespace :import do
             ',
             meta_title: '', meta_desc: 'description', meta_keyword: 'us meta_keyword', created_at: Time.now)
 
-        Web::Page.create(id: 25, name: 'Privacy & Cookies', page_title: 'Privacy & Cookies', 
+        Web::Page.create(id: 28, name: 'Privacy & Cookies', page_title: 'Privacy & Cookies', 
             page_intro: 'Bowen Craggs & Co facilitates a private group on LinkedIn, the professional networking website, to complement its Web Effectiveness Network. Access is strictly limited to network members. No agencies or consultants are allowed.',
             url: 'privacy-cookies', body: '
                 <h3 style="font-family:garamond,georgia">Privacy &amp; cookies</h3>

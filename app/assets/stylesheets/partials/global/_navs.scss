@@ -50,6 +50,7 @@ header{
     position: relative;
     li{
       float: left;
+      line-height: 22px;
       a{
         display: block;
       }
@@ -109,7 +110,7 @@ header{
     span{
       @include leader(.3, 22px, padding);
       @include trailer(.3, 22px, padding);
-
+      color: white;
       display: block;
       padding-left: 8px;
       padding-right: 8px;

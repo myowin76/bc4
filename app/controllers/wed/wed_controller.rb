@@ -136,7 +136,9 @@ class Wed::WedController < ApplicationController
 
   def my_account
     @page_title = "My Account"
-    @page_lead = "Use the My account tab to update your account details, change your password or amend your e-mail preferences."    
+    @page_lead = "Use the My account tab to update your account details, change your password or amend your e-mail preferences."
+
+    
   end
 
 
