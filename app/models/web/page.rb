@@ -22,7 +22,7 @@
 
 class Web::Page < ActiveRecord::Base
 	attr_accessible :id, :meta_title, :meta_desc, :meta_keyword, :name, :page_title, :page_intro, 
-					:url, :body, :parent_id, :position, :widget_ids
+					:url, :body, :parent_id, :position, :widget_ids, :hide_on_nav
 
 	# act_as_list
 	has_ancestry

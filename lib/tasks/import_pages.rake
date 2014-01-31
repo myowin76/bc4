@@ -9,7 +9,7 @@ namespace :import do
                 Insightful commentary, practical analysis and stimulating observation from our expert team led by veteran online commentator David Bowen.
                 Keep up with our latest Commentaries on the corporate web Consult our twice-weekly BC Tips for best practice features',
             meta_title: 'Bowen Craggs', meta_desc: 'Bowen Craggs description', meta_keyword: 'Bowen Craggs meta_keyword',
-            position: 0, created_at: Time.now
+            hide_on_nav: false, position: 0, created_at: Time.now
         )
 
         Web::Page.create(id: 2, name: 'About us', page_title: 'About Bowen Craggs', 
@@ -25,7 +25,7 @@ namespace :import do
 
             ',
             meta_title: 'What we do', meta_desc: 'about us description', meta_keyword: ' meta_keyword',
-            position: 1, created_at: Time.now)
+            hide_on_nav: false, position: 1, created_at: Time.now)
         Web::Page.create(id: 3, name: 'What we do', page_title: 'What we do', 
             page_intro: 'We help organisations turn their online communications into a set of powerful tools that polish their reputation, increase sales, satisfy investors, inform journalists, improve customer service, raise the quality of recruits and much more.',
             url: 'what-we-do', body: '
@@ -40,7 +40,7 @@ namespace :import do
                 </ul>
             ',
             meta_title: '', meta_desc: 'description', meta_keyword: ' meta_keyword',
-            position: 2, created_at: Time.now)
+            hide_on_nav: false, position: 2, created_at: Time.now)
         Web::Page.create(id: 4, name: 'FT Bowen Craggs Index', page_title: 'FT Bowen Craggs Index', 
             page_intro: 'The Index of corporate online effectiveness is a once-a-year snapshot of how well the world’s largest companies by market capitalisation use their websites, mobile and social channels, and apps to support their business objectives.',
             url: 'ft-bowen-craggs-index', body: '
@@ -51,7 +51,7 @@ namespace :import do
                 <p>The Index is a ranking &ndash; in fact many rankings &ndash; but the real aim is not to stimulate praise, blame or panic among the featured companies or the wider constituency of large organisations with online estates. Its purpose is to show what should be done (and what should not be done) to make a website and a company&rsquo;s other online communication channels as effective as possible.</p>
             ',
             meta_title: '', meta_desc: 'description', meta_keyword: ' meta_keyword',
-            position: 3, created_at: Time.now)
+            hide_on_nav: false, position: 3, created_at: Time.now)
         Web::Page.create(id: 5, name: 'Our thinking', page_title: 'Our thinking', 
             page_intro: 'Insightful commentary, practical analysis and stimulating observation.',
             url: 'our-thinking', body: '
@@ -63,7 +63,7 @@ namespace :import do
                 <p>Here you&rsquo;ll find what are the five &lsquo;cardinal sins&rsquo; of online corporate communications&nbsp; that businesses should&nbsp; resolve to give up; why ExxonMobil appears to be asleep on the web; what&rsquo;s to learn from Google&rsquo;s newsfeed alternative to Twitter; and a gamut of issues from accessibility through reputation management and social media integration&nbsp; to zoomable displays.</p>
             ',
             meta_title: '', meta_desc: 'description', meta_keyword: ' meta_keyword',
-            position: 4, created_at: Time.now)
+            hide_on_nav: false, position: 4, created_at: Time.now)
         Web::Page.create(id: 6, name: 'Events & networking', page_title: 'Events & networking', 
             page_intro: 'We support online communications professionals in drawing on shared ideas and experiences through a variety of exclusive forums.',
             url: 'event-networking', body: '
@@ -74,51 +74,59 @@ namespace :import do
                 <p>We also conduct ad hoc research to enable members to tap into the collective wisdom of the community.</p>
             ',
             meta_title: 'event-networking', meta_desc: ' description', meta_keyword: ' meta_keyword',
-            position: 5, created_at: Time.now)
+            hide_on_nav: false, position: 5, created_at: Time.now)
         
         # subpages
 
         Web::Page.create(id: 7, name: 'Our five strengths', page_title: 'Our five strengths', 
             page_intro: 'Bowen Craggs’ consulting and research services are unique to online corporate communications and rooted in an unparalleled combination of elements that enables us to deliver practical advice to clients worldwide.',
             url: 'our-five-strengths', 
-            body: '1. Global understanding
-                We think globally and act globally. We understand cultural and other issues that affect the corporate communications needs of organisations in different parts of the world. Our working language is English, but we have associates who are fluent in a range of languages.
-                2. Independence
-                We do not build websites, manage campaigns, develop content, or sell software. Our only interest is in providing impartial advice.
-                3. Expertise
-                We have been analysing commercial and organisational websites since the mid-1990s. Our analysts are experts in both business and the web – we do not use junior staff.
-                4. Credibility
-                Our client list and collaboration with the Financial Times speak for themselves. Please ask if you would like to talk to a past or existing client.
-                5. Clarity
-                Our founders worked as business journalists and understand that clarity of expression is critical. We avoid jargon and produce reports or presentations in clear language. They can be translated if required.',
+            body: '
+                <h3 style="font-family:garamond,georgia,serif">1. Global understanding</h3>
+                <p><img alt="placeholder" src="http://placehold.it/100x100" style="margin-right:1em" /></p>
+                <p>Caption for image</p>
+                <p>We think globally and act globally. We understand cultural and other issues that affect the corporate communications needs of organisations in different parts of the world. Our working language is English, but we have associates who are fluent in a range of languages.</p>
+                <h3 style="font-family:garamond,georgia,serif">2. Independence</h3>
+                <p>We do not build websites, manage campaigns, develop content, or sell software. Our only interest is in providing impartial advice.</p>
+                <h3 style="font-family:garamond,georgia,serif">3. Expertise</h3>
+                <p>We have been analysing commercial and organisational websites since the mid-1990s. Our analysts are experts in both business and the web &ndash; we do not use junior staff.</p>
+                <p><img alt="placeholder" src="http://placehold.it/210x150" style="margin-right:1em" />&nbsp;<img alt="placeholder" src="http://placehold.it/210x150" style="margin-right:1em" />&nbsp;<img alt="placeholder" src="http://placehold.it/210x150" style="margin-right:1em" /></p>
+                <p>Caption for image</p>
+                <h3 style="font-family:garamond,georgia,serif">4. Credibility</h3>
+                <p>Our client list and collaboration with the Financial Times speak for themselves. Please ask if you would like to talk to a past or existing client.</p>
+                <p><img alt="placeholder" src="http://placehold.it/660x150" style="margin-right:1em" /></p>
+                <p>Caption for image</p>
+                <h3 style="font-family:garamond,georgia,serif">5. Clarity</h3>
+                <p>Our founders worked as business journalists and understand that clarity of expression is critical. We avoid jargon and produce reports or presentations in clear language. They can be translated if required.</p>
+            ',
             meta_title: '', meta_desc: 'description', meta_keyword: 'meta_keyword',
             parent_id: 2,
-            position: 1, created_at: Time.now)
+            hide_on_nav: false, position: 1, created_at: Time.now)
         Web::Page.create(id: 8, name: 'Q & A', page_title: 'Help me choose', 
             page_intro: 'Discover more about who we are, what we deliver and how we do it.',
             url: 'q-a', body: 'A question-and-answer guide to the essentials The opportunity we offer to improve the effectiveness of your online communications strategies is built on a proven approach, robust methodology and sound return on investment. Naturally, that raises some questions…',
             meta_title: '', meta_desc: 'description', meta_keyword: 'meta_keyword',
             parent_id: 2,
-            position: 2, created_at: Time.now)
+            hide_on_nav: false, position: 2, created_at: Time.now)
         Web::Page.create(id: 9, name: 'Our team', page_title: 'Our team', 
             page_intro: 'Bowen Craggs & Co assembles an unrivalled perspective on the commercial and organisational web.',
             url: 'our-team', body: 'The Bowen Craggs & Co team brings together a unique range of experience and involvement with online corporate communications stretching from the early days of the medium. The team is led by David Bowen, who founded Net Profit in 1996 and has been a long-standing columnist on the business web for the Financial Times and ft.com. Since 2007 the team has been responsible for the annual FT Bowen Craggs Index of corporate online effectiveness, which is established as the most credible overview of corporate online channels.',
             meta_title: '', meta_desc: 'description', meta_keyword: 'meta_keyword',
             parent_id: 2,
-            position: 3, created_at: Time.now)
+            hide_on_nav: false, position: 3, created_at: Time.now)
 
 
         Web::Page.create(id: 10, name: 'Help me choose', page_title: 'Help me choose', 
             page_intro: 'We help organisations turn their online communications into a set of powerful tools that polish their reputation, increase sales, satisfy investors, inform journalists, improve customer service, raise the quality of recruits and much more.',
             url: 'help-me-choose', body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
             meta_title: '', meta_desc: 'description', meta_keyword: 'meta_keyword',
-            parent_id: 3,
+            hide_on_nav: false, parent_id: 3,
             position: 1, created_at: Time.now)
         Web::Page.create(id: 11, name: 'Client case studies', 
             page_title: 'Client case studies', page_intro: 'Many of the world’s largest companies use our advice to shape their online communications strategies. Learn from the featured case studies  how we work with clients from around the world to provide the knowledge and analysis that helps them continuously improve their online channels and strategies to do the jobs they should be doing as well as they could be.',
             url: 'client-case-studies', body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
             meta_title: '', meta_desc: 'description', meta_keyword: 'meta_keyword',
-            parent_id: 3,
+            hide_on_nav: false, parent_id: 3,
             position: 2, created_at: Time.now)
         Web::Page.create(id: 12, name: 'Web Effectiveness database', page_title: 'Web Effectiveness database', 
             page_intro: 'Subscribers to the database get unique access to detailed reports about top companies’ online presence and a set of interactive tools that allows them to interrogate the underlying data.',
@@ -131,7 +139,7 @@ namespace :import do
             <p>As well as providing guidelines for improvement, our review of corporate online effectiveness at this level establishes a &lsquo;performance gap&rsquo; metric-by-metric of how your enterprise performs against a selection of peer companies from a range of sectors and geographies. Social media indicators are woven into our methodology so that companies are credited for their use of social media as part of their communications effort. As such, data is excellent for internal reporting and senior management presentations.&nbsp;</p>
             ',
             meta_title: '', meta_desc: ' description', meta_keyword: 'meta_keyword',
-            parent_id: 3,
+            hide_on_nav: false, parent_id: 3,
             position: 3, created_at: Time.now)
         Web::Page.create(id: 13, name: 'Strategic consulting', page_title: 'Strategic consulting', 
             page_intro: 'We are called in by clients to help formulate strategy at the four pivotal points in the lifecycle of a corporate web presence.',
@@ -176,7 +184,7 @@ namespace :import do
 
             ',
             meta_title: '', meta_desc: 'description', meta_keyword: 'meta_keyword',
-            parent_id: 3,
+            hide_on_nav: false, parent_id: 3,
             position: 4, created_at: Time.now)
         Web::Page.create(id: 14, name: 'Audience research and measurement', page_title: 'Audience research and measurement', 
             page_intro: 'Do you know who visits your website, what expectations they arrive with or what they do there? AND where that puts you against your peers?',
@@ -195,7 +203,7 @@ namespace :import do
             ',
             meta_title: '', meta_desc: 'description', meta_keyword: 'meta_keyword',
             parent_id: 3,
-            position: 5, created_at: Time.now)
+            hide_on_nav: false, position: 5, created_at: Time.now)
 
         Web::Page.create(id: 15, name: 'Trends', page_title: 'Trends 2013', 
             page_intro: 'The biggest corporations in the world are taking a new interest in online communications thanks to the latest commercial \'must have\': a mobile web strategy.',
@@ -207,7 +215,7 @@ namespace :import do
             url: 'interactive-results-table', body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
             meta_title: 'Interactive Result Table', meta_desc: 'description', meta_keyword: 'meta_keyword',
             parent_id: 4,
-            position: 2, created_at: Time.now)
+            hide_on_nav: false, position: 2, created_at: Time.now)
 
         Web::Page.create(id: 17, name: 'FAQ & methodology', page_title: 'FAQ & methodology', 
             page_intro: 'The FT Bowen Craggs Index is produced using a unique report-based methodology developed to assess corporate online effectiveness and covering web estates along with their associated social media channels, mobile sites and apps.',
@@ -234,7 +242,7 @@ namespace :import do
             page_intro: 'The FT Bowen Craggs Index is produced using a unique report-based methodology developed to assess corporate online effectiveness and covering web estates along with their associated social media channels, mobile sites and apps.',
             url: 'downloads', body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
             meta_title: 'Downloads', meta_desc: 'downloadsdescription', meta_keyword: 'meta_keyword',
-            parent_id: 4,
+            hide_on_nav: false, parent_id: 4,
             position: 4, created_at: Time.now)
 
 
@@ -242,25 +250,25 @@ namespace :import do
             page_intro: 'Insights into the corporate web from our veteran Financial Times contributor David Bowen and senior analyst Scott Payton.',
             url: 'commentaries', body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
             meta_title: 'Commentaries', meta_desc: 'description', meta_keyword: 'meta_keyword',
-            parent_id: 5,
+            hide_on_nav: false, parent_id: 5,
             position: 1, created_at: Time.now)
         Web::Page.create(id: 20, name: 'BC Tips', page_title: 'BC Tips', 
             page_intro: 'Best (and worst) practice ‘snapshots’ from around the web, with our unique evaluation of their significance and value to online professionals',
             url: 'bc-tips', body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
             meta_title: 'BC Tips', meta_desc: 'description', meta_keyword: 'meta_keyword',
-            parent_id: 5,
+            hide_on_nav: false, parent_id: 5,
             position: 2, created_at: Time.now)
         Web::Page.create(id: 21, name: 'Presentations and reports', page_title: 'Presentations and reports', 
             page_intro: 'Topic-related content from the Web Effectiveness conference series, ad hoc research for the Web Effectiveness Network and more.',
             url: 'presentations-and-reports', body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
             meta_title: 'Presentations and reports', meta_desc: 'description', meta_keyword: 'meta_keyword',
-            parent_id: 5,
+            hide_on_nav: false, parent_id: 5,
             position: 3, created_at: Time.now)
         Web::Page.create(id: 22, name: 'FT-Bowen-Craggs-Index-analysis', page_title: 'FT-Bowen-Craggs-Index-analysis', 
             page_intro: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
             url: 'bc-tips', body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
             meta_title: 'BC Tips', meta_desc: 'description', meta_keyword: 'meta_keyword',
-            parent_id: 5,
+            hide_on_nav: false, parent_id: 5,
             position: 5, created_at: Time.now)
 
         Web::Page.create(id: 23, name: 'Network group', page_title: 'Network group', 
@@ -287,7 +295,7 @@ namespace :import do
                 <p>There is no cost to join but membership is subject to acceptance. Applicants must be senior industry professionals working for large corporate or public sector/ non-governmental organisations. Members agree to their being made known to fellow and prospective members.</p>
 ',
             meta_title: '', meta_desc: 'description', meta_keyword: 'meta_keyword',
-            parent_id: 6,
+            hide_on_nav: false, parent_id: 6,
             position: 1, created_at: Time.now)
         Web::Page.create(id: 24, name: 'Conferences', page_title: 'Conferences', 
             page_intro: 'Bowen Craggs’ annual Web Effectiveness Conference has established itself as a go-to fixture in the corporate communications calendar since the inaugural event in 2008 and is now complemented by regional events.',
@@ -307,7 +315,7 @@ namespace :import do
                 <p><strong>No sponsors or exhibitors means you can relax and talk freely.</strong></p>
             ',
             meta_title: '', meta_desc: 'description', meta_keyword: 'meta_keyword',
-            parent_id: 6,
+            hide_on_nav: false, parent_id: 6,
             position: 2, created_at: Time.now)
         Web::Page.create(id: 25, name: 'LinkedIn group', page_title: 'LinkedIn group', 
             page_intro: 'Bowen Craggs & Co facilitates a private group on LinkedIn, the professional networking website, to complement its Web Effectiveness Network. Access is strictly limited to network members. No agencies or consultants are allowed.',
@@ -319,7 +327,7 @@ namespace :import do
                 <p>Please apply to join the LinkedIn group if you want to make and maintain key business relationships with other corporate website professionals.</p>
             ',
             meta_title: '', meta_desc: 'description', meta_keyword: 'us meta_keyword',
-            parent_id: 6,
+            hide_on_nav: false, parent_id: 6,
             position: 3, created_at: Time.now)
 
         Web::Page.create(id: 26, name: 'Contact us', page_title: 'Contact us', 

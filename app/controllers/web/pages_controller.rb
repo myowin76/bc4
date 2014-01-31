@@ -89,7 +89,7 @@ class Web::PagesController < Web::WebController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def web_page_params
-      params.require(:web_page).permit(:meta_title, :meta_desc, :meta_keyword, :name, :page_title, 
+      params.require(:web_page).permit(:meta_title, :meta_desc, :meta_keyword, :name, :page_title, :hide_on_nav,
         :page_intro, :url, :body, :parent_id, :position, widget_ids: [])
     end
 end
