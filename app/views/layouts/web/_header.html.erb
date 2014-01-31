@@ -37,10 +37,15 @@
   <nav class="main-nav web" role="main">
     <ul id="main-navigation">
       <% Web::Page.not_home.nav_items.roots.order(:position).each do |page| %>
-          <li class=<%= page.url %>>
+        <% if @web_page.url == page.url %>
+          <li class= "active <%= page.url %>">
             <%=link_to h(page.name), page_path(page.url), class: ("active" if page.root == page) %>
           </li>
-
+        <% else %>
+          <li class= <%= page.url %>>
+            <%=link_to h(page.name), page_path(page.url), class: ("active" if page.root == page) %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
 

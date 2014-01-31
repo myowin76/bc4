@@ -54,7 +54,21 @@ header{
       a{
         display: block;
       }
+      &.active{
+        &:after{
+          content: "";
+          display: block;
+          float: left;
+          border-top: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-bottom: 10px solid #8fa5b3;
+          border-left: 10px solid transparent;
+          position: absolute;
+        }  
+      }
+      
     }
+
   }
 
   li{
