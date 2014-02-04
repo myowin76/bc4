@@ -138,7 +138,8 @@ class Wed::WedController < ApplicationController
     @page_title = "My Account"
     @page_lead = "Use the My account tab to update your account details, change your password or amend your e-mail preferences."
 
-    
+    # user changed information to do
+    debugger
   end
 
 

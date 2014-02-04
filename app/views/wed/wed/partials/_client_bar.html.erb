@@ -4,8 +4,10 @@
 	</figure>
 	<section>
 		<p> Welcome 
-			<%= current_user.lastname if current_user.lastname.present? %>, 
-			<%= current_user.firstname if current_user.firstname.present?%>
+			<%= link_to my_account_path do %>
+				<%= current_user.lastname if current_user.lastname.present? %>, 
+				<%= current_user.firstname if current_user.firstname.present?%>
+			<% end %>
 		</p>
 		<p><strong>Latest report score :</strong>177/280 (previous: 162/280)</p>
 		<p><strong>Current rank: </strong>3</p>

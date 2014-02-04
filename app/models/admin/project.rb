@@ -14,7 +14,7 @@
 #
 
 class Admin::Project < ActiveRecord::Base
-	attr_accessible :name, :publish_date, :ft_index, :in_result_table, :can_compare, :reports_count
+	attr_accessible :id, :name, :publish_date, :ft_index, :in_result_table, :can_compare, :reports_count
 
 	self.table_name = "projects"
 	

@@ -49,8 +49,18 @@ class Admin::Report < ActiveRecord::Base
     # where('user_id = ? AND IS NOT NULL', user.id)
   }
 
+
+  # TO do
+  # scope - reports awaiting approvals
+  # scopt - reports assigned to me
+
+
   def report_name
+    unless publish_date.nil?
     "#{company.name} #{report_type.name} #{publish_date.strftime("%Y")}"
+    else
+      "#{company.name} #{report_type.name}"
+    end
   end
   # to do - pending for publish reports( where containing project is not yet publishd -join project)
   # scope :pending_for_publish -> { }

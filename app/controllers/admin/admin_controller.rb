@@ -9,7 +9,8 @@ class Admin::AdminController < ApplicationController
 
   def dashboard
     # render "admin/dashboard"
-    @assigned_reports = Admin::Report.order(:created_at).limit(5)    
+    @assigned_reports = Admin::Report.order(:created_at) 
+
   end
 
 
@@ -30,6 +31,5 @@ class Admin::AdminController < ApplicationController
 
   
   protected
-
 
 end

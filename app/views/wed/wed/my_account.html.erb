@@ -7,5 +7,51 @@
   </li>
 </ul>
 
-<%= current_user.username %><br>
-TO DO: USER ACCOUNT EDIT FORM
+
+
+<%= form_tag(my_account_path, method: :post, :class => 'wed_user_update') do %>
+
+	<article>
+		<section>
+			<fieldset>
+				<label>Username</label>
+				<label><%= current_user.username %></label>
+			</fieldset>
+			<fieldset>
+				<label>First Name</label>
+				<%= text_field_tag 'firstname' %>
+			</fieldset>
+			<fieldset>
+				<label>Last Name</label>
+				<%= text_field_tag 'lastname' %>
+			</fieldset>
+			<fieldset>
+				<label>Email</label>
+				<%= text_field_tag 'email' %>
+			</fieldset>
+			<fieldset>
+				<label>Job Title</label>
+				<%= text_field_tag 'job_title' %>
+			</fieldset>
+
+			<hr>
+			<fieldset>
+				<label>Current Password</label>
+				<%= text_field_tag 'current_password' %>
+			</fieldset>
+
+			<fieldset>
+				<label>New Password</label>
+				<%= text_field_tag 'new_password' %>
+			</fieldset>
+
+			<fieldset>
+				<label>Confirm Password</label>
+				<%= text_field_tag 'confirm_password' %>
+			</fieldset>
+
+		</section>
+	</article>
+
+	<%= submit_tag 'Update', :class => 'btn-save pull-right' %>
+<% end %>
