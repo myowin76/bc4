@@ -134,12 +134,40 @@ class Wed::WedController < ApplicationController
     @my_peers = Admin::Company.order(:name).limit(10)
   end
 
+  def my_account_update
+    if current_user
+      debugger
+      current_user.firstname = params[:firstname]
+      current_user.lastname = params[:lastname]
+      current_user.email = params[:email]
+      current_user.job_title = params[:job_title]
+
+      # if no password entered , need to skip password field
+      if params[:current_password].present?
+        if current_user.authenticate(params[:password])
+          current_user.password = params[:new_password]
+          current_user.confirm_password = params[:confirm_password]
+        end  
+      end 
+
+      if current_user.save
+        format.html { redirect_to my_account_url, notice: 'User Information updated' }
+      else
+        
+        flash.now.alert = "Please Check inputs"
+        render "new"
+
+      end
+    end
+  end
+
   def my_account
     @page_title = "My Account"
     @page_lead = "Use the My account tab to update your account details, change your password or amend your e-mail preferences."
 
-    # user changed information to do
-    debugger
+
+    
+    
   end
 
 
@@ -150,6 +178,7 @@ class Wed::WedController < ApplicationController
 
   def advanced_search
     @page_title = "Advanced Search"
+    
 
     render layout: 'wed/two_column'
 

@@ -57,7 +57,7 @@ class Admin::Report < ActiveRecord::Base
 
   def report_name
     unless publish_date.nil?
-    "#{company.name} #{report_type.name} #{publish_date.strftime("%Y")}"
+      "#{company.name} #{report_type.name} #{publish_date.strftime("%Y")}"
     else
       "#{company.name} #{report_type.name}"
     end

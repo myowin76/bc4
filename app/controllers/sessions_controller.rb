@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
   def create
 
-    user = User.find_by_email(params[:email])
+    user = User.find_by_username_or_email(params[:login_input])
     
     if user && user.authenticate(params[:password])
       
@@ -41,7 +41,7 @@ class SessionsController < ApplicationController
 
   def destroy
 	  cookies.delete(:auth_token)
-    redirect_to root_url, :notice => "Logged out!"
+    redirect_to login_path, :notice => "Logged out!"
 	end
 
 end

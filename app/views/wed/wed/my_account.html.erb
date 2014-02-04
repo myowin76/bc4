@@ -9,7 +9,7 @@
 
 
 
-<%= form_tag(my_account_path, method: :post, :class => 'wed_user_update') do %>
+<%= form_tag(my_account_update_path, method: :post, :id => 'wed_userupdate_form') do %>
 
 	<article>
 		<section>
@@ -37,17 +37,17 @@
 			<hr>
 			<fieldset>
 				<label>Current Password</label>
-				<%= text_field_tag 'current_password' %>
+				<%= password_field_tag 'current_password' %>
 			</fieldset>
 
 			<fieldset>
 				<label>New Password</label>
-				<%= text_field_tag 'new_password' %>
+				<%= password_field_tag 'new_password' %>
 			</fieldset>
 
 			<fieldset>
 				<label>Confirm Password</label>
-				<%= text_field_tag 'confirm_password' %>
+				<%= password_field_tag 'confirm_password' %>
 			</fieldset>
 
 		</section>

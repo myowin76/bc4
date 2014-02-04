@@ -7,7 +7,7 @@
 			<%= @latest_report.report_name %>
 		</div>
 		<div class="ddl-reports">
-			<%= select_tag "company_reports_select", options_from_collection_for_select(@company_reports, "id", "name"), :class => 'pull-right form-control' %>
+			<%= select_tag "company_reports_select", options_from_collection_for_select(@company_reports, "id", "report_name"), :class => 'pull-right form-control' %>
 		</div>
 		
 	</section>

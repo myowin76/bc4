@@ -52,6 +52,10 @@ class User < ActiveRecord::Base
 	before_create { generate_token(:auth_token) }
 
 	
+	def self.find_by_username_or_email(option)
+	    where("username =? OR email =?", option, option).first
+	end
+
 	def send_password_reset
 	  generate_token(:password_reset_token)
 	  self.password_reset_sent_at = Time.zone.now
