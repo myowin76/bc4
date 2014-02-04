@@ -4,7 +4,7 @@
     width: $width;
     margin-left: 1.5%; /* to justify the nav horizontally */
     &.active:after{
-      left: 5%;
+      left: 7.5%;
     }
   }
   .what-we-do{
@@ -18,21 +18,21 @@
     $width : ((254 - 1) / 965) * 100%;
     width: $width;
     &.active:after{
-      left: 35%;
+      left: 44%;
     }
   }
   .our-thinking{
     $width : ((157 - 1) / 965) * 100%;
     width: $width;
     &.active:after{
-      left: 60%;
+      left: 65.5%;
     }
   }
   .event-networking{
     $width : ((258 - 1) / 965) * 100% - 4%; /* to justify the nav horizontally */
     width: $width;
     &.active:after{
-      left: 80%;
+      left: 85%;
     }
   }
 }

@@ -31,6 +31,21 @@ header{
   @include legacy-pie-clearfix();
   padding-bottom: 0.83333em;
   border-bottom: 1px solid silver;
+
+  li{
+    &.active{
+      &:after{
+        content: "";
+        display: block;
+        float: left;
+        border-top: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #8fa5b3;
+        border-left: 10px solid transparent;
+        position: absolute;
+      }  
+    }
+  }
 }
 
 .main-nav{
@@ -54,18 +69,7 @@ header{
       a{
         display: block;
       }
-      &.active{
-        &:after{
-          content: "";
-          display: block;
-          float: left;
-          border-top: 10px solid transparent;
-          border-right: 10px solid transparent;
-          border-bottom: 10px solid #8fa5b3;
-          border-left: 10px solid transparent;
-          position: absolute;
-        }  
-      }
+      
       
     }
 
@@ -141,6 +145,12 @@ header{
       margin-left: -5px;
       border-left: 1px solid $col-line-gray;
     }
+
+    &.active{
+      background-color: #688495;
+    }
+      
+    
     &:first-child:before{
       border-left: 0;
     }
