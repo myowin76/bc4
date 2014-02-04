@@ -125,7 +125,12 @@
             <%= report.publish_date.strftime("%Y") unless report.publish_date.nil? %>
           <% end %>
         </td>
-        <td><%= report.project.name unless report.project.nil? %></td>
+        <td>
+          <%  unless report.project.nil? %>
+            <%= link_to report.project.name, edit_admin_project_path(report.project) %>
+          <%# else %>
+          <% end %>
+        </td>
         <td><%= report.company.name unless report.company.nil? %></td>
         <td>
           <%= link_to 'Edit', manage_report_path(report), {:class => 'link_edit',

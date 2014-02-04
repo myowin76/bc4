@@ -24,8 +24,6 @@ class SessionsController < ApplicationController
       end
 
       # add login details to login history table
-      # if user is admin - redirect to admin panel
-      # if user is company user - redirect to wed panel
 
       if (user.role.name == 'Administrator')
         redirect_to admin_dashboard_path, :notice => "Logged in!"
