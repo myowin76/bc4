@@ -27,41 +27,89 @@
   </article>      
   <article>
     <section>
+
       <header>
         <h4>Reports</h4>
       </header>
-      
+
+      <div action="/admin/reports" method="post" class="test" id="project-new-report-form">
+        <fieldset>
+          <label>Company</label>
+          <div class="col-sm-4">
+            <%= select_tag "project-new-report-companies", options_from_collection_for_select(Admin::Company.order(:name), "id", "name"),
+             :prompt => "Companies" %>
+          </div>
+        </fieldset>
+        <fieldset>
+          <label>Report Type</label>
+          <div class="col-sm-4">
+            <%= select_tag "project-new-report-type", options_from_collection_for_select(Admin::ReportType.order(:name), "id", "name"),
+             :prompt => "Report Type" %>
+          </div>
+        </fieldset>
+        <fieldset>
+          <label>Assigned To</label>
+        </fieldset>
+        <fieldset>  
+          <label>Report Title</label>
+          <div class="col-sm-4">
+            <%= text_field_tag "project-new-report-title" %>
+          </div>
+        </fieldset>
+      </div>
+    </section>
+    <div class="form-actions">
+      <%= link_to "#", :class => 'btn btn-new pull-right', :id => 'project-add-report' do %>
+        <i></i>Add Report
+      <% end %>
+
+      <%#= link_to_add_report "#", f do %>
+        <!-- <i></i>Add Report -->
+      <%# end %>      
+    </div>
+  </article>
+  <article>
+    <section>
       <!-- new report form -->
 
+      <!-- new report form end -->
+      <div id="project-report-listview">
+        <table class="table" id="company_index">
+          <thead>
+            <tr>
+              <th>Report Title</th>
+              <th>Created on</th>
+              <th>Status</th>
+              <th></th>
+              <th>Updated on</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= f.fields_for :reports do |r| %>
+              <tr>
+                <td><%= r.input :name, :label => false %></td>
+                <td><%= r.object.created_at.strftime("%d/%m/%Y") %></td>
+                <td><%= r.object.report_state.name unless r.object.report_state.nil? %></td>
+                <td></td>
+                <td><%= r.object.updated_at.strftime("%d/%m/%Y") %></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
 
-      <%= f.fields_for :reports do |r| %>
-        <fieldset>
-          <%#= r.association :company %>
-        </fieldset>  
-        <fieldset>
-          <%#= r.input :name %>
-        </fieldset>
-        <!-- <fieldset>
-          add user/editors  
-        </fieldset> -->
-        
-        <fieldset>
-        <%= r.input :report_name, :label => false %>
-        </fieldset>
-        <fieldset>
-          <%= r.object.created_at.strftime("%d/%m/%Y") %>
-        </fieldset>
-        <fieldset>
-          <%= r.object.updated_at.strftime("%d/%m/%Y") %>
-        </fieldset>
-        <fieldset>
-          <%= r.object.status.name %>
-        </fieldset>
-      <% end %>
     </section>
   </article>
-    <div class="form-actions">
-      <%= f.button :submit, :class => 'btn-save pull-right' %>
-    </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save", :class => 'btn-save pull-right' %>
+    <a href="#" id="project-revert" class="btn pull-right">Revert</a>
+  </div>
 
 <% end %>

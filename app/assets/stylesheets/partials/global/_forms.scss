@@ -53,12 +53,19 @@
           }
         }  
       }
-        
-
     }
+    
     
   }
 
+  .form-actions{
+      @include clearfix;
+      &:before{
+        content: "";
+        clear: both;
+      }
+    }
+    
   fieldset{
   	border: 0;
   	margin: 0;

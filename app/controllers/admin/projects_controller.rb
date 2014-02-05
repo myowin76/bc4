@@ -20,6 +20,7 @@ class Admin::ProjectsController < Admin::AdminController
 
   # GET /projects/1/edit
   def edit
+
   end
 
   # POST /projects
@@ -70,6 +71,9 @@ class Admin::ProjectsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :publish_date, :ft_index, :in_result_table, :can_compare, :reports_count)
+      debugger
+      params.require(:admin_project).permit(:name, :publish_date, :ft_index, :in_result_table, :can_compare, :reports_count,
+        reports_attributes: []
+        )
     end
 end

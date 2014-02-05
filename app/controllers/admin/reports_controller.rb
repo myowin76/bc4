@@ -45,7 +45,9 @@ class Admin::ReportsController < Admin::AdminController
 
   # GET /reports/new
   def new
-    @report = Admin::Report.new
+
+    debugger
+    # @report = Admin::Report.new
   end
 
   # GET /reports/1/edit
