@@ -27,6 +27,8 @@ class Admin::Report < ActiveRecord::Base
   	counter_cache: true
   belongs_to :report_type, 
     :class_name => "Admin::ReportType"
+  belongs_to :report_state,
+    :class_name => 'Admin::ReportState'
   belongs_to :approver,
     :class_name => "User"
   has_many :metrics,

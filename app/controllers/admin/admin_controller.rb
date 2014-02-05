@@ -13,7 +13,6 @@ class Admin::AdminController < ApplicationController
 
   end
 
-
   def advanced_search
     
     # render "admin/advanced_search"

@@ -13,4 +13,6 @@ class Admin::ReportState < ActiveRecord::Base
 
 	attr_accessible :name, :code
 	self.table_name = "report_states"
+
+	has_many :reports, :class_name => 'Admin::Report'
 end

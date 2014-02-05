@@ -34,5 +34,5 @@ $(function() {
 	$(".company-ddl-countries").select2();
 	$(".company-ddl-regions").select2();
 	$(".company-ddl-sectors").select2();
-
+	$(".admin_project_reports_company select").select2();
 })

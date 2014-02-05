@@ -14,11 +14,13 @@
 #
 
 class Admin::Project < ActiveRecord::Base
-	attr_accessible :id, :name, :publish_date, :ft_index, :in_result_table, :can_compare, :reports_count
+	attr_accessible :id, :name, :publish_date, :ft_index, :in_result_table, :can_compare, :reports_count,
+						:reports_attributes
 
 	self.table_name = "projects"
 	
 	has_many :reports
+	accepts_nested_attributes_for :reports, allow_destroy: true
 	
 
 	scope :recent_projects, -> { order ('created_at desc').limit(10)}

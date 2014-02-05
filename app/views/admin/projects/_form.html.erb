@@ -25,7 +25,41 @@
       </fieldset>
     </section>
   </article>      
+  <article>
+    <section>
+      <header>
+        <h4>Reports</h4>
+      </header>
+      
+      <!-- new report form -->
 
+
+      <%= f.fields_for :reports do |r| %>
+        <fieldset>
+          <%#= r.association :company %>
+        </fieldset>  
+        <fieldset>
+          <%#= r.input :name %>
+        </fieldset>
+        <!-- <fieldset>
+          add user/editors  
+        </fieldset> -->
+        
+        <fieldset>
+        <%= r.input :report_name, :label => false %>
+        </fieldset>
+        <fieldset>
+          <%= r.object.created_at.strftime("%d/%m/%Y") %>
+        </fieldset>
+        <fieldset>
+          <%= r.object.updated_at.strftime("%d/%m/%Y") %>
+        </fieldset>
+        <fieldset>
+          <%= r.object.status.name %>
+        </fieldset>
+      <% end %>
+    </section>
+  </article>
     <div class="form-actions">
       <%= f.button :submit, :class => 'btn-save pull-right' %>
     </div>
