@@ -1,7 +1,9 @@
 <div class="page-header">
   <h1>Emails</h1>
+  <%= link_to new_admin_system_email_path, :class => 'btn-new' do %>
+    <i></i>New email
+  <% end %>
 </div>
-
 
 <table class="table">
   <thead>
@@ -30,7 +32,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New System email', new_admin_system_email_path %>

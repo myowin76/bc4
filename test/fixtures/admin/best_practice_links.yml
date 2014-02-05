@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  best_practice_id: 
+  caption: MyString
+  created_by: 2014-02-05 17:51:24
+  updated_by: 2014-02-05 17:51:24
+
+two:
+  best_practice_id: 
+  caption: MyString
+  created_by: 2014-02-05 17:51:24
+  updated_by: 2014-02-05 17:51:24

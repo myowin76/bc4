@@ -16,6 +16,7 @@ class Admin::BestPractice < ActiveRecord::Base
 
   belongs_to :company
   has_many :screengrabs, as: :source
+  has_many :best_practice_links, :class_name => 'Admin::BestPracticeLink'
 
   accepts_nested_attributes_for :screengrabs, :allow_destroy => true
 end
