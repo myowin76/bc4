@@ -42,6 +42,8 @@ class User < ActiveRecord::Base
 	# has_and_belongs_to_many :roles, :class_name => 'Admin::Role'
 	belongs_to :role, :class_name => 'Admin::Role'
 	has_many :user_peer_companies, :class_name => "UserPeerCompany"
+
+	has_many :login_histories
   # has_many :companies, through: :user_peer_companies, 
   				# :class_name => "UserPeerCompany"
 
