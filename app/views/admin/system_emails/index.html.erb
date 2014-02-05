@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>Emails</h1>
+</div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>From</th>
+      <th>Subject</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_system_emails.each do |admin_system_email| %>
+      <tr>
+        <td><%= admin_system_email.name %></td>
+        <td><%= admin_system_email.from %></td>
+        <td><%= admin_system_email.subject %></td>
+        <td><%= admin_system_email.body %></td>
+        <td><%= link_to 'Show', admin_system_email %></td>
+        <td><%= link_to 'Edit', edit_admin_system_email_path(admin_system_email) %></td>
+        <td><%= link_to 'Destroy', admin_system_email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New System email', new_admin_system_email_path %>

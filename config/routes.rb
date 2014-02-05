@@ -1,5 +1,7 @@
 Bc4::Application.routes.draw do
 
+ 
+
   # get "password_resets/new"
   # get "sessions/create"
   # get "sessions/destroy"
@@ -43,6 +45,7 @@ Bc4::Application.routes.draw do
   match 'admin' => 'admin/admin#dashboard', via: :get, :as => :admin_dashboard
   match 'admin/advanced-search' => 'admin/admin#advanced_search', via: :get, :as => :admin_advanced_search
   match 'admin/manage-report/:id' => 'admin/reports#manage_report', via: :get, :as => :manage_report
+  match 'admin/emails' => 'admin/system_emails#index', via: :get, :as => :admin_emails
 
   # CMSDESK
   match 'admin/cmsdesk' => 'admin/cms_desk#index', via: :get, :as => :cms_desk
@@ -69,6 +72,7 @@ Bc4::Application.routes.draw do
   namespace :admin do
 
     resources :users, :roles
+    resources :system_emails
 
     resources :companies do
       collection do

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_system_email.name %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @admin_system_email.from %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @admin_system_email.subject %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @admin_system_email.body %>
+</p>
+
+<%= link_to 'Edit', edit_admin_system_email_path(@admin_system_email) %> |
+<%= link_to 'Back', admin_system_emails_path %>
