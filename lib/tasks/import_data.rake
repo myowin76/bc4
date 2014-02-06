@@ -226,4 +226,78 @@ namespace :import do
 		end # csv end
   end # task end
 
+	task :best_practices => :environment do
+		
+		Admin::BestPractice.delete_all
+    CSV.foreach(File.join(Rails.root, 'bin', 'best_practices.csv')) do |row|
+		  unless row.join.blank?
+			  # cells map
+			  id_cell = row[1]
+			  name_cell = row[2].to_s.truncate(30)
+			  body_cell = row[2]
+			  created_cell = row[4]
+			  updated_cell = row[6]
+			  
+ 				record = Admin::BestPractice.new(
+			  	:note_source_id => id_cell,
+			  	:note_source_type => 'Admin::BestPractice',
+			  	:name => name_cell,
+			  	:body => body_cell,
+			  	:created_at => created_cell,
+			  	:updated_at => updated_cell
+		  	)
+		  	record.save!
+
+			end # one row end
+		end # csv end
+  end # task end
+
+
+  task :best_prectice_screengrabs => :environment do
+		
+		Admin::Note.delete_all
+    CSV.foreach(File.join(Rails.root, 'bin', 'report_notes.csv')) do |row|
+		  unless row.join.blank?
+			  # cells map
+			  id_cell = row[1]
+			  note_cell = row[2]
+			  created_cell = row[4]
+			  updated_cell = row[6]
+			  
+ 				record = Admin::Note.new(
+			  	:note => note_cell,
+			  	:note_source_id => id_cell,
+			  	:note_source_type => 'Admin::Report',
+			  	:created_at => created_cell,
+			  	:updated_at => updated_cell
+		  	)
+		  	record.save!
+
+			end # one row end
+		end # csv end
+  end # task end
+
+  task :report_tags => :environment do
+		
+		Admin::ReportTag.delete_all
+    CSV.foreach(File.join(Rails.root, 'bin', 'report_tags.csv')) do |row|
+		  unless row.join.blank?
+			  # cells map
+			  id_cell = row[9]
+			  name_cell = row[1]
+			  # created_cell = row[4]
+			  # updated_cell = row[6]
+			  
+ 				record = Admin::ReportTag.new(
+			  	:id => id_cell,
+			  	:name => name_cell
+			  	# :created_at => created_cell,
+			  	# :updated_at => updated_cell
+		  	)
+		  	record.save!
+
+			end # one row end
+		end # csv end
+  end # task end
+
 end # namespace end

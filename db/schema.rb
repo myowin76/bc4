@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206133246) do
+ActiveRecord::Schema.define(version: 20140206162521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140206133246) do
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "company_name"
   end
 
   add_index "best_practices", ["company_id"], name: "index_best_practices_on_company_id", using: :btree

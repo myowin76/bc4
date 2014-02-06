@@ -37,7 +37,7 @@ $(function() {
 	$(".admin_project_reports_company select").select2();
 	$("#project-new-report-companies").select2();
 	$("#project-new-report-type").select2();
-
+	$("#admin_best_practice_company_id").select2();
 
 	$("#project-add-repot").on("click", function(e){
 

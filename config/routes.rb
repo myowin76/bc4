@@ -3,6 +3,10 @@ Bc4::Application.routes.draw do
  
 
   namespace :admin do
+    resources :report_tags
+  end
+
+  namespace :admin do
     resources :sub_metrics
   end
 

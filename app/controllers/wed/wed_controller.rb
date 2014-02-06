@@ -29,7 +29,9 @@ class Wed::WedController < ApplicationController
     @page_title = "Score Card"
     @page_lead = "Lorem itsum Lorem itsum Lorem itsum Lorem itsum Lorem itsum"
 
-    @metrics = Admin::Metric.roots.order(:number)
+    @metrics = Admin::Metric.order(:number)
+    # @metrics = @latest_report.report_type.metric_report_types.order(:number)
+
     
   end
 
@@ -122,9 +124,8 @@ class Wed::WedController < ApplicationController
     @company = Admin::Company.find(params[:id])
     @company_reports = @company.reports
     @latest_report = @company.reports.order(:created_at).last
+    @metrics = @latest_report.report_type.metric_report_types.order(:number)
 
-    
-    @metrics = Admin::Metric.order(:number)
     @first_metric = @metrics.first
   end
 

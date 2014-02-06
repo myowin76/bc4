@@ -87,10 +87,10 @@
 
   	<div class="nav-tabs">
 			<ul>
-				<% @width = 100.00/@metrics.roots.count %>
+				<% @width = 100.00/@metrics.count %>
 
-				<% @metrics.roots.order(:number).each do |metric| %>
-					<li style="width: <%= "#{@width}" + '%' %>"><a href="#"><%= metric.name %></a></li>
+				<% @metrics.each do |metric| %>
+					<li style="width: <%= "#{@width}" + '%' %>"><a href="#"><%= metric.metric.name %></a></li>
 					
 				<% end %>
 			</ul>
@@ -114,7 +114,7 @@
 				        <a data-toggle="collapse" data-parent="#accordion" href="#<%= sub_metric.id %>">
 				        	<i class="panel-arrow-right"></i>
 				        	<%= @metrics.first.number %>.<%= sub_metric.number %>
-				          <%= sub_metric.name %>
+				          <%#= sub_metric.name %>
 				        </a>
 				        <!-- <span>Score 11(13)</span> -->
 				      </h4>
@@ -129,7 +129,7 @@
 
 					      <div class="panel-slide row">
 				        	<section>
-				        		<div class="title">Notes(<%= sub_metric.notes.count %>)</div>
+				        		<div class="title">Notes(<%#= sub_metric.notes.count %>)</div>
 				        		<div class="view-notes">
 				        			<form>
 				        				<textarea>

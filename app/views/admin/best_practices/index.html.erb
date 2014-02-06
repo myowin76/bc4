@@ -34,7 +34,7 @@
       <tr>
         <td><%= link_to best_practice.name, best_practice %></td>
         <td><%= best_practice.body %></td>
-        <td><%= best_practice.company.name %></td>
+        <td><%#= best_practice.company.name %></td>
         <%#= link_to 'Show', best_practice %>
         <td><%= link_to 'Edit', edit_admin_best_practice_path(best_practice), :class => 'link_edit' %></td>
         <td><%= link_to 'Destroy', best_practice, method: :delete, :class => 'link_destroy',
@@ -43,6 +43,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-

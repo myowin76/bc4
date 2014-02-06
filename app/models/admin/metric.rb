@@ -29,7 +29,7 @@ class Admin::Metric < ActiveRecord::Base
  #  				:class_name => "Admin::SubMetric"
 
 	# belongs_to :metric, :foreign_key => :parent_id
-	# has_many :sub_metrics, :foreign_key => :parent_id, :class_name => 'Admin::Metric'
+	has_many :sub_metrics, :class_name => 'Admin::SubMetric'
 
 	has_many :metric_report_types, :class_name => "Admin::MetricReportType"
   has_many :report_types,  through: :metric_report_types, 

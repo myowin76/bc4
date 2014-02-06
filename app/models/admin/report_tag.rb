@@ -9,8 +9,8 @@
 #
 
 class Admin::ReportTag < ActiveRecord::Base
-	attr_accessible :name
+	attr_accessible :id, :name
 	
 	self.table_name = "report_tags"
-	validates :name, :presence => true
+	# validates :name, :presence => true
 end

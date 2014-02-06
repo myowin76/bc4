@@ -14,7 +14,13 @@
         <%= f.input :body %>
       </fieldset>
       <fieldset>
-        <%= f.association :company, :input_html => {:class => 'form-control'} %>
+        <label>Company</label>
+        <div class="col-sm-3">
+          <%= f.association :company, :label => false %>
+        </div>
+        <div class="col-sm-3">
+          <%= f.input :company_name, :label => false %>
+        </div>
       </fieldset>
       
       <%= f.fields_for :screengrabs, @screengrabs do |screengrab_fields| %>
