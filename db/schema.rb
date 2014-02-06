@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205175124) do
+ActiveRecord::Schema.define(version: 20140206095738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,6 +121,17 @@ ActiveRecord::Schema.define(version: 20140205175124) do
   end
 
   add_index "login_histories", ["user_id"], name: "index_login_histories_on_user_id", using: :btree
+
+  create_table "metric_report_types", force: true do |t|
+    t.integer  "metric_id"
+    t.integer  "report_type_id"
+    t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "metric_report_types", ["metric_id"], name: "index_metric_report_types_on_metric_id", using: :btree
+  add_index "metric_report_types", ["report_type_id"], name: "index_metric_report_types_on_report_type_id", using: :btree
 
   create_table "metrics", force: true do |t|
     t.string   "name"

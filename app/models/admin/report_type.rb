@@ -19,4 +19,9 @@ class Admin::ReportType < ActiveRecord::Base
 	self.table_name = "report_types"
 
 	has_many :reports
+	
+	has_many :metric_report_types, :class_name => "Admin::MetricReportType"
+  has_many :metrics, -> { order('metric_report_types.number DESC')}, through: :metric_report_types, 
+  				:class_name => "Admin::Metric"
+
 end
