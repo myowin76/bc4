@@ -148,11 +148,11 @@ namespace :import do
   end # task end
 
 
-	# IMPORT COUNTRIES
+	# IMPORT REPORT TYPE
 		  task :report_types => :environment do
 			
 			Admin::ReportType.delete_all
-	    CSV.foreach(File.join(Rails.root, 'bin', 'report_types.csv'), :headers => true ) do |row|
+	    CSV.foreach(File.join(Rails.root, 'bin', 'report_types.csv') ) do |row|
 			  unless row.join.blank?
 				  # cells map
 				  id_cell = row[10]

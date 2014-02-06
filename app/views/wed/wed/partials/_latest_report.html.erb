@@ -1,8 +1,4 @@
 
-<%# @company_reports.each do |report| %>
-	<%#= report.name %>
-	
-<%# end %>
 <div class="rpt-view-totalscore">
 	<div class="total">Total Score [280]</div>
 	<div class="scores">Score 210 (220)</div>
@@ -10,9 +6,9 @@
 
 <div class="nav-tabs">
 	<ul>
-		<% @width = 100.00/@metrics.roots.count %>
-		<% @metrics.roots.each do |metric| %>
-			<li style="width: <%= "#{@width}" + '%' %>"><a href="#"><%= metric.number %>.<%= metric.name %></a></li>
+		<% @width = 100.00/@metrics.count %>
+		<% @metrics.each do |metric| %>
+			<li style="width: <%= "#{@width}" + '%' %>"><a href="#"><%= metric.metric.number %>.<%= metric.metric.name %></a></li>
 		<% end %>
 	</ul>
 </div>
@@ -20,7 +16,7 @@
 <div class="row">
 	<div class="col-sm-9">
 		<div class="rpt-metric-score">
-			<div class="name"><%= @first_metric.name %> [60]</div>
+			<div class="name"><%= @first_metric.metric.name %> [<%= @first_metric.sub_metrics.sum(:max_score) %>]</div>
 			<div class="scores">Score 39 (41)</div>
 		</div>
 		<div class="rpt-view-container">
@@ -46,7 +42,6 @@
 						<td>Current score</td>
 					</tr>
 				</table>
-				
 			</section>
 		</div>
 

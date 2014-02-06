@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206095738) do
+ActiveRecord::Schema.define(version: 20140206133246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -224,6 +224,17 @@ ActiveRecord::Schema.define(version: 20140206095738) do
     t.datetime "updated_at"
   end
 
+  create_table "report_types_sub_metrics", force: true do |t|
+    t.integer  "metric_report_type_id"
+    t.integer  "sub_metric_id"
+    t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "report_types_sub_metrics", ["metric_report_type_id"], name: "index_report_types_sub_metrics_on_metric_report_type_id", using: :btree
+  add_index "report_types_sub_metrics", ["sub_metric_id"], name: "index_report_types_sub_metrics_on_sub_metric_id", using: :btree
+
   create_table "reports", force: true do |t|
     t.string   "name"
     t.integer  "project_id"
@@ -274,6 +285,17 @@ ActiveRecord::Schema.define(version: 20140206095738) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "sub_metrics", force: true do |t|
+    t.string   "name"
+    t.integer  "number"
+    t.integer  "metric_id"
+    t.integer  "max_score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sub_metrics", ["metric_id"], name: "index_sub_metrics_on_metric_id", using: :btree
 
   create_table "subscriptions", force: true do |t|
     t.string   "name"

@@ -1,0 +1,9 @@
+id,"uuid","number","title","description",median_score,created_by,"created_at",updated_by,"updated_at",deleted_by,"deleted_at"
+1,"90036ae3-94ab-2ee4-0943-27699f8246a5","1.","Construction",NULL,36,NULL,"2009-09-22 11:36:29",NULL,"2009-09-22 11:36:29",NULL,NULL
+2,"805c45e9-700a-2284-b929-aef63acd342b","2.","Message",NULL,31,NULL,"2009-09-22 11:36:29",NULL,"2009-09-22 11:36:29",NULL,NULL
+3,"042348fe-44ce-6f34-e1e4-7357da3a9b37","3.","Contact",NULL,7,NULL,"2009-09-22 11:36:29",NULL,"2009-09-22 11:36:29",NULL,NULL
+4,"afbf5728-cfbd-0894-d1ac-5abeb62176c8","4.","Serving society",NULL,21,NULL,"2009-09-22 11:36:29",NULL,"2009-09-22 11:36:29",NULL,NULL
+5,"753babb2-d6f4-d844-49c7-332ae81caf63","5.","Serving investors",NULL,20,NULL,"2009-09-22 11:36:29",NULL,"2009-09-22 11:36:29",NULL,NULL
+6,"0df9129a-bcd1-e914-f160-39f8a77abe99","6.","Serving media",NULL,17,NULL,"2009-09-22 11:36:29",NULL,"2009-09-22 11:36:29",NULL,NULL
+7,"2cb4ac2b-3459-93b4-51a8-45a4e284ab28","7.","Serving jobseekers",NULL,18,NULL,"2009-09-22 11:36:29",NULL,"2009-09-22 11:36:29",NULL,NULL
+8,"e3a9917f-850e-7954-e1d6-346b8a6066b3","8.","Serving customers","",20,NULL,"2009-09-22 11:36:29",13,"2011-01-07 11:34:42",NULL,NULL

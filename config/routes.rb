@@ -2,6 +2,10 @@ Bc4::Application.routes.draw do
 
  
 
+  namespace :admin do
+    resources :sub_metrics
+  end
+
   # get "password_resets/new"
   # get "sessions/create"
   # get "sessions/destroy"

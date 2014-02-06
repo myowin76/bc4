@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  metric_report_type_id: 
+  sub_metric_id: 
+  number: 1
+
+two:
+  metric_report_type_id: 
+  sub_metric_id: 
+  number: 1

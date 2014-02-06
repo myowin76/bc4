@@ -15,13 +15,13 @@
 #
 
 class Admin::ReportType < ActiveRecord::Base
-	attr_accessible :name, :public, :notes, :exe_summary, :recommendation, :best_practice, :supplementary
+	attr_accessible :id, :name, :public, :notes, :exe_summary, :recommendation, :best_practice, :supplementary
 	self.table_name = "report_types"
 
-	has_many :reports
+	has_many :reports, :class_name => "Admin::Report"
 	
 	has_many :metric_report_types, :class_name => "Admin::MetricReportType"
-  has_many :metrics, -> { order('metric_report_types.number DESC')}, through: :metric_report_types, 
+  has_many :metrics, -> { order('metric_report_types.number ASC')}, through: :metric_report_types, 
   				:class_name => "Admin::Metric"
 
 end

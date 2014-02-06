@@ -1,0 +1,33 @@
+<h1>Listing admin_sub_metrics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Metric</th>
+      <th>Max score</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_sub_metrics.each do |admin_sub_metric| %>
+      <tr>
+        <td><%= admin_sub_metric.name %></td>
+        <td><%= admin_sub_metric.number %></td>
+        <td><%= admin_sub_metric.metric %></td>
+        <td><%= admin_sub_metric.max_score %></td>
+        <td><%= link_to 'Show', admin_sub_metric %></td>
+        <td><%= link_to 'Edit', edit_admin_sub_metric_path(admin_sub_metric) %></td>
+        <td><%= link_to 'Destroy', admin_sub_metric, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub metric', new_admin_sub_metric_path %>

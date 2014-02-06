@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_sub_metric.name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @admin_sub_metric.number %>
+</p>
+
+<p>
+  <strong>Metric:</strong>
+  <%= @admin_sub_metric.metric %>
+</p>
+
+<p>
+  <strong>Max score:</strong>
+  <%= @admin_sub_metric.max_score %>
+</p>
+
+<%= link_to 'Edit', edit_admin_sub_metric_path(@admin_sub_metric) %> |
+<%= link_to 'Back', admin_sub_metrics_path %>

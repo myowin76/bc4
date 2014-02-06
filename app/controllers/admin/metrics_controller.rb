@@ -69,6 +69,6 @@ class Admin::MetricsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def metric_params
-      params.require(:admin_metric).permit(:name, :number, :score, :parent_id)
+      params.require(:admin_metric).permit(:id, :name, :number, :score, :parent_id, :created_at, :updated_at)
     end
 end

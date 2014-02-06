@@ -39,14 +39,20 @@ class Wed::WedController < ApplicationController
     @page_lead = "Explore, download and share your current report whole or in parts; retrieve earlier versions; and check other companies’ reports."
 
     ## current user's company's latest report
-    # @company_reports = Admin::Report.find_all_by_company(params[:company])
-    @latest_report = Admin::Report.last
-    # current user's company's all reports
-    # @company_reports = Admin::Company.reports
-    @company = Admin::Company.first
-    @company_reports = @company.reports.order(:created_at)
+    # check if there is report id params changed, and get report data according to id
 
-    @metrics = Admin::Metric.order(:number)
+    @company_reports = current_user.company.reports.order('created_at desc')
+    
+    unless params[:id].nil?
+      @latest_report = @company_reports.find(params[:id])
+    else
+      @latest_report = @company_reports.first
+    end
+
+    
+    @metrics = @latest_report.report_type.metric_report_types.order(:number)
+    # check if there is metric params to search for
+    # @current_metric = @metrics.find(params[:metric_id])
     @first_metric = @metrics.first
     # debugger
   end

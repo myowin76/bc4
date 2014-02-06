@@ -14,6 +14,8 @@
 #  updated_at     :datetime
 #
 
+# TO DO ? HSTORE to store all the data after published
+
 class Admin::Report < ActiveRecord::Base
 	attr_accessible :id, :name, :project_id, :company_id, :publish_date, 
     :report_type_id, :created_at, :updated_at
