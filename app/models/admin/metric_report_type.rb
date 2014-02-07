@@ -10,5 +10,9 @@ class Admin::MetricReportType < ActiveRecord::Base
   has_many :report_types_sub_metrics, :class_name => "Admin::ReportTypeSubMetrics"
   has_many :sub_metrics, -> { order('report_types_sub_metrics.number ASC')}, through: :report_types_sub_metrics, 
   				:class_name => "Admin::SubMetric"
-  
+
+
+	has_many :report_type_metric_tags, :class_name => "Admin::ReportTypeMetricTags"
+  has_many :report_tags, through: :report_type_metric_tags, 
+  				:class_name => "Admin::ReportTag"  
 end

@@ -13,4 +13,8 @@ class Admin::ReportTag < ActiveRecord::Base
 	
 	self.table_name = "report_tags"
 	# validates :name, :presence => true
+
+	has_many :report_type_metric_tags, :class_name => "Admin::ReportTypeMetricTags"
+  has_many :metric_report_types, through: :report_type_metric_tags, 
+  				:class_name => "Admin::MetricReportType"  
 end

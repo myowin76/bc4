@@ -62,16 +62,28 @@
   
   <!-- report overview content -->
   <div class="tab-pane" id="overview">
-  	<%#= @report.company.name %>
-  	<%#= link_to @report.company.url, @report.company.url, :target => '_blank' %>
-  	<%#= @report.company.country.name %>
-  	<%#= @report.company.country.region.name %>
+  	
 
   	<%#= render "admin/reports/manage_report_overview" %>
   	<article>
   		<header>
   			<h4>Company</h4>
   		</header>
+  		<section>
+  			<%= @report.company.name %>
+		  	<%= link_to @report.company.url, @report.company.url, :target => '_blank' %>
+		  	<%= @report.company.country.name %>
+		  	<%= @report.company.country.region.name %>
+  		</section>
+  		
+  	</article>
+
+  	<article>
+  		<section>
+  			<% @report_type_metrics.each do |report_type_metric| %>
+  				<%= report_type_metric.metric.name %>
+  			<% end %>
+  		</section>
   	</article>
 
   </div>
@@ -87,9 +99,9 @@
 
   	<div class="nav-tabs">
 			<ul>
-				<% @width = 100.00/@metrics.count %>
+				<% @width = 100.00/@report_type_metrics.count %>
 
-				<% @metrics.each do |metric| %>
+				<% @report_type_metrics.each do |metric| %>
 					<li style="width: <%= "#{@width}" + '%' %>"><a href="#"><%= metric.metric.name %></a></li>
 					
 				<% end %>
@@ -102,19 +114,21 @@
 
 				<div class="panel-group report-accordion" id="accordion">
 					<div class="rpt-metric-score">
-						<div class="name">Construction [60]</div>
+						<div class="name">
+							<%= @report_type_metrics.first.metric.name %> [<%= @report_type_metrics.first.sub_metrics.sum(:max_score) %>]
+						</div>
 						<div class="scores">Score 39 (41)</div>
 					</div>
 
 					<!-- CONSTRUCTION METRIC FORM START -->		
-					<% @metrics.first.sub_metrics.each do |sub_metric| %>	
+					<% @report_type_metrics.first.metric.sub_metrics.each do |sub_metric| %>	
 				  <div class="panel panel-default">
 				    <div class="panel-heading">
 				      <h4 class="panel-title">
 				        <a data-toggle="collapse" data-parent="#accordion" href="#<%= sub_metric.id %>">
 				        	<i class="panel-arrow-right"></i>
-				        	<%= @metrics.first.number %>.<%= sub_metric.number %>
-				          <%#= sub_metric.name %>
+				        	<%= @report_type_metrics.first.metric.number %>.<%= sub_metric.number %>
+				          <%= sub_metric.name %>
 				        </a>
 				        <!-- <span>Score 11(13)</span> -->
 				      </h4>

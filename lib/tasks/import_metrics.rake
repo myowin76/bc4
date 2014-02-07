@@ -120,5 +120,34 @@ namespace :import do
 		end # csv end
   end # task end
 
+  # IMPORT SubMetric Screengrabs
+	task :report_type_sub_metrics => :environment do
+		
+		Admin::Screengrab.delete_all
+    CSV.foreach(File.join(Rails.root, 'bin', 'report_sub_metric_screengrabs.csv')) do |row|
+		  unless row.join.blank?
+			  # cells map
+			  id_cell = row[0]
+			  metric_report_type_id_cell = row[1]
+			  sub_metric_id_cell = row[2]
+			  number_cell = row[3]
+			  created_cell = row[5]
+			  updated_cell = row[7]
+			  
+			  
+ 				record = Admin::Screengrab.new(
+ 					:id => id_cell,
+			  	:metric_report_type_id => metric_report_type_id_cell,
+			  	:sub_metric_id => sub_metric_id_cell,
+			  	:number => number_cell,
+			  	:created_at => created_cell,
+			  	:updated_at => updated_cell
+		  	)
+		  	record.save!
+
+			end # one row end
+		end # csv end
+  end # task end
+
 
 end

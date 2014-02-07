@@ -1,14 +1,25 @@
 <%= simple_form_for(@admin_system_email) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :from %>
-    <%= f.input :subject %>
-    <%= f.input :body %>
-  </div>
+  <article>
+    <section>
+      <fieldset>
+        <%= f.input :name %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :from %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :subject %>
+      </fieldset>
+      <fieldset>
+        <%= f.input :body %>
+      </fieldset>
+    </section>
+    
+  </article>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Save",  :class => 'btn-save pull-right' %>
   </div>
 <% end %>
