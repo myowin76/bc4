@@ -80,9 +80,39 @@
 
   	<article>
   		<section>
-  			<% @report_type_metrics.each do |report_type_metric| %>
-  				<%= report_type_metric.metric.name %>
-  			<% end %>
+  			<div class="panel-group" id="accordion">
+				  <% @report_type_metrics.each do |report_type_metric| %>
+				    <div class="panel panel-default">
+				      <div class="panel-heading">
+				        <h4 class="panel-title">
+				          <a data-toggle="collapse" data-parent="#accordion" href="#<%= report_type_metric.id %>">
+				            <%= report_type_metric.metric.name %>
+				          </a>
+				          <%#= link_to 'Edit', edit_admin_metric_path(metric) %>
+				          <%#= link_to 'Destroy', metric, method: :delete, 
+				            data: { confirm: 'Are you sure?' } %>
+				        </h4>
+				      </div>
+				      <div id="<%= report_type_metric.id %>" class="panel-collapse">
+
+				        <div class="panel-body">
+				          <table class="table">
+				          	<% report_type_metric.sub_metrics.each do |sub_metric| %>
+						      		<tr>
+						      			<td>
+						      				<%= sub_metric.name %>
+						      			</td>
+						      		</tr>
+						      		<% end %>
+						      	</table>
+				        </div>
+				      </div>
+
+				    </div>
+				  <% end %>
+				</div>
+
+  				
   		</section>
   	</article>
 
