@@ -279,7 +279,7 @@ ActiveRecord::Schema.define(version: 20140210113827) do
   add_index "reports_metrics", ["report_id"], name: "index_reports_metrics_on_report_id", using: :btree
 
   create_table "reports_sub_metrics", force: true do |t|
-    t.integer  "reports_metrics_id"
+    t.integer  "reports_metric_id"
     t.integer  "sub_metric_id"
     t.integer  "total_score"
     t.text     "summary"
@@ -287,7 +287,7 @@ ActiveRecord::Schema.define(version: 20140210113827) do
     t.datetime "updated_at"
   end
 
-  add_index "reports_sub_metrics", ["reports_metrics_id"], name: "index_reports_sub_metrics_on_reports_metrics_id", using: :btree
+  add_index "reports_sub_metrics", ["reports_metric_id"], name: "index_reports_sub_metrics_on_reports_metric_id", using: :btree
   add_index "reports_sub_metrics", ["sub_metric_id"], name: "index_reports_sub_metrics_on_sub_metric_id", using: :btree
 
   create_table "reports_sub_metrics_notes", force: true do |t|

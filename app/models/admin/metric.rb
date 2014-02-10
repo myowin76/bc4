@@ -23,6 +23,9 @@ class Admin::Metric < ActiveRecord::Base
 	# validates :score, :numericality => { :only_integer => true }
 
 	# belongs_to :report, :class_name => 'Admin::Report' #wrong
+	has_many :reports_metrics, :class_name => "ReportsMetric"
+  has_many :reports, through: :reports_metrics, 
+          :class_name => "Admin::Report"
 
 	# has_many :report_types_sub_metrics, :class_name => "Admin::ReportTypeSubMetrics"
  #  has_many :sub_metrics, -> { order('report_types_sub_metrics.number ASC')}, through: :report_types_sub_metrics, 
