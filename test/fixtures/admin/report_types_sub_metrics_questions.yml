@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  report_types_sub_metric_id: 
+  question_id: 
+  order: 1
+
+two:
+  report_types_sub_metric_id: 
+  question_id: 
+  order: 1

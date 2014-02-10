@@ -1,0 +1,120 @@
+id,sub_metric_id,"uuid","value","status",version,created_by,"created_at",updated_by,"updated_at",deleted_by,"deleted_at"
+1,1,"3e67331d-fd59-2074-5d54-0cafb33080a1","Primary","",NULL,NULL,"2009-09-17 11:55:59",NULL,"2009-09-17 11:55:59",NULL,NULL
+2,1,"ab0916c9-4d8f-3c24-396f-a25025a5eb7e","Secondary","",NULL,NULL,"2009-09-17 11:55:59",NULL,"2009-09-17 11:55:59",NULL,NULL
+3,1,"34495bd3-b3a4-7774-4d67-1b44e254a8cc","Tertiary","",NULL,NULL,"2009-09-17 11:55:59",NULL,"2009-09-17 11:55:59",NULL,NULL
+4,1,"abd62c00-1328-ed54-317a-f9f2fab532fc","Deeper","",NULL,NULL,"2009-09-17 11:55:59",NULL,"2009-09-17 11:55:59",NULL,NULL
+5,1,"eaea5b44-38a7-8004-113a-6566c4f9641f","Right Links","",NULL,NULL,"2009-09-17 11:55:59",NULL,"2009-09-17 11:55:59",NULL,NULL
+6,2,"20d7c8b4-f8a3-32c4-7927-44a559842a60","Is treatment of navigation the same throughout corporate areas?","",NULL,NULL,"2009-09-17 11:55:59",13,"2011-01-07 15:21:55",NULL,NULL
+7,2,"45d72817-de33-89f4-d508-1bcab419292d","Is the current page/section clearly indicated?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:41:01",NULL,NULL
+8,2,"d1d846f1-b586-a924-5520-b614f1ea9320","Do you get pushed out of sections without that being clear?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+9,2,"72f22f01-ee2c-6534-d9e8-b55920c07e39","How intelligently are new and replacement windows used?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+10,3,"bc17d92c-0594-46d4-a5c8-2f8d4dc018a1","How easy is it to get to country/business/brand sites from home page?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:41:46",NULL,NULL
+11,3,"dd19927a-e88a-5864-356f-b5d95cb8885a","How easy is it to move around the web estate?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-05-10 15:46:50",NULL,NULL
+12,3,"4f71c331-a6bc-af24-dd56-bc10a473be0b","Are routes back from country/business sites to the centre consistent?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+13,4,"069fe1bb-05b7-6b34-11d6-094b585918fc","Term / phrase A (Enter the term or phrase as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+14,4,"822481a9-6449-2974-89c0-f7137a57d8a9","Term / phrase B (Enter the term or phrase as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+15,4,"c4d082d1-b5ed-4e04-4d5d-0c02a354b182","Term / phrase C (Enter the term or phrase as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+16,4,"a975662d-d86b-c164-a515-ee461cdda3ee","Term / phrase D (Enter the term or phrase as the first line of the answer):","",NULL,NULL,"2009-09-17 11:55:59",NULL,"2009-09-17 11:55:59",NULL,NULL
+17,4,"0482e1f8-0c62-b564-5d29-4ebca67591db","Term / phrase E (Enter the term or phrase as the first line of the answer):","",NULL,NULL,"2009-09-17 11:55:59",NULL,"2009-09-17 11:55:59",NULL,NULL
+18,5,"8584b0a8-5201-52d4-e18b-d71b496fc2ad","Term / phrase A (Enter the term or phrase as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+19,5,"eb2f1117-a874-76e4-4549-738a5460baf3","Term / phrase B (Enter the term or phrase as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+20,5,"daacbcb5-fa11-b874-3596-42e64979dc04","Term / phrase C (Enter the term or phrase as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+21,5,"1a9e1d4d-db6a-a934-8164-44131a1156d1","Term / phrase D (Enter the term or phrase as the first line of the answer):","",NULL,NULL,"2009-09-17 11:55:59",NULL,"2009-09-17 11:55:59",NULL,NULL
+22,5,"85222f20-e572-2ae4-b941-b9a3a0969bfe","Term / phrase E (Enter the term or phrase as the first line of the answer):","",NULL,NULL,"2009-09-17 11:55:59",NULL,"2009-09-17 11:55:59",NULL,NULL
+23,6,"c797d3e1-474c-5f84-ede8-8fa2e707da35","Are there engaging stories, good headlines?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+24,6,"71d92c66-9e0f-21f4-a9e7-50b7bc556af6","Does it come across as international when it should?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+25,7,"bfc7c8a3-db59-43d4-b58d-23b085147d05","Is the look/feel appropriate, unusual, up to date?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+26,7,"c6da7089-d3ab-3e44-c9d9-fc44098447aa","Do country/business sites transmit the same (or an appropriate) image?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+27,8,"f2d07051-4935-b454-b940-7c4e730ff83e","Does the site have a suitably global feel, eg on the home page, in About us, CSR?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:52:33",NULL,NULL
+28,8,"4d300971-c459-e874-d135-5e575127e936","In an international company, check the number of foreign sites.","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+29,8,"ccf18d09-fbb5-c324-357f-3bdd704b4afc","How appropriate is the use of foreign languages?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:47:06",NULL,NULL
+30,8,"805f04b9-d87e-5064-8907-85ab1c9e6ee7","Is corporate material available in different languages?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:47:49",NULL,NULL
+31,9,"f8a73c68-1c0b-5174-196b-bbff3f4c585c","How comprehensive and clear is the section?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:48:25",NULL,NULL
+32,9,"29802ba0-c1f2-d1a4-594d-310e3471b5c6","How easy is it to see what the company does and how it is organised?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:48:57",NULL,NULL
+33,9,"6e00365b-d32f-f514-b5bd-7ae28975eca7","History – how good is it?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:49:30",NULL,NULL
+34,9,"7ad6c0f4-e2d4-18f4-a5d1-77447e6b9b98","Are there biographies/photos of directors?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:50:03",NULL,NULL
+35,10,"068f6ff3-b05a-d394-f1e8-d3a549420bfe","How well signposted are contacts?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:51:00",NULL,NULL
+36,10,"88c59619-17a3-21c4-715a-554ef2870379","How appropriate is the contact information?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:51:29",NULL,NULL
+37,10,"4a262c73-9e4c-d164-5173-7d38142fd179","Are there appropriate attempts to deflect direct contact?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:51:56",NULL,NULL
+38,11,"65555561-1234-73c4-e53b-9c97d5f3e33c","How visible is the information?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:52:23",NULL,NULL
+39,11,"f519fa9b-edd8-95d4-e516-cac863a4ed36","How comprehensive is the range of information?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:52:50",NULL,NULL
+40,11,"88ee5ee1-09c0-18a4-b145-3fadb720cd7b","How clear is the information?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:53:17",NULL,NULL
+41,11,"35f01a3a-f845-3994-b5e8-2683385c214c","How well is the web used to present information?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:54:04",NULL,NULL
+42,12,"b8f791ff-5627-4e14-0551-e30d0fb24b91","Does the site provide performance data?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:54:21",NULL,NULL
+43,12,"b6183fb0-2eed-cf54-ad0e-8681e1cc226a","Quality of data?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:54:45",NULL,NULL
+44,12,"bda3fd01-6516-1b14-214d-709ea21985e4","How well are management and measuring systems explained?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:55:11",NULL,NULL
+45,12,"4bd4c609-61d8-ee74-01e1-452c8f0db2bc","Are CSR-specific contacts given?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:56:21",NULL,NULL
+46,13,"96b3721d-fdce-a444-c1f6-5d4311746baf","Does the site tackle relevant controversial issues (if there are any)?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+47,13,"0544afdf-e831-5b24-e52a-f92c9cddf174","How well does it promote active responsibility initiatives?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:57:07",NULL,NULL
+48,13,"da51f869-f778-3e34-498f-0cd72b041ec3","Does it tackle environmental and other 'CSR' issues in a way that is likely to engage a non-specialist visitor?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:57:39",NULL,NULL
+49,13,"d46a5192-4214-8fd4-e575-a63e1a69ff21","Does it transmit its responsibility messages across the site?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:58:06",NULL,NULL
+50,14,"c52a5a3a-2d58-1a34-bd74-d89ffed3d8bb","How easy is it to find archives of quarterly figures and presentations?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+51,14,"2c804f37-8877-44c4-1dfb-96b8ad88ded5","How deep are the archives?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+52,14,"bc14cb41-6668-ddb4-3520-2bf0c9096fd1","How well laid out, with different formats signalled?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+53,14,"7914de59-2bc0-4974-fd9e-c15ec764c6bc","What details are provided for quarterly results?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:58:57",NULL,NULL
+54,15,"9b734442-52da-1c34-f9dd-6389be16cba9","What background and data are provided on the company and industry?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 14:59:33",NULL,NULL
+55,15,"e3c8a378-6a4f-7404-2d43-3e6c12b0f52e","How detailed is IR team contact information?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+56,16,"8b886c8c-98ad-7784-3502-d54de583acfb","Are there good signposts to information aimed at private shareholders?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:00:07",NULL,NULL
+57,16,"445d54c7-7b96-4d14-c5c3-b47abe76c8be","Is there good information for private shareholders?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:00:43",NULL,NULL
+58,16,"8e8883ba-fb62-5fa4-c930-fa760ac384eb","Is language in the shareholder area accessible (plain English)?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+59,16,"e0c772b4-f33a-a694-89e7-a1c2e4f22d6f","Is there an engaging online annual report?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:01:46",NULL,NULL
+60,17,"fb926a28-2db2-c494-2d55-8080bc6c4086","How well are press releases organised?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:02:27",NULL,NULL
+61,17,"14c17157-1560-ab44-29d4-38fef363e162","How well are press releases presented?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:03:39",NULL,NULL
+62,17,"b5689401-f2bd-7ef4-dd87-2f336b330e37","How deep is the archive?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+63,18,"7327eeed-edbb-2cb4-6100-1e06eadd4f72","How accessible is press office contact information?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+64,18,"4fc87cf7-b2ef-37e4-7d68-04f6274cb36e","How detailed?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+65,18,"77bf16ff-9eec-b684-f157-af715b62380d","What alert services are provided: email, RSS, Twitter, sharing links?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:04:20",NULL,NULL
+66,19,"754b8635-8619-2c24-294e-e6da3b5c63e3","Are fact sheets, easily printable or easy to read on a smart phone, provided?","",NULL,NULL,"2009-09-11 16:35:56",13,"2012-12-18 15:02:10",NULL,NULL
+67,19,"56276425-90fc-5514-69cc-b4c543750110","What other briefing content is provided?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+68,20,"d4c5f1cf-fa30-8104-f906-c0c6bf9eacad","How well organised is it?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:04:51",NULL,NULL
+69,20,"615eaf2f-001a-7484-4932-66105df1c06e","What is the size and quality of the archive?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:05:30",NULL,NULL
+70,20,"b2b19fed-995d-1504-d93d-f1becbd450ee","Does it have any unusual and valuable features?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-05-10 15:47:59",NULL,NULL
+71,21,"6a1a3ef5-8019-d724-fdd8-e08ef5dfc734","To what extent can vacancies be found centrally?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-10 10:26:08",NULL,NULL
+72,21,"b27ec53d-2040-c444-ade2-60c0328f1a0f","Are vacancies searchable?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:07:23",NULL,NULL
+73,21,"b27ec53d-2040-c444-ade2-60c0328f1a0f","Is there an online application process?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:07:52",NULL,NULL
+74,21,"b5e96c18-6a8f-17b4-d5b6-6a6aae34826f","Can applicants create and store a CV?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:08:54",NULL,NULL
+75,22,"7c060d2c-e3f9-2df4-e93f-1d4a9f7ac7fa","How clear is information on the recruiting/application process?","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+76,22,"94c70ad1-a839-16c4-597c-85873690a4d6","Are there profiles of graduate entrants or other members of staff?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-10 10:27:12",NULL,NULL
+77,22,"27a937d5-d900-daf4-31a5-ec7aeaa75fb2","What information is there about training schemes and career development?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:10:45",NULL,NULL
+78,23,"f11d6033-3dc0-d534-619b-cd49278c3974","What range of formats/media is used?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-10 10:29:46",NULL,NULL
+79,23,"62c82e90-f463-1f54-119d-0f82b12d20d8","Is there good supporting information?","",NULL,NULL,"2009-09-11 16:35:56",13,"2011-01-07 15:12:15",NULL,NULL
+80,24,"a007a44a-876f-94f4-e5a9-2b61ac7e9174","Scenario A (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+81,24,"3e09c4f7-cffb-4b64-ed1d-3c189c0d1b41","Scenario B (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+82,24,"5d5e9696-3ac3-21a4-912f-c7cfa8530b3f","Scenario C (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+83,24,"db69de96-6819-9774-5dd3-23f517aa4a58","Scenario D (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+84,24,"cc388905-bbd9-8b94-7109-09c359b95c69","Scenario E (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+85,25,"9fa6068f-f994-88b4-c17d-860c10c15236","Scenario A (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+86,25,"74c21c53-2364-b1f4-a1b0-bb867d252aa4","Scenario B (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+87,25,"b742d777-4fa3-a404-250a-2dec22e68b83","Scenario C (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+88,25,"286fd9ca-d602-a474-bdbd-9e2ab1c33563","Scenario D (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+89,25,"2aafef7a-23ad-a9d4-f94d-9138a1819469","Scenario E (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+90,26,"c48f8545-0c45-2384-5133-77ed725361da","Scenario A (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+91,26,"3c0da65a-b6bd-6ab4-dd62-511de01e8086","Scenario B (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+92,26,"cd1d5f3a-49e2-0694-e5ba-9e25231d4ec3","Scenario C (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+93,26,"aaf9db61-d1da-1b84-192f-f27213571200","Scenario D (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+94,26,"7ce4f1ed-971e-c644-b507-feadb9f5d605","Scenario E (Enter your scenario as the first line of the answer):","",NULL,NULL,"2009-09-11 16:35:56",NULL,"2009-09-11 16:35:56",NULL,NULL
+95,6,"c4747f5b-048b-6634-19dd-3ca2d41a6d33","Are there signs of social media integration (eg Twitter, Facebook links)?","",NULL,5,"2009-11-27 08:53:41",5,"2009-11-27 08:53:41",NULL,NULL
+96,13,"71f7e614-1c27-2644-3d02-e3a32d4f1a06","Does it use social media to boost its reputation?","",NULL,5,"2009-11-27 08:55:14",13,"2011-01-07 15:13:26",NULL,NULL
+97,14,"9b100546-51d9-bc64-1122-4ebea40a0396","Is there a Twitter feed pointing to results releases?","",NULL,5,"2009-11-27 08:55:50",5,"2009-11-27 08:55:50",NULL,NULL
+98,23,"c97affb5-367e-dcd4-9135-9df82aad6f8e","To what extent (and effect) is the company using social media (YouTube profiles, guides or other)?","",NULL,5,"2009-11-27 08:56:56",13,"2011-01-10 10:29:13",NULL,NULL
+99,17,"ac30601b-7cca-35e4-d99a-3d8151ed26df","Is there a Twitter feed pointing to press releases?","",NULL,5,"2009-11-27 08:57:31",5,"2009-11-27 13:33:24",NULL,"2009-11-27 13:33:24"
+100,1,"9af23359-e182-71f4-b5cd-4de47427f859","test this question","",NULL,13,"2010-12-06 15:30:29",13,"2010-12-06 15:30:29",NULL,NULL
+101,2,"656bc3de-df14-0c94-c937-98bb329ec7b6","Is the site accessible, judged by the OneVoice guidelines?","",NULL,13,"2011-01-07 15:29:04",13,"2011-01-07 15:29:04",NULL,NULL
+102,4,"685c1efe-9ff0-f1a4-c172-4a43f3fe3f40","Overview","",NULL,13,"2011-01-07 15:29:49",13,"2011-01-07 15:29:49",NULL,NULL
+103,5,"ec6254c4-6b79-f954-c916-2d473117760d","How visible is the site to search engines?","",NULL,13,"2011-01-07 15:33:09",13,"2011-01-10 10:57:18",NULL,NULL
+104,6,"a7e05a4c-4461-68b4-914c-655d6f68e5b9","What message does the home page transmit to people coming to the company for the first time?","",NULL,13,"2011-01-07 15:36:30",13,"2011-01-07 15:36:30",NULL,NULL
+105,21,"fa189225-e09f-44f4-4de5-b5fd0fa4502c","How clear/useful is the search results listing?","",NULL,13,"2011-01-07 15:43:38",13,"2011-01-07 15:43:38",NULL,NULL
+106,21,"d7a61f4e-4df0-c624-bd49-5c974432226a","Is there a vacancy alert service?","",NULL,13,"2011-01-07 15:44:11",13,"2011-01-07 15:44:11",NULL,NULL
+107,24,"7fa76d2b-2a2c-1d44-a50e-620c567aa7ba","Overview","",NULL,13,"2011-01-07 15:46:29",13,"2011-01-07 15:46:29",NULL,NULL
+108,25,"d4baa6eb-9094-f724-8526-3898a1898563","Overview","",NULL,13,"2011-01-07 15:46:29",13,"2011-01-07 15:46:29",NULL,NULL
+109,26,"0ecb2125-e577-dcf4-3de7-9c32915a4219","Overview","",NULL,13,"2011-01-07 15:46:29",13,"2011-01-07 15:46:29",NULL,NULL
+110,5,"e9337b18-fcda-6094-d1a6-6310cda00919","Is social media used to raise visibility?","",NULL,13,"2011-01-10 10:16:07",13,"2011-01-10 10:16:07",NULL,NULL
+111,1,"eab8cd69-72bb-2a14-f95d-a2ad3b068b86","ALERT: IF YOU ARE WORKING ON A 2011 REPORT THIS IS NOT THE RIGHT TEMPLATE. PLEASE ASK KAREN RE. NEXT STEPS","",NULL,13,"2011-01-10 11:09:43",13,"2011-01-10 11:22:45",NULL,NULL
+112,4,"e8ff838b-261a-8fa4-f529-2fec630872dc","Term / phrase E","",NULL,13,"2011-04-13 17:56:11",13,"2011-04-13 17:56:11",NULL,NULL
+113,5,"ffe3f497-6bc7-44d4-a5bf-2d9e1f930356","Term / phrase E","",NULL,13,"2011-04-13 17:56:11",13,"2011-04-13 17:56:11",NULL,NULL
+114,24,"ba419555-cd2d-9444-8997-ba839f09c827","Term / phrase E","",NULL,13,"2011-04-13 17:56:11",13,"2011-04-13 17:56:11",NULL,NULL
+115,25,"2ecbbe1a-85b9-a914-89e9-bf4edf793e40","Term / phrase E","",NULL,13,"2011-04-13 17:56:11",13,"2011-04-13 17:56:11",NULL,NULL
+116,26,"449d5c7e-7506-5af4-91eb-01b41846df8a","Term / phrase E","",NULL,13,"2011-04-13 17:56:11",13,"2011-04-13 17:56:11",NULL,NULL
+117,4,"e6fda1a6-542a-e554-f11d-001020d5f014","test media","",NULL,13,"2011-04-13 18:04:45",13,"2011-04-13 18:04:45",NULL,NULL
+118,5,"987ba135-bf95-5744-4151-67d1e160093c","test social media","",NULL,13,"2011-04-13 18:05:45",13,"2011-04-13 18:05:45",NULL,NULL
+119,1,"80117841-1569-0aa4-4dba-225db15e7554","testy m testy","",NULL,5,"2012-03-21 10:55:21",5,"2012-03-21 10:55:21",NULL,NULL

@@ -308,4 +308,27 @@ namespace :import do
 		end # csv end
   end # task end
 
+  task :questions => :environment do
+		
+		Admin::Question.delete_all
+    CSV.foreach(File.join(Rails.root, 'bin', 'questions.csv')) do |row|
+		  unless row.join.blank?
+			  # cells map
+			  id_cell = row[0]
+			  question_cell = row[3]
+			  created_cell = row[7]
+			  updated_cell = row[9]
+			  
+ 				record = Admin::Question.new(
+			  	:id => id_cell,
+			  	:question => question_cell,
+			  	:created_at => created_cell,
+			  	:updated_at => updated_cell
+		  	)
+		  	record.save!
+
+			end # one row end
+		end # csv end
+  end # task end
+
 end # namespace end
