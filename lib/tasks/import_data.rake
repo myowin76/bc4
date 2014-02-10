@@ -179,16 +179,24 @@ namespace :import do
 		    unless row.join.blank?
           # cells map
           id_cell = row[0]
+          
           company_id_cell = row[2]
+          project_id_cell = row[2]
           report_type_id_cell = row[1]
+          company = Admin::Company.find(company_id_cell)
+          project = Admin::Project.find(project_id_cell)
+          report_type = Admin::ReportType.find(report_type_id_cell)
+
+          # name_cell = "#{company.name}  #{report_type.name} #{project.publish_date.strftime("%Y")}"
+          
           publish_date_cell = row[7]
+          
           created_cell = row[10]
           updated_cell = row[12]
           
-          
           Admin::Report.create(
             :id => id_cell,
-            # :name => name_cell,
+            :name => name_cell,
             :report_type_id => report_type_id_cell,
             :company_id => company_id_cell,
             :publish_date => publish_date_cell,

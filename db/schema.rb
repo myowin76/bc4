@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140207155618) do
+ActiveRecord::Schema.define(version: 20140210113827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -262,6 +262,42 @@ ActiveRecord::Schema.define(version: 20140207155618) do
   add_index "reports", ["company_id"], name: "index_reports_on_company_id", using: :btree
   add_index "reports", ["project_id"], name: "index_reports_on_project_id", using: :btree
   add_index "reports", ["report_type_id"], name: "index_reports_on_report_type_id", using: :btree
+
+  create_table "reports_metrics", force: true do |t|
+    t.integer  "report_id"
+    t.integer  "metric_id"
+    t.integer  "total_score"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "deleted_at"
+    t.integer  "deleted_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reports_metrics", ["metric_id"], name: "index_reports_metrics_on_metric_id", using: :btree
+  add_index "reports_metrics", ["report_id"], name: "index_reports_metrics_on_report_id", using: :btree
+
+  create_table "reports_sub_metrics", force: true do |t|
+    t.integer  "reports_metrics_id"
+    t.integer  "sub_metric_id"
+    t.integer  "total_score"
+    t.text     "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reports_sub_metrics", ["reports_metrics_id"], name: "index_reports_sub_metrics_on_reports_metrics_id", using: :btree
+  add_index "reports_sub_metrics", ["sub_metric_id"], name: "index_reports_sub_metrics_on_sub_metric_id", using: :btree
+
+  create_table "reports_sub_metrics_notes", force: true do |t|
+    t.integer  "reports_sub_metric_id"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reports_sub_metrics_notes", ["reports_sub_metric_id"], name: "index_reports_sub_metrics_notes_on_reports_sub_metric_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"

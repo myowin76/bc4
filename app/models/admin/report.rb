@@ -33,8 +33,14 @@ class Admin::Report < ActiveRecord::Base
     :class_name => 'Admin::ReportState'
   belongs_to :approver,
     :class_name => "User"
-  has_many :metrics,
-  	:class_name => "Admin::Metric"	
+  
+  # has_many :metrics,
+  # 	:class_name => "Admin::Metric"	- wrong
+  has_many :reports_metrics, :class_name => "ReportsMetric"
+  has_many :metrics, -> { order('metrics.number DESC')}, through: :reports_metrics, 
+          :class_name => "Admin::Metric"
+
+
   has_many :notes,
     :as => :note_source,
     :class_name => "Admin::Note"

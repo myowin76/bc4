@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reports_metrics_id: 
+  sub_metric_id: 
+  total_score: 1
+  summary: MyText
+
+two:
+  reports_metrics_id: 
+  sub_metric_id: 
+  total_score: 1
+  summary: MyText

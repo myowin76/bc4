@@ -4,7 +4,7 @@ class Admin::ProjectsController < Admin::AdminController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Admin::Project.all
+    @projects = Admin::Project.published
     @companies = Admin::Company.all
   end
 

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  report_id: 
+  metric_id: 
+  total_score: 1
+  created_by: 1
+  updated_by: 1
+  deleted_at: 2014-02-10 11:17:06
+  deleted_by: 1
+
+two:
+  report_id: 
+  metric_id: 
+  total_score: 1
+  created_by: 1
+  updated_by: 1
+  deleted_at: 2014-02-10 11:17:06
+  deleted_by: 1
