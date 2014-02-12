@@ -25,7 +25,8 @@ class SessionsController < ApplicationController
 
       # add login details to login history table
 
-      if (user.role.name == 'Administrator')
+      # if (user.role.name == 'Administrator')
+      if (user.roles.map(&:name).include?('Administrator') || user.roles.map(&:name).include?('Report Editor'))
         redirect_to admin_dashboard_path, :notice => "Logged in!"
       else
         redirect_to wed_dashboard_path, :notice => "Logged in!"

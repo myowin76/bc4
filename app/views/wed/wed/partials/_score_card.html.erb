@@ -68,7 +68,7 @@
   </ul>
   <section class="sc-main">
     <ul class="metric">
-      <% @metrics.each do |metric| %>
+      <% Admin::Metric.order(:name).each do |metric| %>
         <li>
           <div class="title">
             <span><%= metric.name %></span>

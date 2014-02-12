@@ -36,11 +36,14 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
 		
+
+  has_many :editors, :class_name => "User", :dependent => :destroy, :conditions => "address_type = 'Report Editors'"#, :as => :addressable, 
+		
   belongs_to :company, 
 		:class_name => "Admin::Company",
 		counter_cache: true
-	# has_and_belongs_to_many :roles, :class_name => 'Admin::Role'
-	belongs_to :role, :class_name => 'Admin::Role'
+	has_and_belongs_to_many :roles, :class_name => 'Admin::Role'
+	
 	has_many :user_peer_companies, :class_name => "UserPeerCompany"
 
 	has_many :user_peer_companies, :class_name => "UserPeerCompany"

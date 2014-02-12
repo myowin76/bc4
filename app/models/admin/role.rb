@@ -12,7 +12,6 @@ class Admin::Role < ActiveRecord::Base
 	attr_accessible :name
 	self.table_name = "roles"
 	
-	# has_and_belongs_to_many :users, :class_name => 'User'
-	has_many :users, :class_name => 'User'
+	has_and_belongs_to_many :users, :class_name => 'User'
 	
 end

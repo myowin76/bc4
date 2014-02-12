@@ -25,6 +25,32 @@
 
 $(function() {
 
+
+	$("#project-add-report").on("click", function(e){
+		alert("add report");
+		e.preventDefault();
+	});
+
+
+	$("#project-new-report-companies").change(function(){
+
+		var published_date = $("#admin_project_publish_date").val();
+		var published_year = published_date.substr(published_date.length - 4);
+		var report_type = $("#project-new-report-type").find('option:selected').text();
+		
+		$("#project-new-report-title").val($(this).find('option:selected').text() + " " + report_type + " " + published_year);
+	});
+
+	$("#project-new-report-type").change(function(){
+
+		var published_date = $("#admin_project_publish_date").val();
+		var published_year = published_date.substr(published_date.length - 4);
+		var company = $("#project-new-report-companies").find('option:selected').text();
+		
+		$("#project-new-report-title").val(company + " " + $(this).find('option:selected').text() + " " + published_year);
+	});
+
+
 	$('.link_edit').tooltip();
 	$('#rpt-tag').select2();
 	$(".peer-companies").select2();
