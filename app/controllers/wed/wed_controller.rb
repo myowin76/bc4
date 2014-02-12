@@ -5,7 +5,7 @@ class Wed::WedController < ApplicationController
 
   # to do : add custom layout 2 columns
   before_action :get_companies, only: [:results_table, :my_peers, :advanced_search]
-  before_action :get_my_peers, only: [:dashboard, :company_profile, :score_card, :progress_chart]
+  before_action :get_my_peers, only: [:dashboard, :company_profile, :score_card, :progress_chart, :my_peers]
 
   before_action :authorize
 
@@ -30,6 +30,7 @@ class Wed::WedController < ApplicationController
     @page_lead = "Lorem itsum Lorem itsum Lorem itsum Lorem itsum Lorem itsum"
 
     @metrics = Admin::Metric.order(:number)
+    # @my_peers = Admin::Company.find(current_user.user_peer_companies.map(&:company_id))
     # @metrics = @latest_report.report_type.metric_report_types.order(:number)
 
     
@@ -138,7 +139,7 @@ class Wed::WedController < ApplicationController
           free to edit and produce your own list."    
 
     # temp, TO DO:: get my peer companies
-    @my_peers = Admin::Company.order(:name).limit(10)
+    
   end
 
   def my_account_update
@@ -204,6 +205,7 @@ class Wed::WedController < ApplicationController
 
   def get_my_peers
     # TO DO :: GET MY PEERS
-    @my_peers = Admin::Company.order(:name).limit(10)
+    # @my_peers = Admin::Company.find(current_user.user_peer_companies.map(&:company_id))
+    @my_peers = current_user.peer_companies
   end
 end

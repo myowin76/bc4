@@ -30,6 +30,7 @@
 			<ul class="peer-list">
 				<% @my_peers.each do |my_peer|%>
 				<li>
+					
 					<div class="icon">
 						<%= link_to image_tag(my_peer.icon.url(:normal)), my_peer.url, :target => "_blank" %>
 					</div>

@@ -12,5 +12,7 @@
 class UserPeerCompany < ActiveRecord::Base
   belongs_to :user,
 		:class_name => "User"
+	belongs_to :peer_company, foreign_key: :company_id,
+		:class_name => "Admin::Company"
 
 end

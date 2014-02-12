@@ -37,7 +37,10 @@ class Admin::Company < ActiveRecord::Base
   belongs_to :company_status
   has_many :reports
 
-  
+  has_many :user_peer_companies, :class_name => "UserPeerCompany"
+  # has_many :users, -> { order('companies.name DESC')}, through: :user_peer_companies, 
+  #         :class_name => "User"
+
   # has_many :company_commentaries, :class_name => "Admin::CompanyCommentary"
   # has_many :commentaries, -> { order('page_widgets.position DESC')}, 
   #         through: :company_commentaries, 
