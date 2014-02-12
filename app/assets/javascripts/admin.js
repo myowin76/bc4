@@ -39,6 +39,9 @@ $(function() {
 	$("#project-new-report-type").select2();
 	$("#admin_best_practice_company_id").select2();
 
+	$("#report-tabs a:first").tab('show');
+	
+	$('#accordion').collapse('toggle')
 	$("#project-add-repot").on("click", function(e){
 
 		// alert("add me");

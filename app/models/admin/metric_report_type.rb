@@ -7,8 +7,8 @@ class Admin::MetricReportType < ActiveRecord::Base
 
   self.table_name = "metric_report_types"
 
-  has_many :report_types_sub_metrics, :class_name => "Admin::ReportTypeSubMetrics"
-  has_many :sub_metrics, -> { order('report_types_sub_metrics.number ASC')}, through: :report_types_sub_metrics, 
+  has_many :report_types_sub_metrics, :class_name => "Admin::ReportTypesSubMetric"
+  has_many :sub_metrics, -> { order('report_types_sub_metrics.number DESC')}, through: :report_types_sub_metrics, 
   				:class_name => "Admin::SubMetric"
 
 

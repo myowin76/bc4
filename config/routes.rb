@@ -24,7 +24,7 @@ Bc4::Application.routes.draw do
   resources :users
   # get '/admin/users/new', to: redirect('/users/sign_up')
   resources :newsletters
-  match 'subscribe' => 'newsletters#new', via: :get, :as => :subscribe_newsletter
+  # match 'subscribe' => 'newsletters#new', via: :get, :as => :subscribe_newsletter
   # match 'newsletters/subscribe' => 'newsletters#new', via: :get, :as => :subscribe_newsletter
 
   # get "cms_desk/index"

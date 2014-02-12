@@ -1,5 +1,6 @@
 class Admin::Question < ActiveRecord::Base
 
+	attr_accessible :id, :question, :created_at, :updated_at
 
 	self.table_name = "questions"
 
