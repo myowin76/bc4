@@ -25,6 +25,30 @@
 
 $(function() {
 
+	$('#project-reports-table').on ('click', '.link_destroy', function(e){
+    e.preventDefault();
+    
+    alert("to remove");
+    
+    // console.log(this)
+    // $(this).prev().val('1');
+    // $(this).closest('li').hide();
+  });
+
+	$('.form-actions').on ('click', '.add_fields', function(e){
+    e.preventDefault();
+    
+    var link = $(this);
+    var time =  new Date().getTime();
+    var regexp = new RegExp(link.data('id'), 'g');
+
+    var html = link.data('fields').replace(regexp, time);
+     // console.log(this)
+     // alert(link.data('fields'));
+    $('#project-reports-table tbody').prepend(html);
+
+  });
+
 
 	$("#project-add-report").on("click", function(e){
 		alert("add report");
@@ -64,6 +88,7 @@ $(function() {
 	$("#project-new-report-companies").select2();
 	$("#project-new-report-type").select2();
 	$("#admin_best_practice_company_id").select2();
+	$("#project-new-report-assigned_to").select2();
 
 	$("#report-tabs a:first").tab('show');
 	

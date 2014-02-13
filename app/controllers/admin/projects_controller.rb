@@ -16,6 +16,9 @@ class Admin::ProjectsController < Admin::AdminController
   # GET /projects/new
   def new
     @project = Admin::Project.new
+    # 5.times do
+    #   @project.reports.build
+    # end
   end
 
   # GET /projects/1/edit
@@ -27,7 +30,7 @@ class Admin::ProjectsController < Admin::AdminController
   # POST /projects.json
   def create
     @project = Admin::Project.new(project_params)
-
+debugger
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
@@ -71,9 +74,9 @@ class Admin::ProjectsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      debugger
+      # debugger
       params.require(:admin_project).permit(:name, :publish_date, :ft_index, :in_result_table, :can_compare, :reports_count,
-        reports_attributes: []
+        reports_attributes: [:name, :company_id, :report_type_id, :report_state_id]
         )
     end
 end

@@ -47,12 +47,11 @@ class User < ActiveRecord::Base
 	has_many :user_peer_companies, :class_name => "UserPeerCompany"
 
 	has_many :user_peer_companies, :class_name => "UserPeerCompany"
-  has_many :peer_companies, -> { order('companies.name DESC')}, through: :user_peer_companies, 
+  has_many :peer_companies, -> { order('companies.name ASC')}, through: :user_peer_companies, 
   				:class_name => "Admin::Company"
 
 	has_many :login_histories
-  # has_many :companies, through: :user_peer_companies, 
-  				# :class_name => "UserPeerCompany"
+  
 
 
 	has_secure_password

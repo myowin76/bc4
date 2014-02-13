@@ -48,8 +48,8 @@ class Admin::ReportsController < Admin::AdminController
   # GET /reports/new
   def new
 
-    debugger
-    # @report = Admin::Report.new
+    # debugger
+    @report = Admin::Report.new
   end
 
   # GET /reports/1/edit
@@ -60,7 +60,8 @@ class Admin::ReportsController < Admin::AdminController
   # POST /reports.json
   def create
     @report = Admin::Report.new(report_params)
-
+    # check there is project_id params- is required
+    debugger
     respond_to do |format|
       if @report.save
         format.html { redirect_to @report, notice: 'Report was successfully created.' }

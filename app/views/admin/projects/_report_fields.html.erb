@@ -1,0 +1,18 @@
+<tr>
+  <td><%= f.input :name, :label => false %></td>
+  <td><%= f.input :created_at, as: :string, :label => false, :input_html => { :value => DateTime.now } %></td>
+  <td>
+    <%#= r.object.report_state.name unless r.object.report_state.nil? %>
+    <%#= f.association :report_state, as: :string, :label => false, :input_html => { :value => DateTime.now } %>
+    Commissioned
+  </td>
+  <td></td>
+  <td><%= f.object.updated_at %></td>
+  <td></td>
+  <td></td>
+  <td>
+    <a href="#" class="link_destroy remove">Remove</a>
+    <%#= link_to 'Destroy', report, method: :delete, :class => 'link_destroy',
+          data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>
