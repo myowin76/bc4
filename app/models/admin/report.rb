@@ -59,6 +59,9 @@ class Admin::Report < ActiveRecord::Base
     # where('user_id = ? AND IS NOT NULL', user.id)
   }
 
+  # after_create :send_email_to_editors, if: :author_wants_emails?,
+  #   unless: Proc.new { |comment| comment.post.ignore_comments? }
+
 
   # TO do
   # scope - reports awaiting approvals
