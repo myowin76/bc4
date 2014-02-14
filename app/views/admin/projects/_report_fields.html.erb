@@ -8,8 +8,11 @@
   </td>
   <td></td>
   <td><%= f.object.updated_at %></td>
-  <td></td>
-  <td></td>
+  
+  <td>
+    <%= select_tag "project-new-report-type", options_from_collection_for_select(User.order(:username), "id", "username"),
+             :prompt => "Select Editor", :class => 'form-control' %>
+  </td>
   <td>
     <a href="#" class="link_destroy remove">Remove</a>
     <%#= link_to 'Destroy', report, method: :delete, :class => 'link_destroy',

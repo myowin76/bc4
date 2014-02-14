@@ -41,10 +41,10 @@ $(function() {
     var link = $(this);
     var time =  new Date().getTime();
     var regexp = new RegExp(link.data('id'), 'g');
-
     var html = link.data('fields').replace(regexp, time);
-     // console.log(this)
-     alert(link.data('fields'));
+
+    console.log(this);
+     // alert(link.data('fields'));
      // alert($("#project-new-report-type").find('option:selected').text());
     $('#project-reports-table tbody').prepend(html);
 
