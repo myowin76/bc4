@@ -53,10 +53,10 @@ class Wed::WedController < ApplicationController
     end
 
     
-    @metrics = @latest_report.report_type.metric_report_types.order(:number)
+    @report_type_metrics = @latest_report.report_type.metric_report_types.order(:number)
     # check if there is metric params to search for
     # @current_metric = @metrics.find(params[:metric_id])
-    @first_metric = @metrics.first
+    #@first_metric = @metrics.first
     # debugger
   end
 

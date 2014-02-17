@@ -1,4 +1,4 @@
-<% @first_metric.sub_metrics.each do |sub_metric| %>
+
 
 	<div class="panel-group" id="metric_accordion">
 	  <div class="panel panel-default">
@@ -6,7 +6,7 @@
 	    <div class="panel-heading">
 	      <h4 class="panel-title">
 	        <a data-toggle="collapse" data-parent="#metric_accordion" href="#<%= sub_metric.id %>">
-	          <%= @first_metric.metric.number %>.<%= sub_metric.number %> 
+	          <%= metric.metric.number %>.<%= sub_metric.number %> 
 	          <%= sub_metric.name %> [16]
 	        </a>
 	      </h4>
@@ -183,4 +183,3 @@
 	  </div>	 
 	</div>
 
-<% end %>
