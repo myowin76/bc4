@@ -143,34 +143,34 @@
 
 		
 			<div class="tab-content">
-			<% @report_type_metrics.each do |metric| %>	
+			<% @report_type_metrics.each do |report_type_metric| %>	
 			
-				<div class="tab-pane" id="<%= metric.metric.name.downcase.gsub(' ','-') %>">
+				<div class="tab-pane" id="<%= report_type_metric.metric.name.downcase.gsub(' ','-') %>">
 
 
 					<div class="panel-group report-accordion" id="accordion">
 						<div class="rpt-metric-score">
 							<div class="name">
-								<%= metric.metric.name %> [<%= metric.sub_metrics.sum(:max_score) %>]
+								<%= report_type_metric.metric.name %> [<%= report_type_metric.sub_metrics.sum(:max_score) %>]
 							</div>
 							<div class="scores">Score 39 (41)</div>
 						</div>
 
 					<!-- CONSTRUCTION METRIC FORM START -->		
 					
-						<% metric.metric.sub_metrics.each do |sub_metric| %>	
+						<%# report_type_metric.metric.sub_metrics.each do |sub_metric| %>	
+						<% report_type_metric.report_types_sub_metrics.each do |rpt_sub_metric| %>	
 						  <div class="panel panel-default">
 						    <div class="panel-heading">
 						      <h4 class="panel-title">
-						        <a data-toggle="collapse" data-parent="#accordion" href="#<%= sub_metric.id %>">
-						        	<i class="panel-arrow-right"></i>
-						        	<%= metric.metric.number %>.<%= sub_metric.number %>
-						          <%= sub_metric.name %>
+						        <a data-toggle="collapse" data-parent="#accordion" href="#<%= rpt_sub_metric.id %>" class="collapsed">
+						        	<%= report_type_metric.metric.number %>.<%= rpt_sub_metric.sub_metric.number %>
+						          <%= rpt_sub_metric.sub_metric.name %>
 						        </a>
 						        <!-- <span>Score 11(13)</span> -->
 						      </h4>
 						    </div>
-						    <div id="<%= sub_metric.id %>" class="panel-collapse collapse">
+						    <div id="<%= rpt_sub_metric.id %>" class="panel-collapse collapse">
 						      <div class="panel-body">
 
 				        		<p>
@@ -201,12 +201,13 @@
 
 						        <div class="panel-section row">
 						        	<section>
-						        		<% @report_type_metrics.first.report_types_sub_metrics.first.report_types_sub_metrics_questions.each do |question| %>
-						        		<%# debugger %>
-						        		<div class="title">Q: <%= question.question.question %></div>
-						        		<textarea class="ckeditor" name="editor">
-						        		</textarea>
+
+						        		<% rpt_sub_metric.report_types_sub_metrics_questions.each do |question| %>
+							        		<div class="title">Q: <%= question.question.question %></div>
+							        		<textarea class="ckeditor" name="editor">
+							        		</textarea>
 						        		<% end %>
+
 						        	</section>
 						        </div>
 
