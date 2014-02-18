@@ -1,0 +1,329 @@
+#accordion{
+
+  #mini-accordion{
+    @include clearfix;
+    clear: both;
+  }
+  // Base class
+
+  .mini-accordion{
+	  .panel {
+	    background-color: transparent;
+	    box-shadow: none;    
+	  }
+
+	  // Panel contents
+	  .panel-body {
+	    margin-top: 5px;
+
+	    p{
+	      font-family: $base-font;
+	      font-size: 15px;
+	    }
+
+	    textarea{
+	      width: 600px;
+	      height: 100px;
+	      text-align: left;
+	      margin-bottom: 20px;
+	    }
+
+	    label{
+	    	float: left;
+	    	width: 90%;
+	    	font-weight: normal;
+	    }
+	    input[type="checkbox"]{
+	    	float: right;
+	    }
+
+	    .panel-section, .panel-slide{
+	      border-top: 1px solid $silver;
+	      padding-top: 5px;
+	      margin-bottom: 25px;
+
+	      section{
+	        //@include clearfix;
+	        background-color: $light-gray;
+	        padding: 15px;
+	        float: left;
+	        width: 100%;
+
+
+	        > div{
+	          margin-bottom: 15px;
+	        }
+
+	        .title{
+	          @include clearfix;
+	          clear: both;
+	          display: block;
+	          width: 100%;
+	          font-family: $base-font-alt;
+	          font-size: 18px;
+	          font-weight: bold;
+	        }
+
+	        .sub-title{
+	          font-family: $base-font;
+	          font-size: 16px;
+	          font-weight: bold;
+	        }
+
+	        .rpt-urls{
+
+	        }
+
+	        figure{
+	          img{
+	            max-width: 100%;
+	          }
+	        }
+	      }
+	    }
+
+	    .panel-slide{
+
+	      .title{
+	        cursor: pointer;
+	        background: url(/assets/arrow-right.png) no-repeat;
+	        width: 20px; height: 20px; line-height: 20px;
+	        padding-left: 20px; margin-bottom: 0px;
+	      }
+	    }
+
+	  }
+
+
+
+	  // List groups in panels
+	  //
+	  // By default, space out list group content from panel headings to account for
+	  // any kind of custom content between the two.
+
+	  .panel {
+	    > .list-group {
+	      margin-bottom: 0;
+
+	      .list-group-item {
+	    
+
+	        // Remove border radius for top one
+	        &:first-child {
+	    
+	        }
+	        // But keep it for the last one
+	        &:last-child {
+	    
+	        }
+	      }
+	    }
+	  }
+	  // Collapse space between when there's no additional content.
+	  .panel-heading + .list-group {
+	    .list-group-item:first-child {
+	      
+	    }
+	  }
+
+
+	  // Tables in panels
+	  //
+	  // Place a non-bordered `.table` within a panel (not within a `.panel-body`) and
+	  // watch it go full width.
+
+	  .panel {
+	    > .table,
+	    > .table-responsive > .table {
+	      margin-bottom: 0;
+	      
+	      > tbody:last-child,
+	      > tfoot:last-child {
+	        > tr:last-child {
+	          td:first-child,
+	          th:first-child {
+	            
+	          }
+	          td:last-child,
+	          th:last-child {
+	            
+	          }
+	        }
+	      }
+	    }
+	    > .panel-body + .table,
+	    > .panel-body + .table-responsive {
+	      
+	    }
+	    > .table > tbody:first-child th,
+	    > .table > tbody:first-child td {
+	      border-top: 0;
+	    }
+	    > .table-bordered,
+	    > .table-responsive > .table-bordered {
+	      border: 0;
+	      > thead,
+	      > tbody,
+	      > tfoot {
+	        > tr {
+	          > th:first-child,
+	          > td:first-child {
+	            
+	          }
+	          > th:last-child,
+	          > td:last-child {
+	            
+	          }
+
+	          &:last-child > th,
+	          &:last-child > td {
+	            
+	          }
+	        }
+	      }
+	    }
+	    > .table-responsive {
+	      border: 0;
+	      margin-bottom: 0;
+	    }
+	  }
+
+
+	  // Optional heading
+	  .panel-heading {
+	    border-radius: 0px;
+
+
+	    > .dropdown .dropdown-toggle {
+	    
+	    }
+	  }
+
+	  // Within heading, strip any `h*` tag of its default margins for spacing.
+	  .panel-title {
+	    font-family: $base-font-alt;
+	    font-size: 18px;
+	    font-weight: bold;
+	    padding: 7px;
+	    border: none;
+	    overflow: hidden;
+
+	    > a {
+	      float: left;
+	      width: 90%;
+	      background: url(/assets/arrow-down.png) no-repeat;
+	      	padding-left: 22px;		
+	      	
+	      &.collapsed{
+	      	background: url(/assets/arrow-right.png) no-repeat;
+	      	padding-left: 22px;	
+	      }
+	      &:hover{
+	        text-decoration: none;
+	      }
+
+	      .panel-arrow-right{
+	        background: url(/assets/arrow-right.png) no-repeat -3px -1px;
+	        width: 20px;
+	        height: 20px;
+	        float: left;
+	      }
+	      .panel-arrow-down{
+	        background: url(/assets/arrow-down.png) no-repeat -3px -1px;
+	        width: 20px;
+	        height: 20px;
+	        float: left;
+	      }
+	    }
+	    input[type="checkbox"]{
+	    	float: right;
+	    }
+	  }
+
+	  // Optional footer (stays gray in every modifier class)
+	  .panel-footer {
+	    
+	  }
+
+
+	  // Collapsable panels (aka, accordion)
+	  //
+	  // Wrap a series of panels in `.panel-group` to turn them into an accordion with
+	  // the help of our collapse JavaScript plugin.
+
+	  .panel-group {
+	    border: 1px solid silver;
+	    > .panel-default{
+	      &:last-child{
+	        // border-top: 1px solid $silver;
+	        border-bottom: 0px;
+	    
+	      }
+
+	      .panel-collapse.in, .panel-collapse.collapsing{
+	      	border-top: 1px solid $silver;
+	      }
+
+
+	    }
+	    
+	    .panel {
+	      margin-bottom: 0;
+	      border-radius: 0;
+	    
+	      + .panel {
+	        margin-top: 0;
+	      }
+	    }
+
+
+
+	    .panel-heading {
+	      border-bottom: 0;
+	      background-color: $light-gray;
+	      padding: 0px;
+	      margin-bottom: 0px;
+	      + .panel-collapse .panel-body {
+	        border-top: none;
+
+	        .summary{
+	          font-weight: bold;
+	        }
+	      }
+	    }
+	    .panel-footer {
+	      border-top: 0;
+	      + .panel-collapse .panel-body {
+	    
+	      }
+	    }
+	  }
+
+
+	  // Contextual variations
+	  .panel-default {
+	    border: none;
+	    border-bottom: 1px solid $silver;
+	    /*padding-top: 5px;*/
+
+	    > panel-heading{
+
+	    }
+	  }
+	  .panel-primary {
+	    
+	  }
+	  .panel-success {
+	    
+	  }
+	  .panel-warning {
+	    
+	  }
+	  .panel-danger {
+	    
+	  }
+	  .panel-info {
+	    
+	  }
+	}  
+}  

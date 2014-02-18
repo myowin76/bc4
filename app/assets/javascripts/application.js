@@ -42,12 +42,12 @@ $(function() {
         $(this).closest('li').toggleClass('show-sub', 2000);
     });
 
-    $('.report-accordion').on('hide.bs.collapse show.bs.collapse ', function (n) { 
-        // $('.report-accordion').children('.panel-default').find('i').each(function({
-        //     $(this).toggleClass('panel-arrow-right panel-arrow-down');    
-        // })
+    // $('.report-accordion').on('hide.bs.collapse show.bs.collapse ', function (n) { 
+    //     // $('.report-accordion').children('.panel-default').find('i').each(function({
+    //     //     $(this).toggleClass('panel-arrow-right panel-arrow-down');    
+    //     // })
    
-    });
+    // });
 
 
     $("#admin_company_renew_date").datepicker({
@@ -80,10 +80,6 @@ $(function() {
           $( "#published_from" ).datepicker( "option", "maxDate", selectedDate );
         }
     });
-
-
-
-
 
 
     $('.tabs a').click(function (e) {
