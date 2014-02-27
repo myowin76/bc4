@@ -4,10 +4,11 @@ class Wed::WedController < ApplicationController
   # respond_to :js, :html, :only => :best_practice 
 
   # to do : add custom layout 2 columns
+  before_action :authorize
   before_action :get_companies, only: [:results_table, :my_peers, :advanced_search]
   before_action :get_my_peers, only: [:dashboard, :company_profile, :score_card, :progress_chart, :my_peers, :peer_comparison]
 
-  before_action :authorize
+  
 
   def dashboard
 
@@ -184,9 +185,6 @@ class Wed::WedController < ApplicationController
     @page_title = "My Account"
     @page_lead = "Use the My account tab to update your account details, change your password or amend your e-mail preferences."
 
-
-    
-    
   end
 
 
@@ -224,5 +222,6 @@ class Wed::WedController < ApplicationController
     # TO DO :: GET MY PEERS
     # @my_peers = Admin::Company.find(current_user.user_peer_companies.map(&:company_id))
     @my_peers = current_user.peer_companies
+    
   end
 end
