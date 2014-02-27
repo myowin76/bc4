@@ -30,13 +30,13 @@ Bc4::Application.routes.draw do
   # get "cms_desk/index"
   # match 'web/cmsdesk' => 'web/pages#index', via: :get, :as => :web_cms
 
-  get "home/index"
-  get "wed/wed/dashboard"
-  get "wed/score_card"
-  # get "wed/latest_report"
-  get "wed/peer_comparison"
-  get "wed/best_practice"
-  get "wed/results_table"
+  # get "home/index"
+  # get "wed/wed/dashboard"
+  # get "wed/score_card"
+  # # get "wed/latest_report"
+  # get "wed/peer_comparison"
+  # get "wed/best_practice"
+  # get "wed/results_table"
   
 
   match 'wed' => 'wed/wed#dashboard', via: :get
