@@ -32,7 +32,7 @@
   	$(function () {
         $('#chart').highcharts({
             title: {
-                text: 'Progress for all metrics (2010 - current)',
+                text: 'Progress for all metrics (<%= @yr.first %> - current)',
                 x: -20 //center
             },
             subtitle: {
@@ -40,7 +40,8 @@
                 x: -20
             },
             xAxis: {
-                categories: ['2010', '2011', '2012']
+                // categories: ['2010', '2011', '2012']
+                categories: <%= raw @yr %>
             },
             yAxis: {
                 title: {
@@ -63,7 +64,7 @@
             },
             series: [{
                 name: 'Construction',
-                data: [7.0, 6.9, 9.5]
+                data: [7.0, 6.9, 9.5,10,9,20]
             }, {
                 name: 'Message',
                 data: [-0.2, 0.8, 5.7]

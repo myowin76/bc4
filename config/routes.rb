@@ -33,7 +33,7 @@ Bc4::Application.routes.draw do
   get "home/index"
   get "wed/wed/dashboard"
   get "wed/score_card"
-  get "wed/latest_report"
+  # get "wed/latest_report"
   get "wed/peer_comparison"
   get "wed/best_practice"
   get "wed/results_table"
@@ -71,6 +71,11 @@ Bc4::Application.routes.draw do
   match 'wed/search' => 'wed/wed#search', via: :get, :as => :wed_search
   match 'wed/advanced-search' => 'wed/wed#advanced_search', via: :get, :as => :wed_advanced_search
 
+  # REPORTS
+  match 'wed/latest_report/download_pdf' => 'admin/reports#generate_report_pdf', via: :get, :as => :download_report_pdf
+
+
+
   namespace :web do
     resources :widgets
     resources :pages, only: [:index, :new, :create]
@@ -101,7 +106,7 @@ Bc4::Application.routes.draw do
       resources :screengrabs
 
       collection do
-        # get :generate_pdf
+        # get :generate_report_pdf
       end
     end
     resources :projects do

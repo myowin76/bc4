@@ -12,7 +12,8 @@
             :input_html => {:class => ''} %>
       </fieldset>  
       <fieldset>  
-        <%= f.input :publish_date, :as => :string %>
+        <%= f.input :publish_date, :as => :string, :input_html => { :value => f.object.publish_date} %>
+        
       </fieldset>
       <fieldset>  
         <%= f.input :ft_index, as: :radio_buttons %>

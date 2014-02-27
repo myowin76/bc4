@@ -197,10 +197,12 @@
       display: block;
       background: url(/assets/arrow-down.png) no-repeat;
       padding-left: 22px;   
+      font-family: $base-font-alt;
         
       &.collapsed{
         background: url(/assets/arrow-right.png) no-repeat;
         padding-left: 22px; 
+
       }
 
       &:hover{

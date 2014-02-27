@@ -69,6 +69,7 @@ class Admin::ReportTypesController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_type_params
-      params.require(:report_type).permit(:name, :public, :notes, :exe_summary, :recommendation, :best_practice, :supplementary)
+      debugger
+      params.require(:admin_report_type).permit(:name, :public, :notes, :exe_summary, :recommendation, :best_practice, :supplementary)
     end
 end

@@ -12,7 +12,22 @@ class Admin::ReportsController < Admin::AdminController
     # debugger
   end
 
+  def generate_report_pdf
+    
+    # @report = params[:report_id]  
+    # debugger
+    
 
+    respond_to do |format|
+      format.pdf do
+        pdf = ReportPdf.new(@report)
+        
+        send_data pdf.render, file_name: "report.pdf",
+                      type: "application/pdf",
+                      disposition: "inline"
+      end
+    end
+  end
 
   # GET /reports
   # GET /reports.json

@@ -6,7 +6,7 @@
           <%#= f.collection_select :role_ids,
               Admin::Role.order(:name), :id, :name,
               {}, { :class => 'form-control'} %>
-          <%= f.association :role,
+          <%= f.association :roles,
             input_html: { class: 'form-control' }, :prompt => 'User Type' %>
         </fieldset>
         <fieldset>

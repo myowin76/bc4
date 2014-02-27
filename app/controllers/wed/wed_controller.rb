@@ -5,12 +5,11 @@ class Wed::WedController < ApplicationController
 
   # to do : add custom layout 2 columns
   before_action :get_companies, only: [:results_table, :my_peers, :advanced_search]
-  before_action :get_my_peers, only: [:dashboard, :company_profile, :score_card, :progress_chart, :my_peers]
+  before_action :get_my_peers, only: [:dashboard, :company_profile, :score_card, :progress_chart, :my_peers, :peer_comparison]
 
   before_action :authorize
 
   def dashboard
-    
 
     @page_title = "Latest from Bowen Craggs & Co"
     @page_lead = "Our database allows you to view the performance of your company's website, as measured by the 
@@ -33,7 +32,6 @@ class Wed::WedController < ApplicationController
     # @my_peers = Admin::Company.find(current_user.user_peer_companies.map(&:company_id))
     # @metrics = @latest_report.report_type.metric_report_types.order(:number)
 
-    
   end
 
 
@@ -44,7 +42,7 @@ class Wed::WedController < ApplicationController
     ## current user's company's latest report
     # check if there is report id params changed, and get report data according to id
 
-    @company_reports = current_user.company.reports.order('created_at desc')
+    @company_reports = current_user.company.reports.order('publish_date desc')
     
     unless params[:id].nil?
       @latest_report = @company_reports.find(params[:id])
@@ -68,6 +66,19 @@ class Wed::WedController < ApplicationController
   def progress_chart
     @page_title = "Progress Chart"
     @page_lead = "Lorem itsum Lorem itsum Lorem itsum Lorem itsum Lorem itsum"
+
+    if current_user
+      @company = current_user.company
+      @reports = @company.reports if @company.reports.present?
+
+      @report_years = @reports.order(:publish_date).map(&:publish_date)
+      
+      @yr = @report_years.map {|d| 
+        d.strftime "%Y" 
+      }
+      # debugger
+    end
+
   end
 
 
@@ -125,9 +136,9 @@ class Wed::WedController < ApplicationController
     @company = Admin::Company.find(params[:id])
     @company_reports = @company.reports
     @latest_report = @company.reports.order(:created_at).last
-    @metrics = @latest_report.report_type.metric_report_types.order(:number)
+    @report_type_metrics = @latest_report.report_type.metric_report_types.order(:number)
 
-    @first_metric = @metrics.first
+    # @first_metric = @metrics.first
   end
 
   def my_peers
@@ -190,6 +201,12 @@ class Wed::WedController < ApplicationController
 
     render layout: 'wed/two_column'
 
+  end
+
+  def download_report_pdf
+      @report = params[:report_id]
+    # debugger
+    
   end
 
 

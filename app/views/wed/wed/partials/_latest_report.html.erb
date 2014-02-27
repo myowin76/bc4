@@ -68,11 +68,12 @@
 									</select>	
 								</div>
 
-								<a href="#" class="btn btn-download">
+								
+								<%= link_to download_report_pdf_path, id: "download_report_pdf", class: "btn btn-download", remote: true do %>
 									<i></i>Download complete report
-								</a>
+								<% end %>
 
-								<a href="#" class="btn btn-download">
+								<a href="#" class="btn btn-download", remote: true>
 									<i></i>Download selected
 								</a>
 							</section>
