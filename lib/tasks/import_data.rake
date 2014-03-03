@@ -331,4 +331,64 @@ namespace :import do
 		end # csv end
   end # task end
 
+
+  # IMPORT METRICS OF REPORTS
+	  task :reports_metrics => :environment do
+		
+		ReportsMetric.delete_all
+    CSV.foreach(File.join(Rails.root, 'bin', 'report_metric.csv')) do |row|
+		  unless row.join.blank?
+			  # cells map
+			  id_cell = row[0]
+			  report_id_cell = row[2]
+			  metric_id_cell = row[3]
+			  total_score_cell = row[5]
+			  created_cell = row[7]
+			  updated_cell = row[9]
+			  
+			  
+ 				ReportsMetric.create(
+ 					:id => id_cell,
+			  	:report_id => report_id_cell,
+			  	:metric_id => metric_id_cell,
+			  	:total_score => total_score_cell,
+			  	:created_at => created_cell,
+			  	:updated_at => updated_cell
+		  	)
+
+			end # one row end
+		end # csv end
+  end # task end
+
+  # IMPORT SUB METRICS OF REPORTS
+	  task :reports_sub_metrics => :environment do
+		
+		ReportsSubMetric.delete_all
+    # CSV.foreach(File.join(Rails.root, 'bin', 'report_sub_metric_view.csv')) do |row|
+    CSV.foreach(File.join(Rails.root, 'bin', 'useit.csv')) do |row|
+		  unless row.join.blank?
+			  # cells map
+			  id_cell = row[0]
+			  reports_metric_id_cell = row[1]
+			  submetric_id_cell = row[2]
+			  total_score_cell = row[2]
+			  # summary_cell = row[3]
+			  created_cell = row[4]
+			  updated_cell = row[5]
+			  
+			  
+ 				ReportsSubMetric.create(
+ 					:id => id_cell,
+			  	:reports_metric_id => reports_metric_id_cell,
+			  	:sub_metric_id => submetric_id_cell,
+			  	:total_score => total_score_cell,
+			  	# :summary => summary_cell.gsub('\"', '""'),
+			  	:created_at => created_cell,
+			  	:updated_at => updated_cell
+		  	)
+
+			end # one row end
+		end # csv end
+  end # task end
+
 end # namespace end

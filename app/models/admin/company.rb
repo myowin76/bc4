@@ -124,6 +124,10 @@ class Admin::Company < ActiveRecord::Base
     # where('user_id = ? AND IS NOT NULL', user.id)
   }
 
+  def latest_report
+    reports.order(:publish_date).last  
+  end
+
   def demo_subscriber?
     
   end

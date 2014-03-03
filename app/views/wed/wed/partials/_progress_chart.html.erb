@@ -62,19 +62,43 @@
                 verticalAlign: 'middle',
                 borderWidth: 0
             },
-            series: [{
-                name: 'Construction',
-                data: [7.0, 6.9, 9.5,10,9,20]
-            }, {
-                name: 'Message',
-                data: [-0.2, 0.8, 5.7]
-            }, {
-                name: 'Contact',
-                data: [-0.9, 0.6, 3.5]
-            }, {
-                name: 'Serving Society',
-                data: [3.9, 4.2, 5.7]
-            }]
+            // series: [{
+            //     name: 'Construction',
+            //     data: [7.0, 6.9, 9.5,10,9,20]
+            // }, {
+            //     name: 'Message',
+            //     data: [-0.2, 0.8, 5.7]
+            // }, {
+            //     name: 'Contact',
+            //     data: [-0.9, 0.6, 3.5]
+            // }, {
+            //     name: 'Serving Society',
+            //     data: [3.9, 4.2, 5.7]
+            // }]
+
+            // series: [
+            // <%# @metrics.each do |metric| %>
+            //   {
+            //       name: '<%#= metric.metric.name %>',
+            //       data: [<%#= metric.total_score %>]
+            //   },
+            // <%# end %>
+            // ]
+            series: [
+              <% @reports.each do |report| %>
+                <% if report.reports_metrics.present? %>
+                
+                  <% report.reports_metrics.each do |report_metric| %>
+                  {
+                    name: '<%= report_metric.metric.name %>',
+                    data: <%= report.reports_metrics.map(&:total_score) %>
+                    <%# debugger %>
+                  },
+                  <% end %>
+                
+                <% end %>
+              <% end %>
+            ]         
         });
     });
     

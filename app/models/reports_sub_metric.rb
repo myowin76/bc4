@@ -1,6 +1,11 @@
 class ReportsSubMetric < ActiveRecord::Base
-  belongs_to :reports_metrics
-  belongs_to :sub_metric
+
+	attr_accessible :id, :reports_metric_id, :sub_metric_id, :total_score, :summary, :created_at, :updated_at
+
+  belongs_to :reports_metrics, :class_name => "ReportsMetric"
+  belongs_to :sub_metric, :class_name => "Admin::SubMetric"
 
   has_many :reports_sub_metrics_notes
+
+  has_paper_trail	#, :on => [:update], only => [:total_score, :summary, :reason, :updated_by, :created_at, :updated_at]
 end

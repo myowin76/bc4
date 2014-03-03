@@ -6,32 +6,32 @@
 
 <div class="nav nav-tabs" id="latest-report-tabs">
 	<ul>
-		<% @width = 100.00/@report_type_metrics.count %>
-		<% @report_type_metrics.each do |metric| %>
-			<li style="width: <%= "#{@width}" + '%' %>"><a href="#<%= metric.metric.name.downcase.gsub(' ','-')  %>" data-toggle="tab" >
-				<%= metric.metric.number %>.<%= metric.metric.name %></a>
+		<% @width = 100.00/@report_metrics.count %>
+		<% @report_metrics.each do |rpt_metric| %>
+			<li style="width: <%= "#{@width}" + '%' %>"><a href="#<%= rpt_metric.metric.name.downcase.gsub(' ','-')  %>" data-toggle="tab" >
+				<%= rpt_metric.metric.number %>.<%= rpt_metric.metric.name %></a>
 			</li>
 		<% end %>
 	</ul>
 </div>
 
 <div class="tab-content">
-	<% @report_type_metrics.each do |metric| %>	
-		<div class="tab-pane" id="<%= metric.metric.name.downcase.gsub(' ','-') %>">
+	<% @report_metrics.each do |rpt_metric| %>	
+		<div class="tab-pane" id="<%= rpt_metric.metric.name.downcase.gsub(' ','-') %>">
 			
 			<div class="panel-group report-accordion" id="accordion">
 				<div class="rpt-metric-score">
 					<div class="name">
-						<%= metric.metric.name %> [<%= metric.sub_metrics.sum(:max_score) %>]
+						<%= rpt_metric.metric.name %> [<%= rpt_metric.reports_sub_metrics.sum(:total_score) %>]
 					</div>
 					<div class="scores">Score 39 (41)</div>
 				</div>
 
 				<div class="row">
 					<div class="col-sm-9">
-						<% metric.metric.sub_metrics.each do |sub_metric| %>		
+						<% rpt_metric.reports_sub_metrics.each do |sub_metric| %>		
 							<div class="rpt-view-container">
-								<%= render "wed/wed/partials/latest_report_view", metric: metric, sub_metric: sub_metric %>
+								<%= render "wed/wed/partials/latest_report_view", rpt_metric: rpt_metric, sub_metric: sub_metric %>
 							</div>
 						<% end %>
 					</div>

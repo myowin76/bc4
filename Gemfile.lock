@@ -163,6 +163,9 @@ GEM
     multi_test (0.0.3)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    paper_trail (3.0.0)
+      activerecord (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
     paperclip (3.5.2)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -313,6 +316,7 @@ DEPENDENCIES
   jquery-datatables-rails
   jquery-rails
   jquery-ui-rails
+  paper_trail (~> 3.0.0)
   paperclip (>= 3.4.2)
   pg
   prawn

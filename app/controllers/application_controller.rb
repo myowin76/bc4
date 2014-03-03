@@ -20,5 +20,10 @@ class ApplicationController < ActionController::Base
   def authorize
 	  redirect_to login_url, alert: "Not authorized" if current_user.nil?
 	end
+
+  def user_for_paper_trail
+    current_user
+    # logged_in? ? current_member.id : 'Public user'  # or whatever
+  end
   helper_method :current_user, :current_page
 end

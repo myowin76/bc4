@@ -1,22 +1,22 @@
 <form id="mini-accordion-download">
 <div class="mini-accordion">
 	<div class="panel-group" id="mini-accordion">
-		<% @report_type_metrics.each do |metric| %>	
+		<% @report_metrics.each do |rpt_metric| %>	
 		  <div class="panel panel-default">
 		    <div class="panel-heading">
 		      <h4 class="panel-title">
-		        <a data-toggle="collapse" data-parent="#mini-accordion" href="#<%= metric.metric.name.downcase.gsub(' ','-')%>-mini" class="collapsed">
-		          <%= metric.metric.name %>
+		        <a data-toggle="collapse" data-parent="#mini-accordion" href="#<%= rpt_metric.metric.name.downcase.gsub(' ','-')%>-mini" class="collapsed">
+		          <%= rpt_metric.metric.name %>
 		        </a>
 		        <%= check_box_tag 'eula', 'accepted', true %>
 		      </h4>
 		    </div>
-		    <div id="<%= metric.metric.name.downcase.gsub(' ','-') %>-mini" class="panel-collapse collapse">
+		    <div id="<%= rpt_metric.metric.name.downcase.gsub(' ','-') %>-mini" class="panel-collapse collapse">
 		      <div class="panel-body">
-		      	<% metric.metric.sub_metrics.each do |sub_metric| %>
+		      	<% rpt_metric.reports_sub_metrics.each do |sub_metric| %>
 		      		<ul>
 		      			<li>
-		      				<label><%= metric.metric.number %>.<%= sub_metric.number %> <%= sub_metric.name %></label>
+		      				<label><%= rpt_metric.metric.number %>.<%= sub_metric.sub_metric.number %> <%= sub_metric.sub_metric.name %></label>
 		      				<%= check_box_tag 'eula', 'accepted', true %>
 		      			</li>
 		      		</ul>

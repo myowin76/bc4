@@ -29,7 +29,7 @@ gem 'backbone-on-rails'
 gem 'will_paginate', '~> 3.0.0'
 gem 'aws-sdk'
 gem "paperclip", ">= 3.4.2"
-# gem 'paper_trail'
+gem 'paper_trail', '~> 3.0.0'
 # gem 'premailer', :require => false
 
 # gem 'devise'

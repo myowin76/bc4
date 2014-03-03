@@ -42,7 +42,7 @@ class Wed::WedController < ApplicationController
 
     ## current user's company's latest report
     # check if there is report id params changed, and get report data according to id
-
+    # @latest_report = current_user.company.latest_report
     @company_reports = current_user.company.reports.order('publish_date desc')
     
     unless params[:id].nil?
@@ -52,7 +52,11 @@ class Wed::WedController < ApplicationController
     end
 
     
-    @report_type_metrics = @latest_report.report_type.metric_report_types.order(:number)
+    # @report_type_metrics = @latest_report.report_type.metric_report_types.order(:number)
+    # debugger
+    @report_metrics = @latest_report.reports_metrics.includes(:metric).order('metrics.number asc')
+    # debugger
+
     # check if there is metric params to search for
     # @current_metric = @metrics.find(params[:metric_id])
     #@first_metric = @metrics.first
@@ -69,7 +73,7 @@ class Wed::WedController < ApplicationController
     @page_lead = "Lorem itsum Lorem itsum Lorem itsum Lorem itsum Lorem itsum"
 
     if current_user
-      @company = current_user.company
+      # @company = current_user.company
       @reports = @company.reports if @company.reports.present?
 
       @report_years = @reports.order(:publish_date).map(&:publish_date)
@@ -77,7 +81,13 @@ class Wed::WedController < ApplicationController
       @yr = @report_years.map {|d| 
         d.strftime "%Y" 
       }
-      # debugger
+
+
+      @reports.each do |report|
+        @metrics = report.reports_metrics
+      end
+      # @metrics = @reports.first.reports_metrics
+      debugger
     end
 
   end
@@ -86,6 +96,10 @@ class Wed::WedController < ApplicationController
   def peer_comparison
     @page_title = "Peer Comparison"
     @page_lead = "Lorem itsum Lorem itsum Lorem itsum Lorem itsum Lorem itsum"
+
+    @metrics = Admin::Metric.order(:number)
+    # @my_peers = @my_peers.all(:condition => '')
+    # debugger
   end
 
 
@@ -215,7 +229,8 @@ class Wed::WedController < ApplicationController
   end
 
   def set_company
-    @companies = Admin::Company.all    
+    # @companies = Admin::Company.all    
+    @my_company = current_user.company
   end
 
   def get_my_peers
