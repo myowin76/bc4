@@ -8,7 +8,8 @@ class Admin::ReportsController < Admin::AdminController
 
     # to do:: check the report types to include extra tabs
     # @metrics = Admin::Metric.all    
-    @report_type_metrics = @report.report_type.metric_report_types.order(:number)
+    # @report_type_metrics = @report.report_type.metric_report_types.order(:number)
+    @report_type_metrics = @report.reports_metrics.includes(:metric).order('metrics.number asc')
     # debugger
   end
 

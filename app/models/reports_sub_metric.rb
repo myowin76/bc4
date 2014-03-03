@@ -8,4 +8,8 @@ class ReportsSubMetric < ActiveRecord::Base
   has_many :reports_sub_metrics_notes
 
   has_paper_trail	#, :on => [:update], only => [:total_score, :summary, :reason, :updated_by, :created_at, :updated_at]
+
+
+  has_many :screengrabs, as: :source, :class_name => "Admin::Screengrab"
+  accepts_nested_attributes_for :screengrabs, :allow_destroy => true
 end

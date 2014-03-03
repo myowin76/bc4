@@ -15,16 +15,20 @@
 #
 
 class Admin::Screengrab < ActiveRecord::Base
-	attr_accessible :caption, :image
+	# attr_accessible :caption, :image
+  attr_accessible :id, :caption, :source_id, :source_type, :image_file_name, :created_at, :updated_at
   self.table_name = "screengrabs"
 
 	belongs_to :source, polymorphic: true
 
 	has_attached_file :image, 
-  	:styles => {:normal => '41x41'},
+  	:styles => {:normal => '300x300',:thumbnails => '41x41'},
   	:default_url => "/images/default_:style_screengrab.png",
-  	:url  => "/assets/screengrabs/:style/:basename.:extension",
-    :path => "/assets/screengrabs/:id/:style/:basename.:extension",
+  	# :url  => "/assets/screengrabs/:style/:basename.:extension",
+   #  :path => "/assets/screengrabs/:id/:style/:basename.:extension",
+    :url  => "/assets/report_sub_metrics_screengrabs/basename.:extension",
+    :path => "/assets/report_sub_metrics_screengrabs/:basename.:extension",
+
     # :storage => :filesystem,
 
     :storage => :s3,

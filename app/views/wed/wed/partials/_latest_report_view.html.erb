@@ -43,7 +43,18 @@
 	        <div class="panel-section row">
 
 	        	<section>
-		        		<div class="col-sm-12 title">Screengrabs</div>		
+		        		<div class="col-sm-12 title">Screengrabs</div>
+		        		<% sub_metric.screengrabs.each do |sg| %>
+		        		<div class="col-sm-3">
+		        			<figure>
+		        				<%= image_tag(sg.image.url(:normal)) %>
+		        				<figcaption><%= sg.caption %></figcaption>
+		        			</figure>
+		        		</div>
+		        		<%#= link_to image_tag(sg.image.url(:normal), sg.image.url(:normal)) %>
+		        		<!-- <figcaption><%#= sg.caption %></figcaption> -->
+		        				
+		        		<% end %>
 		        		<!-- <div class="col-sm-3">
 		        			<figure>
 		        				<a href="#">
