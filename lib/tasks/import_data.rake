@@ -371,10 +371,10 @@ namespace :import do
 			  id_cell = row[0]
 			  reports_metric_id_cell = row[1]
 			  submetric_id_cell = row[2]
-			  total_score_cell = row[2]
+			  total_score_cell = row[3]
 			  # summary_cell = row[3]
-			  created_cell = row[4]
-			  updated_cell = row[5]
+			  created_cell = row[6]
+			  updated_cell = row[7]
 			  
 			  
  				ReportsSubMetric.create(

@@ -29,7 +29,7 @@
 
 				<div class="row">
 					<div class="col-sm-9">
-						<% rpt_metric.reports_sub_metrics.each do |sub_metric| %>		
+						<% rpt_metric.reports_sub_metrics.includes(:sub_metric).order('sub_metrics.number asc').each do |sub_metric| %>		
 							<div class="rpt-view-container">
 								<%= render "wed/wed/partials/latest_report_view", rpt_metric: rpt_metric, sub_metric: sub_metric %>
 							</div>

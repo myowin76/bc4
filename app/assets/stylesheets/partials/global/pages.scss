@@ -21,6 +21,9 @@ body, select, input, textarea {
   outline: 0;
 }
 
+a:focus{
+  outline: none !important;
+}
 //-----------------------------------
 // Add your own custom styles below
 //-----------------------------------
