@@ -149,11 +149,19 @@ class Wed::WedController < ApplicationController
     @page_lead = ""
 
     @company = Admin::Company.find(params[:id])
-    @company_reports = @company.reports
+    @reports = @company.reports if @company.reports.present?
     @latest_report = @company.reports.order(:created_at).last
-    @report_type_metrics = @latest_report.report_type.metric_report_types.order(:number)
-
+    # @report_type_metrics = @latest_report.report_type.metric_report_types.order(:number)
+    @report_metrics = @latest_report.reports_metrics.includes(:metric).order('metrics.number asc')
+    # debugger
     # @first_metric = @metrics.first
+    unless @reports.nil?
+      @report_years = @reports.order(:publish_date).map(&:publish_date).compact
+        
+      @yr = @report_years.map {|d| 
+        d.strftime "%Y" 
+      }
+    end
   end
 
   def my_peers

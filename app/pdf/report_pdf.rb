@@ -16,22 +16,45 @@ class	ReportPdf < Prawn::Document
 		 :bold => { :file => font_path, :font => "Garamond-Bold" }
 		})
 
-		define_grid(:columns => 6, :rows => 8, :gutter => 10)
     company_logo
+
     font("Garamond") do
     	pad_bottom(18) { text "#{@report.report_name}", :size => 16, :style => :normal }
     end
-    
 
+    @report.reports_metrics.includes(:metric).order('metrics.number asc').each do |report_metric|
+    	
+    	font("Garamond") do
+	    	text "#{report_metric.metric.name}", :size => 14
+	    	text "#{report_metric.reports_sub_metrics.sum(:total_score)}", :size => 14
+	    end
+
+	    report_metric.reports_sub_metrics.includes(:sub_metric).order('sub_metrics.number asc').each do |report_sub_metric|
+	    	text "#{report_sub_metric.sub_metric.name}", :size => 12
+	    	text "#{report_sub_metric.total_score}", :size => 12
+
+	    	
+	    	@sg_count = report_sub_metric.screengrabs.count
+	    	define_grid(:columns => 3, :rows => @sg_count/3, :gutter => 10)
+
+	    	report_sub_metric.screengrabs.each do |sg|
+		    	image open("#{sg.image.url(:thumbnails)}"), :fit => [150, 100], :position => :left	
+		    end
+	    end
+
+	    
+
+    end
+    # copyright
 	end
 
 	def company_logo
-		image open("#{@report.company.logo.url(:normal)}"), :fit => [200, 50], :position => :center	
+		image open("#{@report.company.logo.url(:normal)}"), :fit => [200, 50], :position => :left	
 		
 	end
 
 	def copyright
-		
+		text "Copyright &copy; Bowencraggs #{DateTime.now.strftime('%Y')}", :size => 13
 	end
 
 
