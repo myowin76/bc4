@@ -8,9 +8,20 @@ class	ReportPdf < Prawn::Document
     	:margin => [20,30]
     	)
 		@report = report
+		
+		font_path = "#{Rails.root}/app/assets/fonts/simoncini_garamond_bold-webfont.ttf"
+		font_families.update("Garamond" => {
+		 :normal => { :file => font_path, :font => "Garamond" },
+		 :italic => { :file => font_path, :font => "Garamond-Italic" },
+		 :bold => { :file => font_path, :font => "Garamond-Bold" }
+		})
+
 		define_grid(:columns => 6, :rows => 8, :gutter => 10)
     company_logo
-    text "download me"
+    font("Garamond") do
+    	pad_bottom(18) { text "#{@report.report_name}", :size => 16, :style => :normal }
+    end
+    
 
 	end
 

@@ -17,13 +17,13 @@ class Admin::ReportsController < Admin::AdminController
     
     # @report = params[:report_id]  
     # debugger
-    @report = Admin::Report.last
+    @report = Admin::Report.find(811)
 
     respond_to do |format|
       format.pdf do
         pdf = ReportPdf.new(@report)
         
-        send_data pdf.render, file_name: "report.pdf", type: "application/pdf", disposition: "inline"
+        send_data pdf.render, file_name: "report_name.pdf", type: "application/pdf", disposition: "inline"
       end
     end
   end
