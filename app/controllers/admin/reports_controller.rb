@@ -1,7 +1,7 @@
 class Admin::ReportsController < Admin::AdminController
   before_action :set_report, only: [:show, :edit, :update, :destroy, :manage_report]
 
-  # respond_to :pdf, :only => :export_pdf
+  respond_to :pdf, :only => :generate_report_pdf
 
 
   def manage_report
@@ -17,15 +17,13 @@ class Admin::ReportsController < Admin::AdminController
     
     # @report = params[:report_id]  
     # debugger
-    
+    @report = Admin::Report.last
 
     respond_to do |format|
       format.pdf do
         pdf = ReportPdf.new(@report)
         
-        send_data pdf.render, file_name: "report.pdf",
-                      type: "application/pdf",
-                      disposition: "inline"
+        send_data pdf.render, file_name: "report.pdf", type: "application/pdf", disposition: "inline"
       end
     end
   end

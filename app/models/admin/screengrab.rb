@@ -26,8 +26,8 @@ class Admin::Screengrab < ActiveRecord::Base
   	:default_url => "/images/default_:style_screengrab.png",
   	# :url  => "/assets/screengrabs/:style/:basename.:extension",
    #  :path => "/assets/screengrabs/:id/:style/:basename.:extension",
-    :url  => "/assets/report_sub_metrics_screengrabs/basename.:extension",
-    :path => "/assets/report_sub_metrics_screengrabs/:basename.:extension",
+    :url  => "/assets/report_sub_metrics_screengrabs/:style/basename.:extension",
+    :path => "/assets/report_sub_metrics_screengrabs/:style/:basename.:extension",
 
     # :storage => :filesystem,
 

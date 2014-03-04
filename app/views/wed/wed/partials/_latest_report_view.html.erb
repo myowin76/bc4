@@ -47,7 +47,7 @@
 		        		<% sub_metric.screengrabs.each do |sg| %>
 		        		<div class="col-sm-3">
 		        			<figure>
-		        				<%= image_tag(sg.image.url(:normal)) %>
+		        				<%= image_tag(sg.image.url(:thumbnails), :alt => sg.caption) %>
 		        				<figcaption><%= sg.caption %></figcaption>
 		        			</figure>
 		        		</div>
