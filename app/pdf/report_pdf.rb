@@ -33,13 +33,31 @@ class	ReportPdf < Prawn::Document
 	    	text "#{report_sub_metric.sub_metric.name}", :size => 12
 	    	text "#{report_sub_metric.total_score}", :size => 12
 
-	    	
+	    	@num_cols = 3
 	    	@sg_count = report_sub_metric.screengrabs.count
-	    	define_grid(:columns => 3, :rows => @sg_count/3, :gutter => 10)
+	    	@num_rows = @sg_count / @num_cols
+	    	if (@sg_count % @num_cols) > 0
+	    		@num_rows = @num_rows + 1
+	    	end
 
-	    	report_sub_metric.screengrabs.each do |sg|
-		    	image open("#{sg.image.url(:thumbnails)}"), :fit => [150, 100], :position => :left	
-		    end
+	    	define_grid(:columns => @num_cols, :rows => @num_rows, :gutter => 10)
+
+	    	text "<ul><li><a href='#'>test</a></li></ul> "
+	    	# text "#{@num_rows}"
+	   #  	bounding_box([100, cursor], :width => 200, :height => 150) do
+				# 	stroke_bounds
+				# 	text "count #{bounds.width}"
+				#  	text "rows: #{@num_rows}"
+				
+				 
+				# end
+
+	    	# report_sub_metric.screengrabs.each do |sg|
+	    	# 	[:left, :center, :right].each do |position|
+				 	# 	image open("#{sg.image.url(:thumbnails)}"), :fit => [150, 100], :position => position
+				 	# end
+		    	
+		    # end
 	    end
 
 	    

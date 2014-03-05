@@ -421,4 +421,23 @@ namespace :import do
 		end # csv end
   end # task end
 
+  # IMPORT REPORT TAGS
+	 task :sub_metrics_report_tags => :environment do
+		
+		ReportsSubMetricsTags.delete_all
+    CSV.foreach(File.join(Rails.root, 'bin', 'sub_metric_tags.csv')) do |row|
+		  unless row.join.blank?
+			  # cells map
+			  reports_sub_metrics_id_cell = row[3]
+			  report_tags_id_cell = row[1]
+			  
+ 				ReportsSubMetricsTags.create(
+			  	:reports_sub_metric_id => reports_sub_metrics_id_cell,
+			  	:report_tag_id => report_tags_id_cell
+		  	)
+
+			end # one row end
+		end # csv end
+  end # task end
+
 end # namespace end

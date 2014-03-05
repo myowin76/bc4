@@ -68,11 +68,11 @@
 									</select>	
 								</div>
 								
-								<%= link_to download_report_pdf_path, id: "download_report_pdf", class: "btn btn-download", remote: true do %>
+								<%= link_to download_report_pdf_path, id: "download_report_pdf", class: "btn btn-download", :target => '_blank' do %>
 									<i></i>Download complete report
 								<% end %>
 
-								<%= link_to download_report_pdf_path(format: "pdf"), id: "download_s_report_pdf", class: "btn btn-download", :target => '_blank' do %>
+								<%= link_to download_report_pdf_path, id: "download_s_report_pdf", class: "btn btn-download", :target => '_blank' do %>
 									<i></i>Download selected
 								<% end %>
 

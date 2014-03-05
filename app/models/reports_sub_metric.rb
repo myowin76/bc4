@@ -7,6 +7,12 @@ class ReportsSubMetric < ActiveRecord::Base
 
   has_many :reports_sub_metrics_notes
 
+  has_and_belongs_to_many :report_tags, :class_name => "Admin::ReportTag"
+
+  has_many :reports_sub_metrics_tags, :class_name => "ReportsSubMetricsTags"
+  has_many :report_tags, through: :reports_sub_metrics_tags, 
+  				:class_name => "Admin::ReportTag"
+
   has_paper_trail	#, :on => [:update], only => [:total_score, :summary, :reason, :updated_by, :created_at, :updated_at]
 
 

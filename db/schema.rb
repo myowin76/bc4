@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140303134353) do
+ActiveRecord::Schema.define(version: 20140305124125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -322,6 +322,16 @@ ActiveRecord::Schema.define(version: 20140303134353) do
   end
 
   add_index "reports_sub_metrics_notes", ["reports_sub_metric_id"], name: "index_reports_sub_metrics_notes_on_reports_sub_metric_id", using: :btree
+
+  create_table "reports_sub_metrics_tags", force: true do |t|
+    t.integer  "reports_sub_metric_id"
+    t.integer  "report_tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reports_sub_metrics_tags", ["report_tag_id"], name: "index_reports_sub_metrics_tags_on_report_tag_id", using: :btree
+  add_index "reports_sub_metrics_tags", ["reports_sub_metric_id"], name: "index_reports_sub_metrics_tags_on_reports_sub_metric_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"
