@@ -1,3 +1,6 @@
+
+
+
 #viewReport{
 	
 	.modal-dialog{
@@ -39,4 +42,20 @@
 		padding-top: 0;
 	}
 
+}
+
+#photoModal{
+	
+	.modal-dialog{
+		width: auto;
+		max-width: 800px;
+	}
+
+	.modal-body{
+		padding-top: 0;
+
+		img{
+			max-width: 100%;
+		}
+	}
 }

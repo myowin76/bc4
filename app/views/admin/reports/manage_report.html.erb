@@ -280,6 +280,7 @@
 							        	<div class="title">Tags</div>
 							        	<%= select_tag "rpt-tag", options_from_collection_for_select(Admin::ReportTag.order(:name).all, 
 							        			"id", "name"), :prompt => "Select", :multiple => 'true' %>
+							        	<%#= f.collection_select :report_tag_ids, ReportTag.order(:name), :id, :name, {}, {multiple:true} %>
 							        	
 							        </section>
 

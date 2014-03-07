@@ -44,6 +44,9 @@ gem "prawnto_2", :require => "prawnto"
 
 gem "acts_as_list", "~> 0.3.0"
 
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 

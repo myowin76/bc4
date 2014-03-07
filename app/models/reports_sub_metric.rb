@@ -1,6 +1,7 @@
 class ReportsSubMetric < ActiveRecord::Base
 
-	attr_accessible :id, :reports_metric_id, :sub_metric_id, :total_score, :summary, :created_at, :updated_at
+	attr_accessible :id, :reports_metric_id, :sub_metric_id, :total_score, :summary, :created_at, :updated_at,
+					:report_tag_ids
 
   belongs_to :reports_metrics, :class_name => "ReportsMetric"
   belongs_to :sub_metric, :class_name => "Admin::SubMetric"

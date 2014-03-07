@@ -9,6 +9,8 @@ $(function(){
 	// 	$(this).closest('form').submit();
 	// });
 	
-
+	$('.screengrabs-list figure a').on('click', function(){
+		$('#photoModal .modal-body img').attr('src', $(this).attr('data-img-url'));
+	});
 
 });

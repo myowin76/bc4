@@ -1,5 +1,5 @@
 class	ReportPdf < Prawn::Document
-
+	include ActionView::Helpers::SanitizeHelper
 	def initialize(report)
     
     super(
@@ -42,7 +42,7 @@ class	ReportPdf < Prawn::Document
 
 	    	define_grid(:columns => @num_cols, :rows => @num_rows, :gutter => 10)
 
-	    	text "<ul><li><a href='#'>test</a></li></ul> "
+	    	text "<b>test</b>", :inline_format => true
 	    	# text "#{@num_rows}"
 	   #  	bounding_box([100, cursor], :width => 200, :height => 150) do
 				# 	stroke_bounds

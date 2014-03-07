@@ -44,15 +44,18 @@
 	        <% if sub_metric.screengrabs.present? %>
 		        <div class="panel-section row">
 
-		        	<section>
+		        	<section class="screengrabs-list">
 			        		<div class="col-sm-12 title">Screengrabs</div>
 			        		<% sub_metric.screengrabs.each do |sg| %>
 			        		<div class="col-sm-3">
 			        			<figure>
-			        				<%= link_to sg.image.url(:normal) do %>
+			        				<%#= link_to sg.image.url(:normal) do %>
+			        					<%#= image_tag(sg.image.url(:thumbnails), :alt => sg.caption) %>
+			        				<%# end %>
+			        				<%= link_to "#photoModal", "data-toggle" => "modal", "data-img-url" => sg.image.url(:normal) do %>
 			        					<%= image_tag(sg.image.url(:thumbnails), :alt => sg.caption) %>
 			        				<% end %>
-			        				
+
 			        				<figcaption><%= sg.caption %></figcaption>
 			        			</figure>
 			        		</div>
